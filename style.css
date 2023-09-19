@@ -315,10 +315,14 @@ template {
   display: none;
 }
 
+/* --------------------------------------------- base */
 html {
   background-color: black;
 }
 
 a {
   color: red;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* --------------------------------------------- composant */
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */

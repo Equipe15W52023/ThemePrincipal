@@ -6,32 +6,32 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// @import "variables/dimension";
+@import "variables/dimension";
 
 
 @import "normalize/normalize";
-// // @import "normalize/box-sizing";
+// @import "normalize/box-sizing";
 
-// @import "variables/root";
+@import "variables/root";
 
-// /* --------------------------------------------- base */
-// @import "base/link";
-// @import "base/heading";
-// // @import "base/espacement";
-// // @import "base/list";
+/* --------------------------------------------- base */
+@import "base/link";
+@import "base/heading";
+// @import "base/espacement";
+// @import "base/list";
 @import "base/body";
-// @import "base/markdown";
+@import "base/markdown";
 
-// /* --------------------------------------------- composant */
-// @import "composant/bloc_flex";
-// @import "composant/pied_page";
-// @import "composant/site_entete";
-// @import "composant/form";
-// @import "composant/search";
-// @import "composant/aside_cours";
-// @import "composant/burger";
+/* --------------------------------------------- composant */
+@import "composant/bloc_flex";
+@import "composant/pied_page";
+@import "composant/site_entete";
+@import "composant/form";
+@import "composant/search";
+@import "composant/aside_cours";
+@import "composant/burger";
 
-// /*------------------------------------------layout */
+/*------------------------------------------layout */
 
-//  @import "layout/aside-contenu";
+ @import "layout/aside-contenu";
 
