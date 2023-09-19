@@ -1,0 +1,3 @@
+<?php
+// Fonctions personnalisées pour le thème
+// ...
