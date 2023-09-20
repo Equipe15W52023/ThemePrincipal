@@ -316,10 +316,6 @@ template {
 }
 
 /* --------------------------------------------- base */
-html {
-  background-color: black;
-}
-
 a {
   color: red;
 }
