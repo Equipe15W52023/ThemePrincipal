@@ -4,9 +4,10 @@ get_header();
 
 // Récupération des articles d'une catégorie particulière
 $args = array(
-    'post_type' => 'post',      // Type de publication : articles
-    'category_name' => 'principal',
-    'posts_per_page' => -1,     // Afficher tous les articles de cette catégorie
+    'post_type' => 'post',
+    'orderby' => 'meta_value_num',
+    'meta_key' => 'custom_post_order',
+    'order' => 'ASC',    
 );
 
 $custom_query = new WP_Query($args);
