@@ -336,5 +336,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.bloc_footer .footer_logo {
+  text-align: center;
+}
 
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
