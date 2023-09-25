@@ -316,17 +316,27 @@ template {
 }
 
 /* --------------------------------------------- base */
-a {
-  color: red;
+
+html {
+  background-color: rgb(255, 255, 255);
 }
 
-.session {
-  background-color: red;
-}
-.session .cours {
-  width: 50%;
-  background-color: blue;
-}
+
 
 /* --------------------------------------------- composant */
+.bloc_footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bloc_footer .footer_logo {
+  text-align: center;
+}
+
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
