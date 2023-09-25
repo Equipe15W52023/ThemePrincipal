@@ -316,13 +316,27 @@ template {
 }
 
 /* --------------------------------------------- base */
+
 html {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
-a {
-  color: red;
-}
+
 
 /* --------------------------------------------- composant */
+.bloc_footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bloc_footer .footer_logo {
+  text-align: center;
+}
+
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
