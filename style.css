@@ -316,12 +316,16 @@ template {
 }
 
 /* --------------------------------------------- base */
-html {
-  background-color: black;
-}
-
 a {
   color: red;
+}
+
+.session {
+  background-color: red;
+}
+.session .cours {
+  width: 50%;
+  background-color: blue;
 }
 
 /* --------------------------------------------- composant */
