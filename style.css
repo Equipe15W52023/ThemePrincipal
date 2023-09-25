@@ -320,5 +320,13 @@ a {
   color: red;
 }
 
+.session {
+  background-color: red;
+}
+.session .cours {
+  width: 50%;
+  background-color: blue;
+}
+
 /* --------------------------------------------- composant */
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */

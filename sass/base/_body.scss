@@ -2,3 +2,10 @@
 a{
 	color:red;
 }
+.session{
+	background-color: red;
+	.cours{
+		width: 50%;
+		background-color: blue;
+	}
+}
