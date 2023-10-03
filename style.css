@@ -316,27 +316,38 @@ template {
 }
 
 /* --------------------------------------------- base */
-
 html {
   background-color: rgb(255, 255, 255);
 }
 
-
-
 /* --------------------------------------------- composant */
 .bloc_footer {
-  background-color: black;
+  background-color: #1F1F1F;
   color: white;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 8%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.bloc_footer .footer_adresse {
+  background-color: #F06543;
+  width: 45%;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .bloc_footer .footer_logo {
   text-align: center;
+  background-color: #F06543;
+  width: 50%;
 }
 
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
