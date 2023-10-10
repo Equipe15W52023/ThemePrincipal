@@ -1,0 +1,36 @@
+// BOUTONS
+button.session-button {
+    background-color: $bleu__moyen;
+    color: $couleur__textePale;
+    border: none;
+    margin: 0 0.1em;
+    border-radius: 8px 8px 0 0;
+}
+
+button.session-button:first-of-type {
+    background-color: $bleu__pale;
+}
+
+// SESSIONS
+.sessions-container {
+    display: flex;
+    justify-content: center;
+}
+
+.session {
+    background-color: $bleu__moyen;
+    color: $couleur__textePale;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    padding: 1em;
+    border-radius: 0 0 8px 8px;
+}
+
+// COURS
+.cours {
+    width: 35%;
+    margin: 1em;
+}
