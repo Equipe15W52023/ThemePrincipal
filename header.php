@@ -16,6 +16,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
+
     <?php wp_head(); ?>
 
 </head>
