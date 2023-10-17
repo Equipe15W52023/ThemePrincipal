@@ -333,24 +333,36 @@ html {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-family: "montserrat", sans-serif;
+  font-size: 0.7em;
+}
+@media screen and (min-width: 768px) {
+  .bloc_footer {
+    height: 11%;
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 996px) {
+  .bloc_footer {
+    height: 15%;
+    font-size: 1em;
+  }
 }
 .bloc_footer .footer_adresse {
   background-color: #F06543;
   width: 60%;
   -webkit-border-radius: 40px;
   border-radius: 50px;
-  margin: 5px;
+  margin: 5px 0px 5px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "montserrat", sans-serif;
-  font-size: 0.7rem;
 }
 .bloc_footer .footer_adresse a {
   text-decoration: none;
   color: #E8E8E8;
-  margin: 5px 0;
+  margin: 3px 0;
 }
 .bloc_footer .footer_adresse a:hover {
   color: #1B72A6;
@@ -365,6 +377,19 @@ html {
 .bloc_footer .footer_logo a {
   text-decoration: none;
   margin: 5px;
+}
+.bloc_footer .footer_logo a svg {
+  height: 2em;
+}
+@media screen and (min-width: 768px) {
+  .bloc_footer .footer_logo a svg {
+    height: 2.5em;
+  }
+}
+@media screen and (min-width: 996px) {
+  .bloc_footer .footer_logo a svg {
+    height: 3em;
+  }
 }
 
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
