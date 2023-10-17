@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Theme Principal
 Author: Eclipse
@@ -80,7 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -316,12 +318,73 @@ template {
 }
 
 /* --------------------------------------------- base */
-
-html {
-  background-color: rgb(255, 255, 255);
+.site__entete {
+  display: flex;
+  color: #9ACBDA;
+  background-color: #0E3D6D;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
 
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #111;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  left: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 70px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.site {
+  background-color: rgb(14, 61, 109);
+}
 
 /* --------------------------------------------- composant */
 .bloc_footer {
@@ -337,6 +400,15 @@ html {
 }
 .bloc_footer .footer_logo {
   text-align: center;
+}
+
+.butt_burgP {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  align-self: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
