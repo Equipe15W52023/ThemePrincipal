@@ -1,0 +1,14 @@
+.accueil {
+    background-color: aqua;
+    width: 100%;
+    height: 200px;
+
+
+    .description_accueil {
+        background-color: $fond__creation;
+        opacity: 60%;
+        height: 40%;
+        position: relative;
+        top: 60%;
+    }
+}
