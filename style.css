@@ -443,17 +443,17 @@ button.session-button:hover {
 }
 @media screen and (min-width: 992px) {
   .session-buttons {
-    margin-left: 25%;
+    margin-left: 35%;
     margin-top: 5%;
     margin-bottom: 2%;
-    width: 50%;
+    width: 30%;
   }
   button.session-button {
     margin: -1.6em;
     font-size: 4vw;
   }
   .sessions-container .session {
-    width: 60%;
+    width: 40%;
   }
 }
 /*------------------------------------------layout */
