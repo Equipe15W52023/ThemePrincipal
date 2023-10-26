@@ -456,4 +456,38 @@ button.session-button:hover {
     width: 40%;
   }
 }
+figure.sections-future {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+figure.sections-future figure.section-future {
+  height: 500px;
+}
+figure.sections-future figure.section-future img {
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 554px) {
+  figure.sections-future {
+    flex-direction: row;
+    margin: 3em 10em;
+  }
+  figure.sections-future figure.section-future {
+    height: 500px;
+  }
+  figure.sections-future figure.section-future img {
+    border-radius: 8px;
+  }
+}
+@media screen and (min-width: 992px) {
+  figure.sections-future {
+    flex-direction: row;
+    margin: 3em 15em;
+  }
+  figure.sections-future figure.section-future {
+    height: 700px;
+  }
+}
 /*------------------------------------------layout */

@@ -1,0 +1,52 @@
+// ****************************** Mobile ************************************ //
+// SECTIONS FUTURE GÉNÉRALE
+figure.sections-future {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    figure.section-future {
+        height: 500px;
+
+        img {
+            border-radius: 8px;
+            // -webkit-mask-image: url(../../medias/masque-future.svg);
+            // mask-image: url(../../medias/masque-future.svg);
+            // -webkit-mask-repeat: no-repeat;
+            // mask-repeat: no-repeat;
+        }
+    }
+}
+
+// ***************************** TABLETTE *********************************** //
+@media screen and (min-width: 554px) {
+    figure.sections-future {
+        flex-direction: row;
+        margin: 3em 10em;
+    
+        figure.section-future {
+            height: 500px;
+    
+            img {
+                border-radius: 8px;
+                // -webkit-mask-image: url(../../medias/masque-future.svg);
+                // mask-image: url(../../medias/masque-future.svg);
+                // -webkit-mask-repeat: no-repeat;
+                // mask-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+// ****************************** BUREAU ************************************ //
+@media screen and (min-width: 992px) {
+    figure.sections-future {
+        flex-direction: row;
+        margin: 3em 15em;
+    
+        figure.section-future {
+            height: 700px;
+        }
+    }
+}
