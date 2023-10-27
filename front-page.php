@@ -26,7 +26,9 @@ $custom_query = new WP_Query($args);
 <button id="toggle-category-button">Basculer les catégories</button>
 
 <!-- les sections/articles de la page -->
+<article class="acceuil">
 <?php get_template_part('accueil');?>
+</article>
 
 <article class="futur">
 
@@ -34,9 +36,12 @@ $custom_query = new WP_Query($args);
 <article class="grille_cours">
 
 </article>
+
 <article class="environnement">
+<?php get_template_part('environnement');?>
 
 </article>
+
 <article class="prof">
 
 </article>

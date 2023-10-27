@@ -1,15 +1,11 @@
-
-    <div class="titre_accueil">
+   <div class="titre_environnement">
         <h1><?= get_the_title(); ?></h1>
     </div>
-    <div class="description_accueil">      
-        <p><?php the_content();?></p>
-    </div>
-    <?php
+ <?php
             if(have_posts()):
                 while (have_posts()) : the_post();
 
-                $section = 'accueil';
+                $section = 'environnement';
 
             endwhile;
             endif;
