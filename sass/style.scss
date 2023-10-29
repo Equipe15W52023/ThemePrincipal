@@ -13,7 +13,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "normalize/normalize";
 // @import "normalize/box-sizing";
 
-@import "variables/root";
 
 /* --------------------------------------------- base */
 @import "base/link";
@@ -32,7 +31,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "composant/aside_cours";
 @import "composant/burger";
 
+@import "composant/accueil";
+@import "composant/environnement";
+
+@import "composant/grille_cours";
+@import "composant/future";
+
+
 /*------------------------------------------layout */
-
- @import "layout/aside-contenu";
-
+@import "layout/aside-contenu";
