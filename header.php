@@ -16,6 +16,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
+
     <?php wp_head(); ?>
 
 </head>
@@ -32,24 +34,29 @@
 
 // }
 
-     
-
- 
-
 ?>
-
- 
-
- 
-
- 
-
  
 
 <body class="site">
 
    <header class="site__entete">
+   <div id="mySidenav" class="sidenav">
+  <a id="closeBtn" href="#" class="close">×</a>
+  <ul>
+    <li><a href="#">A propos</a></li>
+    <li><a href="#">Nos services</a></li>
+    <li><a href="#">Témoignages</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
 
+<a href="#" id="openBtn">
+  <span class="burger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</a>
        <section class="menu_recherche">
 
            <div class="logomenu">
