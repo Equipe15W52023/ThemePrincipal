@@ -81,8 +81,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -318,14 +317,78 @@ template {
 }
 
 /* --------------------------------------------- base */
+.site__entete {
+  display: flex;
+  color: #9ACBDA;
+  background-color: #0E3D6D;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
 
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #111;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  left: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  border-radius: 50px;
+}
 
 html {
   background-color: rgb(255, 255, 255);
   font-family: "Red Hat Display", sans-serif;
 }
 
+.site {
+  background-color: rgb(14, 61, 109);
+}
 
 /* --------------------------------------------- composant */
 .bloc_footer {
@@ -342,6 +405,7 @@ html {
   justify-content: space-between;
   font-family: "montserrat", sans-serif;
   font-size: 0.7em;
+  z-index: 100;
 }
 @media screen and (min-width: 768px) {
   .bloc_footer {
@@ -399,13 +463,53 @@ html {
   }
 }
 
-/* --------------------------------------------- composant */
-
-.bloc_footer .footer_logo {
-  text-align: center;
+.butt_burgP {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  align-self: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
+p, h1, h2, h3 {
+  color: #E8E8E8;
+}
 
+.accueil {
+  background-color: #1F1F1F;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+.accueil .titre_accueil {
+  background-color: #F06543;
+  margin-top: 2%;
+}
+.accueil .titre_accueil h1 {
+  font-size: 24px;
+}
+.accueil .description_accueil {
+  background-color: #0E3D6D;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 45%;
+}
+.accueil .description_accueil p {
+  color: rgb(255, 255, 255);
+  padding: 1%;
+  margin: 0;
+  font-size: 12px;
+}
+
+.environnement {
+  width: 100%;
+  height: 200px;
+  background-color: aqua;
+}
 .session-buttons {
   margin-left: 20%;
   margin-top: 10%;
@@ -576,5 +680,4 @@ div.sections-future div.section-future .img-future figcaption {
     margin: 3em 20%;
   }
 }
-/*------------------------------------------layout */
-
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */

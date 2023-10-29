@@ -12,6 +12,7 @@
     justify-content: space-between;
     font-family: 'montserrat', sans-serif;
     font-size: 0.7em;
+    z-index: 100;
 
     @media screen and (min-width: $largeur__tablette) {
         height: 11%;
