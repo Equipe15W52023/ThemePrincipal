@@ -393,38 +393,4 @@ html {
   }
 }
 
-.accueil {
-  background-color: #1F1F1F;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-}
-.accueil .titre_accueil {
-  background-color: #F06543;
-  margin-top: 2%;
-}
-.accueil .titre_accueil h1 {
-  font-size: 24px;
-}
-.accueil .description_accueil {
-  background-color: #0E3D6D;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  margin-top: 45%;
-}
-.accueil .description_accueil p {
-  color: rgb(255, 255, 255);
-  padding: 1%;
-  margin: 0;
-  font-size: 12px;
-}
 
-.environnement {
-  width: 100%;
-  height: 200px;
-  background-color: aqua;
-}
-/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
