@@ -1,0 +1,19 @@
+.Section-prof{
+
+    color: $couleur__textePale;
+    display: flex;
+    position: relative;
+    left: 10%;
+
+    width: 80%;
+    padding: 1em;
+    border-radius: 0 0 8px 8px;
+    .professeur{
+        background-color: red;
+        width: 75%;
+        margin: 1em;
+        padding: 1em;
+        background-color: $bleu__moyen;
+        border-radius: 8px;
+    }
+}
