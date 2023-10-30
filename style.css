@@ -511,22 +511,22 @@ p, h1, h2, h3 {
   background-color: aqua;
 }
 .session-buttons {
-  margin-left: 20%;
-  margin-top: 10%;
-  margin-bottom: 5%;
-  width: 60%;
+  width: 63%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
+  margin-bottom: 3%;
+  margin-top: 5%;
 }
 
 button.session-button {
   position: relative;
   color: #E8E8E8;
   border: none;
-  margin: -1.61em;
+  margin: -2em;
   border-radius: 8px 8px 0 0;
-  font-size: 9vw;
+  font-size: clamp(1.5rem, 1rem + 2.6667vw, 2rem);
 }
 
 button.session-button:nth-of-type(1) {
@@ -602,7 +602,7 @@ button.session-button:hover {
 
 @media screen and (min-width: 554px) {
   .session-buttons {
-    margin-bottom: 4%;
+    width: 52%;
   }
   button.session-button {
     font-size: 8vw;
@@ -617,8 +617,6 @@ button.session-button:hover {
 }
 @media screen and (min-width: 992px) {
   .session-buttons {
-    margin-left: 35%;
-    margin-top: 5%;
     margin-bottom: 2%;
     width: 30%;
   }
