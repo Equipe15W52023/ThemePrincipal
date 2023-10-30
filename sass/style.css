@@ -318,88 +318,238 @@ template {
 }
 
 /* --------------------------------------------- base */
-.site__entete {
-  display: flex;
-  color: #9ACBDA;
-  background-color: #0E3D6D;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-/* Sidenav menu */
-.sidenav {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: -250px;
-  background-color: #e8e8e8;
-  padding-top: 60px;
-  transition: left 0.5s ease;
-}
-
-/* Sidenav menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #111;
-}
-
-.sidenav ul {
-  list-style-type: none;
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Active class */
-.sidenav.active {
-  left: 0;
+/* Styles de base
+=============================================== */
+.site_entete {
+  min-height: 100%;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Close btn */
-.sidenav .close {
-  position: absolute;
+ul,
+li {
+  min-height: 100%;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  align-self: center;
+}
+
+.barre-menu,
+.menu {
+  background: #333;
+  color: #ddd;
+}
+
+/* Mise en page pour les petits périphériques
+=============================================== */
+.barre-menu {
+  width: 100%;
+  height: 10vh;
+  border-bottom: 2px solid #ddd;
+  /*La position est fixe pour toujours le voir quand on navigue dans les sections*/
+  position: fixed;
   top: 0;
-  right: 25px;
-  font-size: 36px;
+  /*Conteneur flex en rangée avec alignement à droite pour les petits périphériques*/
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-/* Icône burger */
-.burger-icon span {
+.menu {
+  width: 100%;
+  /*Position fixe sur petit écran en bas de la barre de la barre de menu*/
+  position: fixed;
+  top: 10vh;
+  /*Sa hauteur est celle de la hauteur du viewport MOINS celle de la barre de navigation*/
+  height: 90vh;
+  /*Conteneur flex en colonne avec élément centré au milieu*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*Au démarrage on met complètement transparent*/
+  opacity: 0;
+  /*Effet de transition*/
+  transition: opacity 0.5s;
+}
+
+/*Om met tous les boutons du menu complètement à gauche ou à droite*/
+.menu a {
+  transform: translateX(-100%);
+  /*Effet de transition*/
+  transition: transform 400ms;
+}
+
+/*Les bouton pairs von arriver par la droite...*/
+.menu a:nth-child(even) {
+  transform: translateX(100%);
+}
+
+.bouton-burger {
   display: block;
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-  border-radius: 50px;
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
+  background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, transparent 20%, transparent 40%, #ddd 40%, #ddd 60%, transparent 60%, transparent 80%, #ddd 80%, #ddd 100%);
+  cursor: pointer;
+  transition: transform 400ms;
 }
 
-.site {
-  background-color: rgb(14, 61, 109);
+/* Contrôle du menu et du bouton burger...
+========================================================================== 
+    Le menu...est en position fixed et mis sur le contenu avec de la transparence
+    Il apparaît ou disparaît selon l'état 'checked' de la case à cocher
+    #cc-pour-bouton-burger. La manière de le faire apparaître est de le mettre
+    opaque avec opacity:1
+==========================================================================*/
+#cc-pour-bouton-burger:checked ~ .barre-menu > .bouton-burger {
+  transform: rotate(90deg);
+}
+
+/*
+    On met le menu opaque
+*/
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu {
+  opacity: 1;
+}
+
+/*Arrivée des différents boutons avec un délai*/
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a {
+  transform: translateX(0%);
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(1) {
+  transition-delay: 0.5s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(2) {
+  transition-delay: 1s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(3) {
+  transition-delay: 1.5s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(4) {
+  transition-delay: 2s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(5) {
+  transition-delay: 2.5s;
+}
+
+#cc-pour-bouton-burger {
+  /*On cache la case à cocher*/
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    transform: translateX(0%);
+    justify-content: space-evenly;
+    opacity: 1;
+  }
+  .menu a, .menu a:nth-child(even) {
+    flex-grow: 1;
+    /*Enlever la translation*/
+    transform: translateX(0%);
+  }
+  .barre-menu {
+    height: auto;
+    border: none;
+  }
+  .bouton-burger {
+    /*On cache le bouton burger*/
+    display: none;
+  }
+}
+html {
+  background-color: rgb(255, 255, 255);
+  font-family: "Red Hat Display", sans-serif;
 }
 
 /* --------------------------------------------- composant */
 .bloc_footer {
-  background-color: black;
-  color: white;
+  background-color: #0E3D6D;
+  color: #E8E8E8;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 9%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  font-family: "montserrat", sans-serif;
+  font-size: 0.7em;
+}
+@media screen and (min-width: 768px) {
+  .bloc_footer {
+    height: 11%;
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 996px) {
+  .bloc_footer {
+    height: 15%;
+    font-size: 1em;
+  }
+}
+.bloc_footer .footer_adresse {
+  background-color: #F06543;
+  width: 60%;
+  border-radius: 50px;
+  margin: 5px 0px 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bloc_footer .footer_adresse a {
+  text-decoration: none;
+  color: #E8E8E8;
+  margin: 3px 0;
+}
+.bloc_footer .footer_adresse a:hover {
+  color: #1B72A6;
 }
 .bloc_footer .footer_logo {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F06543;
+  width: 35%;
+}
+.bloc_footer .footer_logo a {
+  text-decoration: none;
+  margin: 5px;
+}
+.bloc_footer .footer_logo a svg {
+  height: 2em;
+}
+@media screen and (min-width: 768px) {
+  .bloc_footer .footer_logo a svg {
+    height: 2.5em;
+  }
+}
+@media screen and (min-width: 996px) {
+  .bloc_footer .footer_logo a svg {
+    height: 3em;
+  }
 }
 
 .butt_burgP {
@@ -411,4 +561,208 @@ template {
   flex-wrap: nowrap;
 }
 
+.accueil {
+  background-color: #1F1F1F;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+.accueil .titre_accueil {
+  background-color: #F06543;
+  margin-top: 2%;
+}
+.accueil .titre_accueil h1 {
+  font-size: 24px;
+}
+.accueil .description_accueil {
+  background-color: #0E3D6D;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 45%;
+}
+.accueil .description_accueil p {
+  color: rgb(255, 255, 255);
+  padding: 1%;
+  margin: 0;
+  font-size: 12px;
+}
+
+.environnement {
+  width: 100%;
+  height: 200px;
+  background-color: aqua;
+}
+.session-buttons {
+  margin-left: 20%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.session-button {
+  position: relative;
+  color: #E8E8E8;
+  border: none;
+  margin: -1.61em;
+  border-radius: 8px 8px 0 0;
+  font-size: 9vw;
+}
+
+button.session-button:nth-of-type(1) {
+  z-index: 7;
+  background-color: #1b72a6;
+}
+
+button.session-button:nth-of-type(2) {
+  z-index: 6;
+  background-color: #0a5785;
+}
+
+button.session-button:nth-of-type(3) {
+  z-index: 5;
+  background-color: #07486f;
+}
+
+button.session-button:nth-of-type(4) {
+  z-index: 4;
+  background-color: #00395b;
+}
+
+button.session-button:nth-of-type(5) {
+  z-index: 3;
+  background-color: #042a41;
+}
+
+button.session-button:nth-of-type(6) {
+  z-index: 2;
+  background-color: #001c2d;
+}
+
+button.session-button .selection {
+  background-color: #9ACBDA;
+  z-index: 10;
+}
+
+button.session-button:hover {
+  background-color: #F06543;
+}
+
+.sessions-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5em;
+}
+.sessions-container .session {
+  background-color: #9ACBDA;
+  color: #E8E8E8;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  padding: 1em;
+  border-radius: 0 0 8px 8px;
+}
+.sessions-container .session h2 {
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  color: #0E3D6D;
+}
+
+.cours {
+  width: 75%;
+  margin: 1em;
+  padding: 1em;
+  background-color: #1B72A6;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 554px) {
+  .session-buttons {
+    margin-bottom: 4%;
+  }
+  button.session-button {
+    font-size: 8vw;
+  }
+  .cours {
+    width: 35%;
+    margin: 1em;
+    padding: 1em;
+    background-color: #1B72A6;
+    border-radius: 8px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .session-buttons {
+    margin-left: 35%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 30%;
+  }
+  button.session-button {
+    margin: -1.6em;
+    font-size: 4vw;
+  }
+  .sessions-container .session {
+    width: 40%;
+  }
+}
+div.sections-future {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+div.sections-future div.section-future {
+  display: flex;
+}
+div.sections-future div.section-future .img-future {
+  position: relative;
+  justify-content: center;
+}
+div.sections-future div.section-future .img-future img {
+  border-radius: 8px;
+}
+div.sections-future div.section-future .img-future figcaption {
+  position: absolute;
+  color: #E8E8E8;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  width: 80%;
+  top: 1em;
+  bottom: auto;
+  left: 4%;
+  right: auto;
+  padding: 1em;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 554px) {
+  div.sections-future {
+    flex-direction: row;
+    margin: 3em 5%;
+  }
+  div.sections-future div.section-future .img-future img {
+    border-radius: 8px;
+  }
+  div.sections-future div.section-future .img-future figcaption {
+    font-size: 18px;
+    left: 4%;
+  }
+}
+@media screen and (min-width: 992px) {
+  div.sections-future {
+    flex-direction: row;
+    margin: 3em 20%;
+  }
+}
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
