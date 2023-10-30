@@ -1,13 +1,14 @@
 # ThemePrincipal
-
+ 
 #### Les réalisations du sprint:
 - Création d'une prototype de notre site
 - Commencement du thème principale
-- Modifcation du fichier header
-- Modifcation du fichier footer
-- Modifcation du fichier front-page
-- Commencement d’une structure de fichier Sass
-
-
-#### Liens vers le prototype
-- https://eclipse.projetweb.lucaruggeri.ca/wp/
+- Création menu burger
+- Avancement de l'intégration du desing de la version création en SCSS pour les sections:
+    - Header
+    - Acceuil
+    - Grille de cours
+    - Futur
+    - Environnement
+    - Prof
+    - Footer
