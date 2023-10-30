@@ -1,7 +1,9 @@
 .bloc_footer {
     background-color: $fond__creation;
     color: #E8E8E8;
-   
+    position: static;
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: 9%;
     display: flex;

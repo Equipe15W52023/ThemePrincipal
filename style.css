@@ -394,6 +394,9 @@ html {
 .bloc_footer {
   background-color: #0E3D6D;
   color: #E8E8E8;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 9%;
   display: flex;
@@ -487,44 +490,99 @@ html {
   border-radius: 8px;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   color: #E8E8E8;
 }
 
-.accueil {
+.accueil_div {
   background-color: #1F1F1F;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
 }
-.accueil .titre_accueil {
+.accueil_div .wp-block-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.accueil_div .wp-block-column .titre_accueil {
   background-color: #F06543;
   margin-top: 2%;
+  text-align: center;
+  width: 70vw;
 }
-.accueil .titre_accueil h1 {
+.accueil_div .wp-block-column .titre_accueil h2 {
   font-size: 24px;
 }
-.accueil .description_accueil {
+.accueil_div .description_accueil {
   background-color: #0E3D6D;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  margin-top: 45%;
+  opacity: 50%;
+  margin-top: 25%;
 }
-.accueil .description_accueil p {
+.accueil_div .description_accueil p {
   color: rgb(255, 255, 255);
   padding: 1%;
   margin: 0;
   font-size: 12px;
 }
-
-.environnement {
-  width: 100%;
-  height: 200px;
-  background-color: aqua;
+@media screen and (min-width: 768px) {
+  .accueil_div .wp-container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
+@media screen and (min-width: 996px) {
+  .accueil_div .wp-container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.environnement_div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.environnement_div .titre_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .titre_environnement h2 {
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement iframe {
+  width: 90vw;
+  height: 50vh;
+}
+
 .session-buttons {
   width: 63%;
   display: flex;
@@ -742,4 +800,4 @@ div.sections-future div.section-future p.texte-future {
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
-/*------------------------------------------layout */
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
