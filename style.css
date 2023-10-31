@@ -525,89 +525,83 @@ p, h1, h2, h3 {
   height: 200px;
   background-color: aqua;
 }
-.session-buttons {
-  width: 63%;
+.sessions-boutons-container > div {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin: auto;
-  margin-bottom: 3%;
-  margin-top: 5%;
+  flex-wrap: nowrap;
+  width: 70%;
 }
-
-button.session-button {
+.sessions-boutons-container > div .session-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0;
+  margin-top: 5%;
+  align-self: stretch;
+}
+.sessions-boutons-container > div .session-buttons button.session-button {
   position: relative;
   color: #E8E8E8;
   border: none;
-  margin: -2em;
   border-radius: 8px 8px 0 0;
-  font-size: clamp(1.5rem, 1rem + 2.6667vw, 2rem);
+  font-size: clamp(0.5rem, 0.0625rem + 2.3333vw, 0.9375rem);
 }
-
-button.session-button:nth-of-type(1) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
   background-color: #9ACBDA;
 }
-
-button.session-button:nth-of-type(2) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(2) {
   z-index: 6;
   background-color: #0a5785;
 }
-
-button.session-button:nth-of-type(3) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(3) {
   z-index: 5;
   background-color: #07486f;
 }
-
-button.session-button:nth-of-type(4) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(4) {
   z-index: 4;
   background-color: #00395b;
 }
-
-button.session-button:nth-of-type(5) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(5) {
   z-index: 3;
   background-color: #042a41;
 }
-
-button.session-button:nth-of-type(6) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(6) {
   z-index: 2;
   background-color: #001c2d;
 }
-
-button.session-button .selection {
+.sessions-boutons-container > div .session-buttons button.session-button .selection {
   background-color: #9ACBDA;
   z-index: 10;
 }
-
-button.session-button:hover {
+.sessions-boutons-container > div .session-buttons button.session-button:hover {
   background-color: #F06543;
 }
-
-.sessions-container {
+.sessions-boutons-container > div .sessions-container {
   display: flex;
   justify-content: center;
   margin-bottom: 5em;
+  width: 100%;
 }
-.sessions-container .session {
+.sessions-boutons-container > div .sessions-container .session {
   background-color: #9ACBDA;
   color: #E8E8E8;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   padding: 1em;
   border-radius: 0 0 8px 8px;
 }
-.sessions-container .session h2 {
+.sessions-boutons-container > div .sessions-container .session h2 {
   align-self: center;
   width: 100%;
   text-align: center;
   margin: 0;
   color: #0E3D6D;
 }
-
-.cours {
+.sessions-boutons-container > div .sessions-container .session .cours {
   width: 75%;
   margin: 1em;
   padding: 1em;
@@ -616,13 +610,14 @@ button.session-button:hover {
 }
 
 @media screen and (min-width: 554px) {
-  .session-buttons {
-    width: 52%;
+  .sessions-boutons-container > div .session-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-  button.session-button {
-    font-size: 8vw;
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
   }
-  .cours {
+  .sessions-boutons-container > div .sessions-container .session .cours {
     width: 35%;
     margin: 1em;
     padding: 1em;
@@ -631,15 +626,10 @@ button.session-button:hover {
   }
 }
 @media screen and (min-width: 992px) {
-  .session-buttons {
-    margin-bottom: 2%;
-    width: 30%;
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: 30px;
   }
-  button.session-button {
-    margin: -1.6em;
-    font-size: 4vw;
-  }
-  .sessions-container .session {
+  .sessions-boutons-container > div .sessions-container .session .cours {
     width: 40%;
   }
 }
