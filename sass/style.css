@@ -333,12 +333,12 @@ template {
   flex-direction: column;
 }
 
-ul,
 li {
   min-height: 100%;
   background-color: lightblue;
   display: flex;
   flex-direction: row;
+  color: azure;
 }
 
 ul {
@@ -348,11 +348,12 @@ ul {
   align-content: flex-start;
   justify-content: center;
   flex-direction: space-between;
+  color: azure;
 }
 
 .barre-menu,
 .menu {
-  background: #333;
+  background: navy;
   color: #ddd;
 }
 
