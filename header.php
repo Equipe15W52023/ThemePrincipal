@@ -43,10 +43,10 @@
    <div id="mySidenav" class="sidenav">
   <a id="closeBtn" href="#" class="close">×</a>
   <ul>
-    <li><a href="#">A propos</a></li>
+    <li><a href="#">image tim</a></li>
     <li><a href="#">Nos services</a></li>
     <li><a href="#">Témoignages</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#">switch prog/creatif</a></li>
   </ul>
 </div>
 

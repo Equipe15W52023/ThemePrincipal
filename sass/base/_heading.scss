@@ -25,7 +25,12 @@ li{
     background-color: lightblue;
     display: flex;
     flex-direction: row;
-    color: azure;
+    color: azure; 
+    border-radius: 25px;
+  border: 2px solid orangered;
+  padding: 20px;
+  width: 200px;
+  height: 10%;
 }
 
 ul{
@@ -36,11 +41,12 @@ ul{
   justify-content: center;
   flex-direction:space-between;
   color: azure;
+   
 }
 .barre-menu,
 .menu{
-    background: navy;
     color: #ddd;
+  
 }
 
 

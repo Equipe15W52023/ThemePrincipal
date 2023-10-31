@@ -339,6 +339,11 @@ li {
   display: flex;
   flex-direction: row;
   color: azure;
+  border-radius: 25px;
+  border: 2px solid orangered;
+  padding: 20px;
+  width: 200px;
+  height: 10%;
 }
 
 ul {
@@ -353,7 +358,6 @@ ul {
 
 .barre-menu,
 .menu {
-  background: navy;
   color: #ddd;
 }
 
