@@ -28,7 +28,12 @@ li{
     flex-direction: row;
 }
 ul{
-  align-self: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: center;
+  align-content: flex-start;
+  justify-content: center;
+  flex-direction:space-between;
 }
 .barre-menu,
 .menu{
