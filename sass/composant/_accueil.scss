@@ -1,71 +1,83 @@
-p,
-h1,
-h2,
-h3 {
-    color: $couleur__textePale;
-}
-
 .accueil_div {
-    background-color: $fond__prog;
     width: 100%;
-    //height: 200px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    background-color: $fond__prog;
     font-family: 'Montserrat', sans-serif;
+    color: $couleur__textePale;
 
-    .wp-block-column {
+    .video_accueil {
+        height: 20vh;
+    }
+
+    .info_accueil {
+        background-color: rgba(2, 18, 45, 0.425);
         display: flex;
-        justify-content: center;
         flex-direction: column;
-
+        flex-wrap: wrap;
+        align-items: center;
 
         .titre_accueil {
             background-color: $orange__creation;
-            margin-top: 2%;
+            margin: 3%;
             text-align: center;
-            width: 70vw;
-
-            h2 {
-                font-size: 24px;
-            }
+            width: 60vw;
+            font-size: 24px;
+            border-radius: 50px;
         }
-    }
 
-    .description_accueil {
-        background-color: $fond__creation;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        opacity: 50%;
-        margin-top: 25%;
-
-        p {
-            color: rgb(255, 255, 255);
-            padding: 1%;
-            margin: 0;
+        .description_accueil {
+            margin: 2%;
             font-size: 12px;
-
-        }
-    }
-
-    @media screen and (min-width: $largeur__tablette) {
-        .wp-container-3 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: column;
-        }
-    }
-
-    @media screen and (min-width: $largeur__bureau) {
-        .wp-container-3 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: column;
         }
 
     }
+}
 
+@media screen and (min-width: $largeur__tablette) {
+    .accueil_div {
+        display: flex;
+        flex-direction: row;
+
+        .video_accueil {
+            height: 60vh;
+        }
+
+        .info_accueil {
+
+            .titre_accueil {
+                margin: 3%;
+                width: 30vw;
+                font-size: 26px;
+            }
+
+            .description_accueil {
+                margin: 3%;
+                font-size: 14px;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: $largeur__bureau) {
+    .accueil_div {
+
+        .video_accueil {
+            height: 70vh;
+        }
+
+        .info_accueil {
+
+            .titre_accueil {
+                margin: 4%;
+                width: 25vw;
+                font-size: 28px;
+            }
+
+            .description_accueil {
+                margin: 5%;
+                font-size: 16px;
+            }
+
+        }
+    }
 }

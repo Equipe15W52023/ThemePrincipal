@@ -472,66 +472,67 @@ html {
   flex-wrap: nowrap;
 }
 
-p,
-h1,
-h2,
-h3 {
+.accueil_div {
+  width: 100%;
+  background-color: #1F1F1F;
+  font-family: "Montserrat", sans-serif;
   color: #E8E8E8;
 }
-
-.accueil_div {
-  background-color: #1F1F1F;
-  width: 100%;
+.accueil_div .video_accueil {
+  height: 20vh;
+}
+.accueil_div .info_accueil {
+  background-color: rgba(2, 18, 45, 0.425);
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-}
-.accueil_div .wp-block-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.accueil_div .wp-block-column .titre_accueil {
-  background-color: #F06543;
-  margin-top: 2%;
-  text-align: center;
-  width: 70vw;
-}
-.accueil_div .wp-block-column .titre_accueil h2 {
-  font-size: 24px;
-}
-.accueil_div .description_accueil {
-  background-color: #0E3D6D;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  opacity: 50%;
-  margin-top: 25%;
+  align-items: center;
 }
-.accueil_div .description_accueil p {
-  color: rgb(255, 255, 255);
-  padding: 1%;
-  margin: 0;
+.accueil_div .info_accueil .titre_accueil {
+  background-color: #F06543;
+  margin: 3%;
+  text-align: center;
+  width: 60vw;
+  font-size: 24px;
+  border-radius: 50px;
+}
+.accueil_div .info_accueil .description_accueil {
+  margin: 2%;
   font-size: 12px;
 }
+
 @media screen and (min-width: 768px) {
-  .accueil_div .wp-container-3 {
+  .accueil_div {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+  }
+  .accueil_div .video_accueil {
+    height: 60vh;
+  }
+  .accueil_div .info_accueil .titre_accueil {
+    margin: 3%;
+    width: 30vw;
+    font-size: 26px;
+  }
+  .accueil_div .info_accueil .description_accueil {
+    margin: 3%;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 996px) {
-  .accueil_div .wp-container-3 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
+  .accueil_div .video_accueil {
+    height: 70vh;
+  }
+  .accueil_div .info_accueil .titre_accueil {
+    margin: 4%;
+    width: 25vw;
+    font-size: 28px;
+  }
+  .accueil_div .info_accueil .description_accueil {
+    margin: 5%;
+    font-size: 16px;
   }
 }
-
 .environnement_div {
   width: 100%;
   display: flex;
