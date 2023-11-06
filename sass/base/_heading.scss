@@ -104,14 +104,16 @@ ul{
     transform: translateX(100%);
 }
 
-.bouton-burger {
-    display: block;
+.sidenav {
+    display: flex;
+    justify-content: flex-start;
     height: 2rem;
     width: 2rem;
-    margin: 1rem;
+    margin-left: 1rem;
     background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, transparent 20%, transparent 40%, #ddd 40%, #ddd 60%, transparent 60%, transparent 80%, #ddd 80%, #ddd 100%);
     cursor: pointer;
     transition: transform 400ms;
+    background-color: grey
 }
 
 /* Contrôle du menu et du bouton burger...
