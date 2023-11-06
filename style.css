@@ -404,7 +404,7 @@ ul {
   transform: translateX(100%);
 }
 
-.sidenav {
+.burger-icon {
   display: flex;
   justify-content: flex-start;
   height: 2rem;

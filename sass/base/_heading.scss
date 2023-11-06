@@ -104,7 +104,18 @@ ul{
     transform: translateX(100%);
 }
 
-.sidenav {
+//.sidenav {
+ //   display: flex;
+  //  justify-content: flex-start;
+  //  height: 2rem;
+  //  width: 2rem;
+ //   margin-left: 1rem;
+  //  background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, transparent 20%, transparent 40%, #ddd 40%, #ddd 60%, transparent 60%, transparent 80%, #ddd 80%, #ddd 100%);
+  //  cursor: pointer;
+  //  transition: transform 400ms;
+  //  background-color: grey
+//}
+.burger-icon{
     display: flex;
     justify-content: flex-start;
     height: 2rem;
@@ -115,7 +126,6 @@ ul{
     transition: transform 400ms;
     background-color: grey
 }
-
 /* Contrôle du menu et du bouton burger...
 ========================================================================== 
     Le menu...est en position fixed et mis sur le contenu avec de la transparence
