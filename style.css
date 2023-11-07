@@ -548,7 +548,7 @@ p, h1, h2, h3 {
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
-  background-color: #9ACBDA;
+  background-color: #0f689d;
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(2) {
   z-index: 6;
@@ -570,12 +570,12 @@ p, h1, h2, h3 {
   z-index: 2;
   background-color: #001c2d;
 }
-.sessions-boutons-container > div .session-buttons button.session-button .selection {
+.sessions-boutons-container > div .session-buttons button.session-button.selection {
   background-color: #9ACBDA;
   z-index: 10;
 }
 .sessions-boutons-container > div .session-buttons button.session-button:hover {
-  background-color: #F06543;
+  background-image: linear-gradient(rgba(240, 102, 67, 0.7333333333), transparent);
 }
 .sessions-boutons-container > div .sessions-container {
   display: flex;
@@ -726,9 +726,9 @@ div.sections-future div.section-future p.texte-future {
     font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
   }
   div.sections-future div.section-future p.texte-future {
-    width: 75%;
-    top: 32%;
-    left: 13%;
+    width: 45%;
+    top: 35%;
+    left: 27%;
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
