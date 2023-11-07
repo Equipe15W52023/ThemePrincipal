@@ -25,8 +25,6 @@ $custom_query = new WP_Query($args);
  
 <button id="toggle-category-button">Basculer les catégories</button>
  
-<!-- les sections/articles de la page -->
- 
 <?php  
 // Boucle pour afficher les articles
 if ($custom_query->have_posts()) :
@@ -36,7 +34,7 @@ if ($custom_query->have_posts()) :
         the_content();
         // Contenu de l'article
         // Vous pouvez personnaliser la mise en page ici
- 
+
     endwhile;
     wp_reset_postdata(); // Réinitialise la requête personnalisée
 else :
