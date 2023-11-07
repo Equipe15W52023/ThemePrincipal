@@ -1,16 +1,33 @@
-let sidenav = document.getElementById("mySidenav");
-let openBtn = document.getElementById("openBtn");
-let closeBtn = document.getElementById("closeBtn");
+let leCheckBox =document.querySelector("#cc-pour-bouton-burger");
+let leBody = document.querySelector("body");
 
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
-
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  sidenav.classList.add("active");
+function gererLeDefilement(event) {
+    if(leCheckBox.checked == true){
+        leBody.style.overflow = "hidden";
+    }else{
+        leBody.style.overflow = "scroll";
+    }
 }
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  sidenav.classList.remove("active");
+
+/*
+    Script qui contrôle l'état de la case à cocher pour fermer
+    le menu quand on clique sur un bouton
+*/
+/*Récupérer les boutons du menu*/
+
+function controlerBoutonBurger() {
+    //Gérer l'état de la case à cocher
+leCheckBox.checked = false
 }
+
+//min-height: 100%;
+//background-color: lightblue;
+//display: flex;
+//flex-direction: row;
+//color: azure; 
+//border-radius: 25px;
+//border: 2px solid orangered;
+//padding: 20px;
+//width: 200px;
+//height: 10%;
