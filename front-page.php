@@ -75,3 +75,5 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleCategoryButton.addEventListener('click', toggleCategory);
 });
 </script>
+
+<script src="header.js"></script>

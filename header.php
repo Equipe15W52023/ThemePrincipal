@@ -46,13 +46,9 @@
   </ul>
 </div>
 
-<a href="#" id="openBtn">
-  <span class="burger-icon">
-    <span>hey</span>
-    <span>hi</span>
-    <span>hello</span>
-  </span>
-</a>
+
+<input type="checkbox" id="cc-pour-bouton-burger">
+<label for="cc-pour-bouton-burger" class="bouton-burger"></label>
        <section class="menu_recherche">
 
            <div class="logomenu">
@@ -95,4 +91,5 @@
 
 </section>
 
+<script src="header.js"></script>
 </header>

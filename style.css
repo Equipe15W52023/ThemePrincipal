@@ -318,6 +318,8 @@ template {
 }
 
 /* --------------------------------------------- base */
+/* Normalisation supplémentaire
+       =============================================== */
 * {
   margin: 0;
   padding: 0;
@@ -326,11 +328,28 @@ template {
 
 /* Styles de base
 =============================================== */
-.site_entete {
+main.contenu {
   min-height: 100%;
-  background-color: lightblue;
+  background-color: #eee;
+  /*Conteneur flex en colonne*/
   display: flex;
   flex-direction: column;
+  /*IMPORTANT - Empêcher que le contenu attrape les clics de souris...*/
+  pointer-events: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.2rem;
+  text-decoration: none;
+  color: navy;
+  text-align: center;
+}
+
+h1,
+h3 {
+  padding: 0 0.5rem;
 }
 
 li {
@@ -344,20 +363,6 @@ li {
   padding: 20px;
   width: 200px;
   height: 10%;
-}
-
-ul {
-  display: flex;
-  flex-wrap: nowrap;
-  align-self: center;
-  align-content: flex-start;
-  justify-content: center;
-  flex-direction: space-between;
-}
-
-.barre-menu,
-.menu {
-  color: #ddd;
 }
 
 /* Mise en page pour les petits périphériques
@@ -404,16 +409,14 @@ ul {
   transform: translateX(100%);
 }
 
-.burger-icon {
-  display: flex;
-  justify-content: flex-start;
+.bouton-burger {
+  display: block;
   height: 2rem;
   width: 2rem;
-  margin-left: 1rem;
+  margin: 1rem;
   background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, transparent 20%, transparent 40%, #ddd 40%, #ddd 60%, transparent 60%, transparent 80%, #ddd 80%, #ddd 100%);
   cursor: pointer;
   transition: transform 400ms;
-  background-color: grey;
 }
 
 /* Contrôle du menu et du bouton burger...
