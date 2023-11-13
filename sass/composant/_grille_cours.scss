@@ -24,7 +24,7 @@
         }
 
         // Couleurs des boutons sessions
-        button.session-button:nth-of-type(1) { z-index: 7; background-color: #0f689d; }
+        button.session-button:nth-of-type(1) { z-index: 7; background-color: #1e6b99; }
         button.session-button:nth-of-type(2) { z-index: 6; background-color: #0a5785; }
         button.session-button:nth-of-type(3) { z-index: 5; background-color: #07486f; }
         button.session-button:nth-of-type(4) { z-index: 4; background-color: #00395b; }
@@ -34,6 +34,7 @@
         // bouton (session) sélectionné
         button.session-button.selection {
             background-color: $bleu__pale;
+            color: $fond__creation;
             z-index: 10;
         }
 
@@ -45,6 +46,7 @@
 
     // SESSIONS
     .sessions-container {
+        position: relative;
         display: flex;
         justify-content: center;
         margin-bottom: 5em;
@@ -77,6 +79,41 @@
                 background-color: $bleu__moyen;
                 border-radius: 8px;
             }       
+
+            .cours:hover {
+                cursor: pointer;
+            }
+
+            // AFFICHAGE DU CONTENU DES COURS SÉLÉCTTIONNÉS OU NON
+            .cours-ferme .texte-cours {
+                display: none;
+            }
+
+            .cours-selection .texte-cours {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                background-color: #001c2d;
+                border-radius: 8px;
+                top: 10%;
+                left: 0;
+                width: 110%;
+                transform: translateX(-10%);
+                height: auto;
+                padding: 10%;
+            }
+
+            .bouton-fermer::before { 
+                content: 'X';
+                position: relative;
+                width: 10px;
+                top: 0;
+                left: 0;
+            }
+
+            .texte-cours, .cours h3{
+                text-align: center;
+            }
         }
     }
 }
@@ -105,9 +142,17 @@
                     background-color: $bleu__moyen;
                     border-radius: 8px;
                 }
+
+                // AFFICHAGE DU CONTENU DES COURS
+                .cours-selection .texte-cours {
+                    top: 5%;
+                    left: 0;
+                    width: 75%;
+                    transform: translateX(9%);
+                    padding: 5%;
+                }
             }
         }
-        
     }
 }
 

@@ -548,7 +548,7 @@ p, h1, h2, h3 {
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
-  background-color: #0f689d;
+  background-color: #1e6b99;
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(2) {
   z-index: 6;
@@ -572,12 +572,14 @@ p, h1, h2, h3 {
 }
 .sessions-boutons-container > div .session-buttons button.session-button.selection {
   background-color: #9ACBDA;
+  color: #0E3D6D;
   z-index: 10;
 }
 .sessions-boutons-container > div .session-buttons button.session-button:hover {
   background-image: linear-gradient(rgba(240, 102, 67, 0.7333333333), transparent);
 }
 .sessions-boutons-container > div .sessions-container {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 5em;
@@ -608,6 +610,35 @@ p, h1, h2, h3 {
   background-color: #1B72A6;
   border-radius: 8px;
 }
+.sessions-boutons-container > div .sessions-container .session .cours:hover {
+  cursor: pointer;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-ferme .texte-cours {
+  display: none;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #001c2d;
+  border-radius: 8px;
+  top: 10%;
+  left: 0;
+  width: 110%;
+  transform: translateX(-10%);
+  height: auto;
+  padding: 10%;
+}
+.sessions-boutons-container > div .sessions-container .session .bouton-fermer::before {
+  content: "X";
+  position: relative;
+  width: 10px;
+  top: 0;
+  left: 0;
+}
+.sessions-boutons-container > div .sessions-container .session .texte-cours, .sessions-boutons-container > div .sessions-container .session .cours h3 {
+  text-align: center;
+}
 
 @media screen and (min-width: 554px) {
   .sessions-boutons-container > div .session-buttons {
@@ -623,6 +654,13 @@ p, h1, h2, h3 {
     padding: 1em;
     background-color: #1B72A6;
     border-radius: 8px;
+  }
+  .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
+    top: 5%;
+    left: 0;
+    width: 75%;
+    transform: translateX(9%);
+    padding: 5%;
   }
 }
 @media screen and (min-width: 992px) {
