@@ -1,17 +1,17 @@
 // ****************************** Mobile ************************************ //
-// SECTIONS FUTURE GÉNÉRALE
-div.sections-future {
+// SECTIONS FUTUR GÉNÉRALE
+div.sections-futur {
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
 
-    div.section-future {
+    div.section-futur {
         display: flex;
         position: relative;
 
-        .img-future {
+        .img-futur {
             position: relative;
             justify-content: center;
             
@@ -34,7 +34,7 @@ div.sections-future {
         }
 
         // Paragraphe
-        p.texte-future {
+        p.desc-futur {
             position: absolute;
             text-align: center;
             color: black;
@@ -45,19 +45,23 @@ div.sections-future {
             right: auto;
             font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
         }
+
+        .texte-futur {
+            display: none;
+        }
     }
 }
 
 // ***************************** TABLETTE *********************************** //
 @media screen and (min-width: 554px) {
-    div.sections-future {
+    div.sections-futur {
         flex-direction: row;
         margin: 3em 5%;
     
-        div.section-future {
+        div.section-futur {
             justify-content: center;
 
-            .img-future {
+            .img-futur {
 
                 img {
                     width: 20em;
@@ -71,7 +75,7 @@ div.sections-future {
             }
 
             // Paragraphe
-            p.texte-future {
+            p.desc-futur {
                 width: 40%;
                 top: 40%;
                 left: 30%;
@@ -84,11 +88,11 @@ div.sections-future {
 
 // ****************************** LAPTOP ************************************ //
 @media screen and (min-width: 782px) {
-    div.sections-future {
+    div.sections-futur {
 
-        div.section-future {
+        div.section-futur {
 
-            .img-future {
+            .img-futur {
 
                 // Titre
                 figcaption {
@@ -101,7 +105,7 @@ div.sections-future {
             }
 
             // Paragraphe
-            p.texte-future {           
+            p.desc-futur {           
                 width: 80%;
                 top: 30%;        
                 left: 12%;
@@ -114,13 +118,13 @@ div.sections-future {
 
 // ****************************** BUREAU ************************************ //
 @media screen and (min-width: 992px) {
-    div.sections-future {
+    div.sections-futur {
         flex-direction: row;
         margin: 3em 17%;
 
-        div.section-future {
+        div.section-futur {
 
-            .img-future {
+            .img-futur {
 
                 img {
                     width: 20em;
@@ -135,7 +139,7 @@ div.sections-future {
             }
 
             // Paragraphe
-            p.texte-future {
+            p.desc-futur {
                 width: 45%;
                 top: 35%;     
                 left: 27%;

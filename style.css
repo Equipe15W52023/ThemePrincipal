@@ -681,25 +681,25 @@ p, h1, h2, h3 {
     width: 40%;
   }
 }
-div.sections-future {
+div.sections-futur {
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-div.sections-future div.section-future {
+div.sections-futur div.section-futur {
   display: flex;
   position: relative;
 }
-div.sections-future div.section-future .img-future {
+div.sections-futur div.section-futur .img-futur {
   position: relative;
   justify-content: center;
 }
-div.sections-future div.section-future .img-future img {
+div.sections-futur div.section-futur .img-futur img {
   width: 250px;
 }
-div.sections-future div.section-future .img-future figcaption {
+div.sections-futur div.section-futur .img-futur figcaption {
   position: absolute;
   text-align: center;
   color: black;
@@ -710,7 +710,7 @@ div.sections-future div.section-future .img-future figcaption {
   right: auto;
   font-size: clamp(1.125rem, 0.875rem + 1.3333vw, 1.375rem);
 }
-div.sections-future div.section-future p.texte-future {
+div.sections-futur div.section-futur p.desc-futur {
   position: absolute;
   text-align: center;
   color: black;
@@ -721,23 +721,26 @@ div.sections-future div.section-future p.texte-future {
   right: auto;
   font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
 }
+div.sections-futur div.section-futur .texte-futur {
+  display: none;
+}
 
 @media screen and (min-width: 554px) {
-  div.sections-future {
+  div.sections-futur {
     flex-direction: row;
     margin: 3em 5%;
   }
-  div.sections-future div.section-future {
+  div.sections-futur div.section-futur {
     justify-content: center;
   }
-  div.sections-future div.section-future .img-future img {
+  div.sections-futur div.section-futur .img-futur img {
     width: 20em;
   }
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur .img-futur figcaption {
     top: 30%;
     font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
   }
-  div.sections-future div.section-future p.texte-future {
+  div.sections-futur div.section-futur p.desc-futur {
     width: 40%;
     top: 40%;
     left: 30%;
@@ -746,14 +749,14 @@ div.sections-future div.section-future p.texte-future {
   }
 }
 @media screen and (min-width: 782px) {
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur .img-futur figcaption {
     position: absolute;
     top: 22%;
     bottom: auto;
     right: auto;
     font-size: 18px;
   }
-  div.sections-future div.section-future p.texte-future {
+  div.sections-futur div.section-futur p.desc-futur {
     width: 80%;
     top: 30%;
     left: 12%;
@@ -761,19 +764,19 @@ div.sections-future div.section-future p.texte-future {
   }
 }
 @media screen and (min-width: 992px) {
-  div.sections-future {
+  div.sections-futur {
     flex-direction: row;
     margin: 3em 17%;
   }
-  div.sections-future div.section-future .img-future img {
+  div.sections-futur div.section-futur .img-futur img {
     width: 20em;
   }
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur .img-futur figcaption {
     text-align: center;
     top: 28%;
     font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
   }
-  div.sections-future div.section-future p.texte-future {
+  div.sections-futur div.section-futur p.desc-futur {
     width: 45%;
     top: 35%;
     left: 27%;
