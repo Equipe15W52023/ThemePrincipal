@@ -21,6 +21,9 @@
             border: none;
             border-radius: 8px 8px 0 0;
             font-size: clamp(0.5rem, 0.0625rem + 2.3333vw, 0.9375rem);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
 
         // Couleurs des boutons sessions
@@ -38,9 +41,18 @@
             z-index: 10;
         }
 
+        .bouton-ferme {
+            display: none;
+        }
+
+        .bouton-ouvert {
+            display: block;
+            padding-right: 5%;
+        }
+
         // hover des boutons (session)
         button.session-button:hover {
-            background-image: linear-gradient(#f06643bb, transparent);
+            background-color: $orange__creation;
         }
     }
 
@@ -103,12 +115,13 @@
                 padding: 10%;
             }
 
-            .bouton-fermer::before { 
+            // Bouton pour fermer le contenu du cours
+            .bouton-x::before { 
                 content: 'X';
+                font-weight: bold;
                 position: relative;
-                width: 10px;
-                top: 0;
-                left: 0;
+                top: 5%;
+                left: 47%;
             }
 
             .texte-cours, .cours h3{
@@ -145,11 +158,11 @@
 
                 // AFFICHAGE DU CONTENU DES COURS
                 .cours-selection .texte-cours {
-                    top: 5%;
+                    top: 5px;
                     left: 0;
-                    width: 75%;
-                    transform: translateX(9%);
-                    padding: 5%;
+                    width: 60%;
+                    transform: translateX(26%);
+                    padding: 3%;
                 }
             }
         }

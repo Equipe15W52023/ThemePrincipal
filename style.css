@@ -545,6 +545,9 @@ p, h1, h2, h3 {
   border: none;
   border-radius: 8px 8px 0 0;
   font-size: clamp(0.5rem, 0.0625rem + 2.3333vw, 0.9375rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
@@ -575,8 +578,15 @@ p, h1, h2, h3 {
   color: #0E3D6D;
   z-index: 10;
 }
+.sessions-boutons-container > div .session-buttons .bouton-ferme {
+  display: none;
+}
+.sessions-boutons-container > div .session-buttons .bouton-ouvert {
+  display: block;
+  padding-right: 5%;
+}
 .sessions-boutons-container > div .session-buttons button.session-button:hover {
-  background-image: linear-gradient(rgba(240, 102, 67, 0.7333333333), transparent);
+  background-color: #F06543;
 }
 .sessions-boutons-container > div .sessions-container {
   position: relative;
@@ -629,12 +639,12 @@ p, h1, h2, h3 {
   height: auto;
   padding: 10%;
 }
-.sessions-boutons-container > div .sessions-container .session .bouton-fermer::before {
+.sessions-boutons-container > div .sessions-container .session .bouton-x::before {
   content: "X";
+  font-weight: bold;
   position: relative;
-  width: 10px;
-  top: 0;
-  left: 0;
+  top: 5%;
+  left: 47%;
 }
 .sessions-boutons-container > div .sessions-container .session .texte-cours, .sessions-boutons-container > div .sessions-container .session .cours h3 {
   text-align: center;
@@ -656,11 +666,11 @@ p, h1, h2, h3 {
     border-radius: 8px;
   }
   .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
-    top: 5%;
+    top: 5px;
     left: 0;
-    width: 75%;
-    transform: translateX(9%);
-    padding: 5%;
+    width: 60%;
+    transform: translateX(26%);
+    padding: 3%;
   }
 }
 @media screen and (min-width: 992px) {
