@@ -46,9 +46,23 @@
   </ul>
 </div>
 
-
-<input type="checkbox" id="cc-pour-bouton-burger">
-<label for="cc-pour-bouton-burger" class="bouton-burger"></label>
+<div class="container nav-container">
+  <input class="checkbox" type="checkbox" name="burger_menu" id="burger" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>  
+   
+    <div class="menu-items">
+        <?php
+     
+      get_template_part("templates-parts/aside");
+     
+      ?>
+     
+    </div>
+  </div>
        <section class="menu_recherche">
 
            <div class="logomenu">
