@@ -739,13 +739,21 @@ div.sections-futur .texte-futur-selection .texte-futur {
   background-color: #001c2d;
   color: #E8E8E8;
   border-radius: 8px;
-  top: -2900%;
-  left: -37px;
-  width: 190%;
-  transform: translateX(-10%);
+  top: 50%;
+  left: 0;
+  width: 80%;
+  transform: translateY(-50%);
   height: auto;
   padding: 10%;
   text-align: center;
+  z-index: 2;
+}
+div.sections-futur .texte-futur-selection .texte-futur h2 {
+  color: #E8E8E8;
+  top: 3%;
+}
+div.sections-futur .texte-futur-selection .texte-futur p {
+  font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
 }
 div.sections-futur .bouton-x-futur::before {
   content: "X";
@@ -753,6 +761,7 @@ div.sections-futur .bouton-x-futur::before {
   position: relative;
   top: 5%;
   left: 47%;
+  z-index: 3;
 }
 div.sections-futur .bouton-plus {
   position: absolute;
