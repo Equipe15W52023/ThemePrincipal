@@ -6,31 +6,35 @@ div.sections-futur {
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
+    justify-content: space-around;
+    margin-bottom: 5em;
 
-    div.section-futur {
+    // UNE SECTION DE FUTUR
+    .section-futur {
         display: flex;
         position: relative;
+        margin-bottom: 5em;
 
         .img-futur {
             position: relative;
             justify-content: center;
-            
-            img {
-                width: 250px;
-            }
-            
-            // Titre
-            figcaption {
-                position: absolute;
-                text-align: center;
-                color: black;
-                width: 80%;
-                top: 25%;
-                bottom: auto;
-                left: 10%;
-                right: auto;
-                font-size: clamp(1.125rem, 0.875rem + 1.3333vw, 1.375rem);
-            }
+            margin: 1em;
+            width: 250px;
+        }
+
+        // Titre
+        h2 {
+            position: absolute;
+            text-align: center;
+            color: black;
+            width: 80%;
+            top: 25%;
+            bottom: auto;
+            left: 10%;
+            right: auto;
+            font-size: clamp(1.125rem, 0.875rem + 1.3333vw, 1.375rem);
+            z-index: 1;
         }
 
         // Paragraphe
@@ -38,17 +42,60 @@ div.sections-futur {
             position: absolute;
             text-align: center;
             color: black;
-            width: 50%;
-            top: 35%;
+            width: 80%;
+            top: 40%;
             bottom: auto;
-            left: 26%;
+            left: 10%;
             right: auto;
             font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
+            z-index: 1;
         }
+    }
 
-        .texte-futur {
-            display: none;
-        }
+    .section-futur:hover {
+        cursor: pointer;
+    }
+
+    // AFFICHAGE DU CONTENU SÉLÉCTTIONNÉ OU NON
+    .section-ferme .texte-futur {
+        display: none;
+    }
+
+    .texte-futur-selection .texte-futur {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: #001c2d;
+        color: $couleur__textePale;
+        border-radius: 8px;
+        top: -2900%;
+        left: -37px;
+        width: 190%;
+        transform: translateX(-10%);
+        height: auto;
+        padding: 10%;
+        text-align: center;
+    }
+
+    // Bouton pour fermer le contenu du cours
+    .bouton-x-futur::before { 
+        content: 'X';
+        font-weight: bold;
+        position: relative;
+        top: 5%;
+        left: 47%;
+    }
+
+    // BOUTON PLUS EN BAS DES SECTION
+    .bouton-plus {
+        position: absolute;
+        z-index: 0;
+        padding: 1.5em;
+        top: 85%;
+        right: 5%;
+        border-radius: 20px;
+        width: 30%;
+        height: auto;
     }
 }
 
@@ -62,16 +109,13 @@ div.sections-futur {
             justify-content: center;
 
             .img-futur {
+                width: 20em;
+            }
 
-                img {
-                    width: 20em;
-                }
-
-                // Titre
-                figcaption {
-                    top: 30%;
-                    font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
-                }
+            // Titre
+            h2 {
+                top: 30%;
+                font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
             }
 
             // Paragraphe
@@ -92,23 +136,20 @@ div.sections-futur {
 
         div.section-futur {
 
-            .img-futur {
-
-                // Titre
-                figcaption {
-                    position: absolute;
-                    top: 22%;
-                    bottom: auto;
-                    right: auto;
-                    font-size: 18px;
-                }
+            // Titre
+            h2 {
+                position: absolute;
+                top: 30%;
+                bottom: auto;
+                right: auto;
+                font-size: 18px;
             }
-
+            
             // Paragraphe
             p.desc-futur {           
-                width: 80%;
-                top: 30%;        
-                left: 12%;
+                width: 50%;
+                top: 40%;        
+                left: 25%;
                 font-size: clamp(1.125rem, 0.8333rem + 0.6667vw, 1.25rem);
             }
         }
@@ -125,17 +166,14 @@ div.sections-futur {
         div.section-futur {
 
             .img-futur {
+                width: 20em;
+            }
 
-                img {
-                    width: 20em;
-                }
-
-                // Titre
-                figcaption {
-                    text-align: center;
-                    top: 28%;
-                    font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
-                }
+            // Titre
+            h2 {
+                text-align: center;
+                top: 28%;
+                font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
             }
 
             // Paragraphe
