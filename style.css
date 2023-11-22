@@ -827,4 +827,15 @@ div.sections-future div.section-future .img-future figcaption {
 }
 
 */
+.carrousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.article {
+  flex: 0 0 100%;
+  transition: transform 0.5s ease;
+}
+
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
