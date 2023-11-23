@@ -469,6 +469,42 @@ html {
   flex-wrap: nowrap;
 }
 
+
+.environnement_div .vv_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.environnement_div .vv_environnement iframe {
+  width: 80vw;
+  height: 50vh;
+  margin: 5%;
+  border-radius: 30px;
+  border: 5px solid #1B72A6;
+}
+
+@media screen and (min-width: 768px) {
+  .environnement_div .vv_environnement iframe {
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 996px) {
+  .environnement_div .vv_environnement iframe {
+    height: 85vh;
+  }
+}
+.session-buttons {
+  margin-left: 20%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.session-button {
+
 .Section-prof {
   color: #E8E8E8;
   display: flex;
@@ -540,6 +576,7 @@ p, h1, h2, h3 {
   align-self: stretch;
 }
 .sessions-boutons-container > div .session-buttons button.session-button {
+
   position: relative;
   color: #E8E8E8;
   border: none;
@@ -832,4 +869,157 @@ div.sections-futur .bouton-plus {
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
+
+.carrousel {
+  width: 100%;
+  height: 40vh;
+}
+.carrousel .projet_article {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  font-family: "Montserrat", sans-serif;
+  color: #E8E8E8;
+  margin-top: 15px;
+  width: 100%;
+  height: 40vh;
+}
+.carrousel .projet_article .projet_info {
+  z-index: 1;
+  position: relative;
+  background-color: rgba(2, 18, 45, 0.425);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  top: 100px;
+  margin: 0;
+  padding: 0;
+  height: 25vh;
+}
+.carrousel .projet_article .projet_info h2 {
+  background-color: #F06543;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 60vw;
+  font-size: 18px;
+  border-radius: 50px;
+}
+.carrousel .projet_article .projet_info div {
+  margin: 0;
+  padding: 5px;
+  font-size: 10px;
+}
+.carrousel .projet_article .projet_info .carrousel_bouton {
+  text-align: center;
+}
+.carrousel .projet_article .projet_info .carrousel_bouton button {
+  cursor: pointer;
+  margin: 5px;
+}
+.carrousel .projet_article .projet_image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 40vh;
+  bottom: 180px;
+}
+.carrousel .projet_article .projet_image img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .carrousel {
+    height: 50vh;
+  }
+  .carrousel .projet_article {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    margin-top: 15px;
+    width: 100%;
+    height: 50vh;
+  }
+  .carrousel .projet_article .projet_info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 30vw;
+    height: 50vh;
+    top: 0;
+  }
+  .carrousel .projet_article .projet_info h2 {
+    width: 20vw;
+    font-size: 18px;
+  }
+  .carrousel .projet_article .projet_info div {
+    padding: 5px;
+    font-size: 12px;
+  }
+  .carrousel .projet_article .projet_info .carrousel_bouton {
+    text-align: center;
+  }
+  .carrousel .projet_article .projet_info .carrousel_bouton button {
+    cursor: pointer;
+    margin: 5px;
+  }
+  .carrousel .projet_article .projet_image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
+    height: 50vh;
+    bottom: 120px;
+  }
+  .carrousel .projet_article .projet_image img {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 996px) {
+  .carrousel {
+    height: 80vh;
+  }
+  .carrousel .projet_article {
+    background-color: rgb(17, 255, 0);
+    height: 80vh;
+  }
+  .carrousel .projet_article .projet_info {
+    height: 80vh;
+    top: 0;
+  }
+  .carrousel .projet_article .projet_info h2 {
+    width: 20vw;
+    font-size: 24px;
+  }
+  .carrousel .projet_article .projet_info div {
+    padding: 5px;
+    font-size: 18px;
+  }
+  .carrousel .projet_article .projet_info .carrousel_bouton {
+    text-align: center;
+  }
+  .carrousel .projet_article .projet_info .carrousel_bouton button {
+    cursor: pointer;
+    margin: 5px;
+  }
+  .carrousel .projet_article .projet_image {
+    height: 80vh;
+    bottom: -82px;
+  }
+  .carrousel .projet_article .projet_image img {
+    height: 80vh;
+  }
+}
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
+
 /*------------------------------------------layout */
+
