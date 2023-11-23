@@ -394,9 +394,6 @@ html {
 .bloc_footer {
   background-color: #0E3D6D;
   color: #E8E8E8;
-  position: static;
-  left: 0;
-  bottom: 0;
   width: 100%;
   height: 9%;
   display: flex;
@@ -472,6 +469,7 @@ html {
   flex-wrap: nowrap;
 }
 
+
 .environnement_div .vv_environnement {
   display: flex;
   flex-wrap: wrap;
@@ -506,78 +504,18 @@ html {
 }
 
 button.session-button {
+
+.Section-prof {
+  color: #E8E8E8;
+  display: flex;
   position: relative;
-  color: #E8E8E8;
-  border: none;
-  margin: -1.61em;
-  border-radius: 8px 8px 0 0;
-  font-size: 9vw;
-}
-
-button.session-button:nth-of-type(1) {
-  z-index: 7;
-  background-color: #1b72a6;
-}
-
-button.session-button:nth-of-type(2) {
-  z-index: 6;
-  background-color: #0a5785;
-}
-
-button.session-button:nth-of-type(3) {
-  z-index: 5;
-  background-color: #07486f;
-}
-
-button.session-button:nth-of-type(4) {
-  z-index: 4;
-  background-color: #00395b;
-}
-
-button.session-button:nth-of-type(5) {
-  z-index: 3;
-  background-color: #042a41;
-}
-
-button.session-button:nth-of-type(6) {
-  z-index: 2;
-  background-color: #001c2d;
-}
-
-button.session-button .selection {
-  background-color: #9ACBDA;
-  z-index: 10;
-}
-
-button.session-button:hover {
-  background-color: #F06543;
-}
-
-.sessions-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5em;
-}
-.sessions-container .session {
-  background-color: #9ACBDA;
-  color: #E8E8E8;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+  left: 10%;
   width: 80%;
   padding: 1em;
   border-radius: 0 0 8px 8px;
 }
-.sessions-container .session h2 {
-  align-self: center;
-  width: 100%;
-  text-align: center;
-  margin: 0;
-  color: #0E3D6D;
-}
-
-.cours {
+.Section-prof .professeur {
+  background-color: red;
   width: 75%;
   margin: 1em;
   padding: 1em;
@@ -585,86 +523,353 @@ button.session-button:hover {
   border-radius: 8px;
 }
 
+p, h1, h2, h3 {
+  color: #E8E8E8;
+}
+
+.accueil {
+  background-color: #1F1F1F;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+.accueil .titre_accueil {
+  background-color: #F06543;
+  margin-top: 2%;
+}
+.accueil .titre_accueil h1 {
+  font-size: 24px;
+}
+.accueil .description_accueil {
+  background-color: #0E3D6D;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 45%;
+}
+.accueil .description_accueil p {
+  color: rgb(255, 255, 255);
+  padding: 1%;
+  margin: 0;
+  font-size: 12px;
+}
+
+.environnement {
+  width: 100%;
+  height: 200px;
+  background-color: aqua;
+}
+.sessions-boutons-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 70%;
+}
+.sessions-boutons-container > div .session-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0;
+  margin-top: 5%;
+  align-self: stretch;
+}
+.sessions-boutons-container > div .session-buttons button.session-button {
+
+  position: relative;
+  color: #E8E8E8;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  font-size: clamp(1.125rem, 0.5202rem + 3.871vw, 1.875rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
+  z-index: 7;
+  background-color: #1e6b99;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(2) {
+  z-index: 6;
+  background-color: #0a5785;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(3) {
+  z-index: 5;
+  background-color: #07486f;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(4) {
+  z-index: 4;
+  background-color: #00395b;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(5) {
+  z-index: 3;
+  background-color: #042a41;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(6) {
+  z-index: 2;
+  background-color: #001c2d;
+}
+.sessions-boutons-container > div .session-buttons button.session-button.selection {
+  background-color: #9ACBDA;
+  color: #0E3D6D;
+  z-index: 10;
+}
+.sessions-boutons-container > div .session-buttons .bouton-ferme {
+  display: none;
+}
+.sessions-boutons-container > div .session-buttons .bouton-ouvert {
+  display: block;
+  padding-right: 5%;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:hover {
+  background-color: #F06543;
+}
+.sessions-boutons-container > div .sessions-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5em;
+  width: 100%;
+}
+.sessions-boutons-container > div .sessions-container .session {
+  background-color: #9ACBDA;
+  color: #E8E8E8;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+  border-radius: 0 0 8px 8px;
+}
+.sessions-boutons-container > div .sessions-container .session h2 {
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  color: #0E3D6D;
+}
+.sessions-boutons-container > div .sessions-container .session .cours {
+  width: 75%;
+  margin: 1em;
+  padding: 1em;
+  background-color: #1B72A6;
+  border-radius: 8px;
+}
+.sessions-boutons-container > div .sessions-container .session .cours:hover {
+  cursor: pointer;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-ferme .texte-cours {
+  display: none;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #001c2d;
+  border-radius: 8px;
+  top: 10%;
+  left: 0;
+  width: 110%;
+  transform: translateX(-10%);
+  height: auto;
+  padding: 10%;
+}
+.sessions-boutons-container > div .sessions-container .session .bouton-x::before {
+  content: "X";
+  font-weight: bold;
+  position: relative;
+  top: 5%;
+  left: 47%;
+}
+.sessions-boutons-container > div .sessions-container .session .texte-cours, .sessions-boutons-container > div .sessions-container .session .cours h3 {
+  text-align: center;
+}
+
 @media screen and (min-width: 554px) {
-  .session-buttons {
-    margin-bottom: 4%;
+  .sessions-boutons-container > div .session-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-  button.session-button {
-    font-size: 8vw;
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
   }
-  .cours {
+  .sessions-boutons-container > div .sessions-container .session .cours {
     width: 35%;
     margin: 1em;
     padding: 1em;
     background-color: #1B72A6;
     border-radius: 8px;
   }
+  .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
+    top: 5px;
+    left: 0;
+    width: 60%;
+    transform: translateX(26%);
+    padding: 3%;
+  }
 }
 @media screen and (min-width: 992px) {
-  .session-buttons {
-    margin-left: 35%;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    width: 30%;
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: 30px;
   }
-  button.session-button {
-    margin: -1.6em;
-    font-size: 4vw;
-  }
-  .sessions-container .session {
+  .sessions-boutons-container > div .sessions-container .session .cours {
     width: 40%;
   }
 }
-div.sections-future {
+div.sections-futur {
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  justify-content: space-around;
+  margin-bottom: 5em;
 }
-div.sections-future div.section-future {
+div.sections-futur .section-futur {
   display: flex;
+  position: relative;
+  margin-bottom: 5em;
 }
-div.sections-future div.section-future .img-future {
+div.sections-futur .section-futur .img-futur {
   position: relative;
   justify-content: center;
+  margin: 1em;
+  width: 250px;
 }
-div.sections-future div.section-future .img-future img {
-  border-radius: 8px;
-}
-div.sections-future div.section-future .img-future figcaption {
+div.sections-futur .section-futur h2 {
   position: absolute;
-  color: #E8E8E8;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  text-align: center;
+  color: black;
   width: 80%;
-  top: 1em;
+  top: 25%;
   bottom: auto;
-  left: 4%;
+  left: 10%;
   right: auto;
-  padding: 1em;
-  font-size: 16px;
+  font-size: clamp(1.125rem, 0.875rem + 1.3333vw, 1.375rem);
+  z-index: 1;
+}
+div.sections-futur .section-futur p.desc-futur {
+  position: absolute;
+  text-align: center;
+  color: black;
+  width: 80%;
+  top: 40%;
+  bottom: auto;
+  left: 10%;
+  right: auto;
+  font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
+  z-index: 1;
+}
+div.sections-futur .section-futur:hover {
+  cursor: pointer;
+}
+div.sections-futur .section-ferme .texte-futur {
+  display: none;
+}
+div.sections-futur .texte-futur-selection .texte-futur {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #001c2d;
+  color: #E8E8E8;
+  border-radius: 8px;
+  top: 50%;
+  left: 0;
+  width: 80%;
+  transform: translateY(-50%);
+  height: auto;
+  padding: 10%;
+  text-align: center;
+  z-index: 2;
+}
+div.sections-futur .texte-futur-selection .texte-futur h2 {
+  color: #E8E8E8;
+  top: 3%;
+}
+div.sections-futur .texte-futur-selection .texte-futur p {
+  font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
+}
+div.sections-futur .bouton-x-futur::before {
+  content: "X";
+  font-weight: bold;
+  position: relative;
+  top: 5%;
+  left: 47%;
+  z-index: 3;
+}
+div.sections-futur .bouton-plus {
+  position: absolute;
+  z-index: 0;
+  padding: 1.5em;
+  top: 85%;
+  right: 5%;
+  border-radius: 20px;
+  width: 30%;
+  height: auto;
 }
 
 @media screen and (min-width: 554px) {
-  div.sections-future {
+  div.sections-futur {
     flex-direction: row;
     margin: 3em 5%;
   }
-  div.sections-future div.section-future .img-future img {
-    border-radius: 8px;
+  div.sections-futur div.section-futur {
+    justify-content: center;
   }
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur .img-futur {
+    width: 20em;
+  }
+  div.sections-futur div.section-futur h2 {
+    top: 30%;
+    font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
+  }
+  div.sections-futur div.section-futur p.desc-futur {
+    width: 40%;
+    top: 40%;
+    left: 30%;
+    right: auto;
+    font-size: clamp(1.125rem, 0.575rem + 1.6vw, 1.375rem);
+  }
+}
+@media screen and (min-width: 782px) {
+  div.sections-futur div.section-futur h2 {
+    position: absolute;
+    top: 30%;
+    bottom: auto;
+    right: auto;
     font-size: 18px;
-    left: 4%;
+  }
+  div.sections-futur div.section-futur p.desc-futur {
+    width: 50%;
+    top: 40%;
+    left: 25%;
+    font-size: clamp(1.125rem, 0.8333rem + 0.6667vw, 1.25rem);
   }
 }
 @media screen and (min-width: 992px) {
-  div.sections-future {
+  div.sections-futur {
     flex-direction: row;
-    margin: 3em 20%;
+    margin: 3em 17%;
+  }
+  div.sections-futur div.section-futur .img-futur {
+    width: 20em;
+  }
+  div.sections-futur div.section-futur h2 {
+    text-align: center;
+    top: 28%;
+    font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
+  }
+  div.sections-futur div.section-futur p.desc-futur {
+    width: 45%;
+    top: 35%;
+    left: 27%;
+    font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
+
 .carrousel {
   width: 100%;
   height: 40vh;
@@ -815,3 +1020,6 @@ div.sections-future div.section-future .img-future figcaption {
   }
 }
 /*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
+
+/*------------------------------------------layout */
+
