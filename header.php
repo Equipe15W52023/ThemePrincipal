@@ -83,7 +83,7 @@
 
                 )) ?>
 
-        <?php  get_search_form() ?>
+        
 
         <!-- <label class="burger" for="chkMenu">
 
@@ -94,10 +94,6 @@
             <section id="site__header__titre">
 
  
-
-<h1><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
-
-<h2><?= bloginfo('description') ?></h2>
 
 </section>
 

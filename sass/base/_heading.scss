@@ -1,12 +1,8 @@
 
- /* Normalisation supplémentaire
-        =============================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
+header{
+
+        
         /* Styles de base
         =============================================== */
         main.contenu {
@@ -25,7 +21,9 @@
 
 
 
-        nav a {
+        nav{
+
+        a {
             display: block;
             padding: 0.5rem 1rem;
             margin-bottom: 0.2rem;
@@ -46,7 +44,6 @@
         flex-direction: row;
         color: azure; 
         border-radius: 25px;
-        border: 2px solid orangered;
         padding: 20px;
         width: 200px;
         height: 10%;
@@ -59,7 +56,7 @@
             align-content: center;
             justify-content: center;
         }
-
+      }
         .navbar {
             width: 100%;
             box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
@@ -204,3 +201,4 @@
             }
           
             }
+          }
