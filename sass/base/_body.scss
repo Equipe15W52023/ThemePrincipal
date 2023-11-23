@@ -7,3 +7,36 @@ html {
 .site{
 	background-color:rgb(14, 61, 109);
 }
+
+// TITRE DES SECTIONS
+.titre-article {
+	position: relative;
+    font-size: 35px;
+	color: $bleu__pale;
+	margin: 0 20%;
+}
+
+.titre-article::before {
+	content: "";
+    position: absolute;
+    background-color: #F06543;
+    border-radius: 8px;
+    height: 6px;
+    width: 22%;
+    bottom: 0;
+    left: 0;
+}
+
+// ***************************** TABLETTE *********************************** //
+@media screen and (min-width: 554px) {
+	.titre-article {
+		font-size: 45px;
+	}
+}
+
+// ****************************** BUREAU ************************************ //
+@media screen and (min-width: 992px) {
+	.titre-article {
+		font-size: 65px;
+	}
+}
