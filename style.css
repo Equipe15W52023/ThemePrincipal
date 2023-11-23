@@ -317,70 +317,170 @@ template {
 }
 
 /* --------------------------------------------- base */
-.site__entete {
-  display: flex;
-  color: #9ACBDA;
-  background-color: #0E3D6D;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-/* Sidenav menu */
-.sidenav {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: -250px;
-  background-color: #e8e8e8;
-  padding-top: 60px;
-  transition: left 0.5s ease;
-}
-
-/* Sidenav menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #111;
-}
-
-.sidenav ul {
-  list-style-type: none;
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Active class */
-.sidenav.active {
-  left: 0;
+/* Styles de base
+=============================================== */
+.site_entete {
+  min-height: 100%;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Close btn */
-.sidenav .close {
-  position: absolute;
+li {
+  min-height: 100%;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  color: azure;
+}
+
+ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-self: center;
+  align-content: flex-start;
+  justify-content: center;
+  flex-direction: space-between;
+  color: azure;
+}
+
+.barre-menu,
+.menu {
+  background: navy;
+  color: #ddd;
+}
+
+/* Mise en page pour les petits périphériques
+=============================================== */
+.barre-menu {
+  width: 100%;
+  height: 10vh;
+  border-bottom: 2px solid #ddd;
+  /*La position est fixe pour toujours le voir quand on navigue dans les sections*/
+  position: fixed;
   top: 0;
-  right: 25px;
-  font-size: 36px;
+  /*Conteneur flex en rangée avec alignement à droite pour les petits périphériques*/
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-/* Icône burger */
-.burger-icon span {
+.menu {
+  width: 100%;
+  /*Position fixe sur petit écran en bas de la barre de la barre de menu*/
+  position: fixed;
+  top: 10vh;
+  /*Sa hauteur est celle de la hauteur du viewport MOINS celle de la barre de navigation*/
+  height: 90vh;
+  /*Conteneur flex en colonne avec élément centré au milieu*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*Au démarrage on met complètement transparent*/
+  opacity: 0;
+  /*Effet de transition*/
+  transition: opacity 0.5s;
+}
+
+/*Om met tous les boutons du menu complètement à gauche ou à droite*/
+.menu a {
+  transform: translateX(-100%);
+  /*Effet de transition*/
+  transition: transform 400ms;
+}
+
+/*Les bouton pairs von arriver par la droite...*/
+.menu a:nth-child(even) {
+  transform: translateX(100%);
+}
+
+.bouton-burger {
   display: block;
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-  border-radius: 50px;
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
+  background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, transparent 20%, transparent 40%, #ddd 40%, #ddd 60%, transparent 60%, transparent 80%, #ddd 80%, #ddd 100%);
+  cursor: pointer;
+  transition: transform 400ms;
 }
 
+/* Contrôle du menu et du bouton burger...
+========================================================================== 
+    Le menu...est en position fixed et mis sur le contenu avec de la transparence
+    Il apparaît ou disparaît selon l'état 'checked' de la case à cocher
+    #cc-pour-bouton-burger. La manière de le faire apparaître est de le mettre
+    opaque avec opacity:1
+==========================================================================*/
+#cc-pour-bouton-burger:checked ~ .barre-menu > .bouton-burger {
+  transform: rotate(90deg);
+}
+
+/*
+    On met le menu opaque
+*/
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu {
+  opacity: 1;
+}
+
+/*Arrivée des différents boutons avec un délai*/
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a {
+  transform: translateX(0%);
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(1) {
+  transition-delay: 0.5s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(2) {
+  transition-delay: 1s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(3) {
+  transition-delay: 1.5s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(4) {
+  transition-delay: 2s;
+}
+
+#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(5) {
+  transition-delay: 2.5s;
+}
+
+#cc-pour-bouton-burger {
+  /*On cache la case à cocher*/
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    transform: translateX(0%);
+    justify-content: space-evenly;
+    opacity: 1;
+  }
+  .menu a, .menu a:nth-child(even) {
+    flex-grow: 1;
+    /*Enlever la translation*/
+    transform: translateX(0%);
+  }
+  .barre-menu {
+    height: auto;
+    border: none;
+  }
+  .bouton-burger {
+    /*On cache le bouton burger*/
+    display: none;
+  }
+}
 html {
   background-color: rgb(255, 255, 255);
   font-family: "Red Hat Display", sans-serif;
@@ -487,44 +587,99 @@ html {
   border-radius: 8px;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   color: #E8E8E8;
 }
 
-.accueil {
+.accueil_div {
   background-color: #1F1F1F;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
 }
-.accueil .titre_accueil {
+.accueil_div .wp-block-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.accueil_div .wp-block-column .titre_accueil {
   background-color: #F06543;
   margin-top: 2%;
+  text-align: center;
+  width: 70vw;
 }
-.accueil .titre_accueil h1 {
+.accueil_div .wp-block-column .titre_accueil h2 {
   font-size: 24px;
 }
-.accueil .description_accueil {
+.accueil_div .description_accueil {
   background-color: #0E3D6D;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  margin-top: 45%;
+  opacity: 50%;
+  margin-top: 25%;
 }
-.accueil .description_accueil p {
+.accueil_div .description_accueil p {
   color: rgb(255, 255, 255);
   padding: 1%;
   margin: 0;
   font-size: 12px;
 }
-
-.environnement {
-  width: 100%;
-  height: 200px;
-  background-color: aqua;
+@media screen and (min-width: 768px) {
+  .accueil_div .wp-container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
+@media screen and (min-width: 996px) {
+  .accueil_div .wp-container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.environnement_div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.environnement_div .titre_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .titre_environnement h2 {
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement iframe {
+  width: 90vw;
+  height: 50vh;
+}
+
 .sessions-boutons-container > div {
   display: flex;
   flex-direction: column;
@@ -832,4 +987,4 @@ div.sections-futur .bouton-plus {
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
-/*------------------------------------------layout */
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
