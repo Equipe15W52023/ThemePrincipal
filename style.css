@@ -81,8 +81,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -318,170 +317,70 @@ template {
 }
 
 /* --------------------------------------------- base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Styles de base
-=============================================== */
-.site_entete {
-  min-height: 100%;
-  background-color: lightblue;
+.site__entete {
   display: flex;
-  flex-direction: column;
-}
-
-li {
-  min-height: 100%;
-  background-color: lightblue;
-  display: flex;
+  color: #9ACBDA;
+  background-color: #0E3D6D;
   flex-direction: row;
-  color: azure;
-}
-
-ul {
-  display: flex;
   flex-wrap: nowrap;
-  align-self: center;
-  align-content: flex-start;
-  justify-content: center;
-  flex-direction: space-between;
-  color: azure;
 }
 
-.barre-menu,
-.menu {
-  background: navy;
-  color: #ddd;
-}
-
-/* Mise en page pour les petits périphériques
-=============================================== */
-.barre-menu {
-  width: 100%;
-  height: 10vh;
-  border-bottom: 2px solid #ddd;
-  /*La position est fixe pour toujours le voir quand on navigue dans les sections*/
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 250px;
   position: fixed;
+  z-index: 1;
   top: 0;
-  /*Conteneur flex en rangée avec alignement à droite pour les petits périphériques*/
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  left: -250px;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
 }
 
-.menu {
-  width: 100%;
-  /*Position fixe sur petit écran en bas de la barre de la barre de menu*/
-  position: fixed;
-  top: 10vh;
-  /*Sa hauteur est celle de la hauteur du viewport MOINS celle de la barre de navigation*/
-  height: 90vh;
-  /*Conteneur flex en colonne avec élément centré au milieu*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /*Au démarrage on met complètement transparent*/
-  opacity: 0;
-  /*Effet de transition*/
-  transition: opacity 0.5s;
-}
-
-/*Om met tous les boutons du menu complètement à gauche ou à droite*/
-.menu a {
-  transform: translateX(-100%);
-  /*Effet de transition*/
-  transition: transform 400ms;
-}
-
-/*Les bouton pairs von arriver par la droite...*/
-.menu a:nth-child(even) {
-  transform: translateX(100%);
-}
-
-.bouton-burger {
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
   display: block;
-  height: 2rem;
-  width: 2rem;
-  margin: 1rem;
-  background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, transparent 20%, transparent 40%, #ddd 40%, #ddd 60%, transparent 60%, transparent 80%, #ddd 80%, #ddd 100%);
-  cursor: pointer;
-  transition: transform 400ms;
+  transition: 0.3s;
 }
 
-/* Contrôle du menu et du bouton burger...
-========================================================================== 
-    Le menu...est en position fixed et mis sur le contenu avec de la transparence
-    Il apparaît ou disparaît selon l'état 'checked' de la case à cocher
-    #cc-pour-bouton-burger. La manière de le faire apparaître est de le mettre
-    opaque avec opacity:1
-==========================================================================*/
-#cc-pour-bouton-burger:checked ~ .barre-menu > .bouton-burger {
-  transform: rotate(90deg);
+.sidenav a:hover {
+  color: #111;
 }
 
-/*
-    On met le menu opaque
-*/
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu {
-  opacity: 1;
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-/*Arrivée des différents boutons avec un délai*/
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a {
-  transform: translateX(0%);
+/* Active class */
+.sidenav.active {
+  left: 0;
 }
 
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(1) {
-  transition-delay: 0.5s;
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
 }
 
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(2) {
-  transition-delay: 1s;
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  border-radius: 50px;
 }
 
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(3) {
-  transition-delay: 1.5s;
-}
-
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(4) {
-  transition-delay: 2s;
-}
-
-#cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(5) {
-  transition-delay: 2.5s;
-}
-
-#cc-pour-bouton-burger {
-  /*On cache la case à cocher*/
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-  .menu {
-    position: static;
-    flex-direction: row;
-    height: auto;
-    transform: translateX(0%);
-    justify-content: space-evenly;
-    opacity: 1;
-  }
-  .menu a, .menu a:nth-child(even) {
-    flex-grow: 1;
-    /*Enlever la translation*/
-    transform: translateX(0%);
-  }
-  .barre-menu {
-    height: auto;
-    border: none;
-  }
-  .bouton-burger {
-    /*On cache le bouton burger*/
-    display: none;
-  }
-}
 html {
   background-color: rgb(255, 255, 255);
   font-family: "Red Hat Display", sans-serif;
@@ -520,6 +419,7 @@ html {
 .bloc_footer .footer_adresse {
   background-color: #F06543;
   width: 60%;
+  -webkit-border-radius: 40px;
   border-radius: 50px;
   margin: 5px 0px 5px 10px;
   display: flex;
@@ -587,236 +487,222 @@ html {
   border-radius: 8px;
 }
 
-p,
-h1,
-h2,
-h3 {
+p, h1, h2, h3 {
   color: #E8E8E8;
 }
 
-.accueil_div {
+.accueil {
   background-color: #1F1F1F;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
   font-family: "Montserrat", sans-serif;
 }
-.accueil_div .wp-block-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.accueil_div .wp-block-column .titre_accueil {
+.accueil .titre_accueil {
   background-color: #F06543;
   margin-top: 2%;
-  text-align: center;
-  width: 70vw;
 }
-.accueil_div .wp-block-column .titre_accueil h2 {
+.accueil .titre_accueil h1 {
   font-size: 24px;
 }
-.accueil_div .description_accueil {
+.accueil .description_accueil {
   background-color: #0E3D6D;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  opacity: 50%;
-  margin-top: 25%;
+  margin-top: 45%;
 }
-.accueil_div .description_accueil p {
+.accueil .description_accueil p {
   color: rgb(255, 255, 255);
   padding: 1%;
   margin: 0;
   font-size: 12px;
 }
-@media screen and (min-width: 768px) {
-  .accueil_div .wp-container-3 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 996px) {
-  .accueil_div .wp-container-3 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
 
-.environnement_div {
+.environnement {
   width: 100%;
+  height: 200px;
+  background-color: aqua;
+}
+.sessions-boutons-container > div {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
-}
-.environnement_div .titre_environnement {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-.environnement_div .titre_environnement h2 {
-  margin: 0;
-  padding: 0;
-}
-.environnement_div .vv_environnement {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-.environnement_div .vv_environnement iframe {
-  width: 90vw;
-  height: 50vh;
-}
-
-.session-buttons {
-  width: 63%;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: auto;
-  margin-bottom: 3%;
-  margin-top: 5%;
+  flex-wrap: nowrap;
+  width: 70%;
 }
-
-button.session-button {
+.sessions-boutons-container > div .session-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0;
+  margin-top: 5%;
+  align-self: stretch;
+}
+.sessions-boutons-container > div .session-buttons button.session-button {
   position: relative;
   color: #E8E8E8;
   border: none;
-  margin: -2em;
   border-radius: 8px 8px 0 0;
-  font-size: clamp(1.5rem, 1rem + 2.6667vw, 2rem);
+  font-size: clamp(1.125rem, 0.5202rem + 3.871vw, 1.875rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
-button.session-button:nth-of-type(1) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
-  background-color: #9ACBDA;
+  background-color: #1e6b99;
 }
-
-button.session-button:nth-of-type(2) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(2) {
   z-index: 6;
   background-color: #0a5785;
 }
-
-button.session-button:nth-of-type(3) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(3) {
   z-index: 5;
   background-color: #07486f;
 }
-
-button.session-button:nth-of-type(4) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(4) {
   z-index: 4;
   background-color: #00395b;
 }
-
-button.session-button:nth-of-type(5) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(5) {
   z-index: 3;
   background-color: #042a41;
 }
-
-button.session-button:nth-of-type(6) {
+.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(6) {
   z-index: 2;
   background-color: #001c2d;
 }
-
-button.session-button .selection {
+.sessions-boutons-container > div .session-buttons button.session-button.selection {
   background-color: #9ACBDA;
+  color: #0E3D6D;
   z-index: 10;
 }
-
-button.session-button:hover {
+.sessions-boutons-container > div .session-buttons .bouton-ferme {
+  display: none;
+}
+.sessions-boutons-container > div .session-buttons .bouton-ouvert {
+  display: block;
+  padding-right: 5%;
+}
+.sessions-boutons-container > div .session-buttons button.session-button:hover {
   background-color: #F06543;
 }
-
-.sessions-container {
+.sessions-boutons-container > div .sessions-container {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 5em;
+  width: 100%;
 }
-.sessions-container .session {
+.sessions-boutons-container > div .sessions-container .session {
   background-color: #9ACBDA;
   color: #E8E8E8;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   padding: 1em;
   border-radius: 0 0 8px 8px;
 }
-.sessions-container .session h2 {
+.sessions-boutons-container > div .sessions-container .session h2 {
   align-self: center;
   width: 100%;
   text-align: center;
   margin: 0;
   color: #0E3D6D;
 }
-
-.cours {
+.sessions-boutons-container > div .sessions-container .session .cours {
   width: 75%;
   margin: 1em;
   padding: 1em;
   background-color: #1B72A6;
   border-radius: 8px;
 }
+.sessions-boutons-container > div .sessions-container .session .cours:hover {
+  cursor: pointer;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-ferme .texte-cours {
+  display: none;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #001c2d;
+  border-radius: 8px;
+  top: 10%;
+  left: 0;
+  width: 110%;
+  transform: translateX(-10%);
+  height: auto;
+  padding: 10%;
+}
+.sessions-boutons-container > div .sessions-container .session .bouton-x::before {
+  content: "X";
+  font-weight: bold;
+  position: relative;
+  top: 5%;
+  left: 47%;
+}
+.sessions-boutons-container > div .sessions-container .session .texte-cours, .sessions-boutons-container > div .sessions-container .session .cours h3 {
+  text-align: center;
+}
 
 @media screen and (min-width: 554px) {
-  .session-buttons {
-    width: 52%;
+  .sessions-boutons-container > div .session-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-  button.session-button {
-    font-size: 8vw;
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
   }
-  .cours {
+  .sessions-boutons-container > div .sessions-container .session .cours {
     width: 35%;
     margin: 1em;
     padding: 1em;
     background-color: #1B72A6;
     border-radius: 8px;
   }
+  .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
+    top: 5px;
+    left: 0;
+    width: 60%;
+    transform: translateX(26%);
+    padding: 3%;
+  }
 }
 @media screen and (min-width: 992px) {
-  .session-buttons {
-    margin-bottom: 2%;
-    width: 30%;
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: 30px;
   }
-  button.session-button {
-    margin: -1.6em;
-    font-size: 4vw;
-  }
-  .sessions-container .session {
+  .sessions-boutons-container > div .sessions-container .session .cours {
     width: 40%;
   }
 }
-div.sections-future {
+div.sections-futur {
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  justify-content: space-around;
+  margin-bottom: 5em;
 }
-div.sections-future div.section-future {
+div.sections-futur .section-futur {
   display: flex;
   position: relative;
+  margin-bottom: 5em;
 }
-div.sections-future div.section-future .img-future {
+div.sections-futur .section-futur .img-futur {
   position: relative;
   justify-content: center;
-}
-div.sections-future div.section-future .img-future img {
+  margin: 1em;
   width: 250px;
 }
-div.sections-future div.section-future .img-future figcaption {
+div.sections-futur .section-futur h2 {
   position: absolute;
   text-align: center;
   color: black;
@@ -826,35 +712,84 @@ div.sections-future div.section-future .img-future figcaption {
   left: 10%;
   right: auto;
   font-size: clamp(1.125rem, 0.875rem + 1.3333vw, 1.375rem);
+  z-index: 1;
 }
-div.sections-future div.section-future p.texte-future {
+div.sections-futur .section-futur p.desc-futur {
   position: absolute;
   text-align: center;
   color: black;
-  width: 50%;
-  top: 35%;
+  width: 80%;
+  top: 40%;
   bottom: auto;
-  left: 26%;
+  left: 10%;
   right: auto;
   font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
+  z-index: 1;
+}
+div.sections-futur .section-futur:hover {
+  cursor: pointer;
+}
+div.sections-futur .section-ferme .texte-futur {
+  display: none;
+}
+div.sections-futur .texte-futur-selection .texte-futur {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #001c2d;
+  color: #E8E8E8;
+  border-radius: 8px;
+  top: 50%;
+  left: 0;
+  width: 80%;
+  transform: translateY(-50%);
+  height: auto;
+  padding: 10%;
+  text-align: center;
+  z-index: 2;
+}
+div.sections-futur .texte-futur-selection .texte-futur h2 {
+  color: #E8E8E8;
+  top: 3%;
+}
+div.sections-futur .texte-futur-selection .texte-futur p {
+  font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
+}
+div.sections-futur .bouton-x-futur::before {
+  content: "X";
+  font-weight: bold;
+  position: relative;
+  top: 5%;
+  left: 47%;
+  z-index: 3;
+}
+div.sections-futur .bouton-plus {
+  position: absolute;
+  z-index: 0;
+  padding: 1.5em;
+  top: 85%;
+  right: 5%;
+  border-radius: 20px;
+  width: 30%;
+  height: auto;
 }
 
 @media screen and (min-width: 554px) {
-  div.sections-future {
+  div.sections-futur {
     flex-direction: row;
     margin: 3em 5%;
   }
-  div.sections-future div.section-future {
+  div.sections-futur div.section-futur {
     justify-content: center;
   }
-  div.sections-future div.section-future .img-future img {
+  div.sections-futur div.section-futur .img-futur {
     width: 20em;
   }
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur h2 {
     top: 30%;
     font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
   }
-  div.sections-future div.section-future p.texte-future {
+  div.sections-futur div.section-futur p.desc-futur {
     width: 40%;
     top: 40%;
     left: 30%;
@@ -863,38 +798,38 @@ div.sections-future div.section-future p.texte-future {
   }
 }
 @media screen and (min-width: 782px) {
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur h2 {
     position: absolute;
-    top: 22%;
+    top: 30%;
     bottom: auto;
     right: auto;
     font-size: 18px;
   }
-  div.sections-future div.section-future p.texte-future {
-    width: 80%;
-    top: 30%;
-    left: 12%;
+  div.sections-futur div.section-futur p.desc-futur {
+    width: 50%;
+    top: 40%;
+    left: 25%;
     font-size: clamp(1.125rem, 0.8333rem + 0.6667vw, 1.25rem);
   }
 }
 @media screen and (min-width: 992px) {
-  div.sections-future {
+  div.sections-futur {
     flex-direction: row;
     margin: 3em 17%;
   }
-  div.sections-future div.section-future .img-future img {
+  div.sections-futur div.section-futur .img-futur {
     width: 20em;
   }
-  div.sections-future div.section-future .img-future figcaption {
+  div.sections-futur div.section-futur h2 {
     text-align: center;
     top: 28%;
     font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
   }
-  div.sections-future div.section-future p.texte-future {
-    width: 75%;
-    top: 32%;
-    left: 13%;
+  div.sections-futur div.section-futur p.desc-futur {
+    width: 45%;
+    top: 35%;
+    left: 27%;
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
-/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
+/*------------------------------------------layout */

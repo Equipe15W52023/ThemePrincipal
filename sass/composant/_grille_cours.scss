@@ -1,116 +1,191 @@
 // ****************************** Mobile ************************************ //
-// BOUTONS SESSION
-.session-buttons {
-    width: 63%;
+// SECTION COMPLÈTE
+.sessions-boutons-container > div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin: auto;
-    margin-bottom: 3%;
-    margin-top: 5%;
-}
-
-button.session-button {
-    position: relative;
-    color: $couleur__textePale;
-    border: none;
-    margin: -2em;
-    border-radius: 8px 8px 0 0;
-    font-size: clamp(1.5rem, 1rem + 2.6667vw, 2rem);
-}
-
-// Couleurs des boutons sessions
-button.session-button:nth-of-type(1) { z-index: 7; background-color: $bleu__pale; }
-button.session-button:nth-of-type(2) { z-index: 6; background-color: #0a5785; }
-button.session-button:nth-of-type(3) { z-index: 5; background-color: #07486f; }
-button.session-button:nth-of-type(4) { z-index: 4; background-color: #00395b; }
-button.session-button:nth-of-type(5) { z-index: 3; background-color: #042a41; }
-button.session-button:nth-of-type(6) { z-index: 2; background-color: #001c2d; }
-
-// bouton (session) sélectionné
-button.session-button .selection {
-    background-color: $bleu__pale;
-    z-index: 10;
-}
-
-// hover des boutons (session)
-button.session-button:hover {
-    background-color: $orange__creation;
-}
-
-
-// SESSIONS
-.sessions-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5em;
-
-    .session {
-        background-color: $bleu__pale;
-        color: $couleur__textePale;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-        padding: 1em;
-        border-radius: 0 0 8px 8px;
+    flex-wrap: nowrap;
+    width: 70%;
     
-        h2 {
-            align-self: center;
-            width: 100%;
-            text-align: center;
-            margin: 0;
+    // BOUTONS SESSION
+    .session-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: 0;
+        margin-top: 5%;
+        align-self: stretch;
+
+        button.session-button {
+            position: relative;
+            color: $couleur__textePale;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            font-size: clamp(1.125rem, 0.5202rem + 3.871vw, 1.875rem);            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        // Couleurs des boutons sessions
+        button.session-button:nth-of-type(1) { z-index: 7; background-color: #1e6b99; }
+        button.session-button:nth-of-type(2) { z-index: 6; background-color: #0a5785; }
+        button.session-button:nth-of-type(3) { z-index: 5; background-color: #07486f; }
+        button.session-button:nth-of-type(4) { z-index: 4; background-color: #00395b; }
+        button.session-button:nth-of-type(5) { z-index: 3; background-color: #042a41; }
+        button.session-button:nth-of-type(6) { z-index: 2; background-color: #001c2d; }
+
+        // bouton (session) sélectionné
+        button.session-button.selection {
+            background-color: $bleu__pale;
             color: $fond__creation;
+            z-index: 10;
+        }
+
+        .bouton-ferme {
+            display: none;
+        }
+
+        .bouton-ouvert {
+            display: block;
+            padding-right: 5%;
+        }
+
+        // hover des boutons (session)
+        button.session-button:hover {
+            background-color: $orange__creation;
+        }
+    }
+
+    // SESSIONS
+    .sessions-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5em;
+        width: 100%;
+
+        .session {
+            background-color: $bleu__pale;
+            color: $couleur__textePale;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            padding: 1em;
+            border-radius: 0 0 8px 8px;
+        
+            h2 {
+                align-self: center;
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                color: $fond__creation;
+            }
+
+            // COURS
+            .cours {
+                width: 75%;
+                margin: 1em;
+                padding: 1em;
+                background-color: $bleu__moyen;
+                border-radius: 8px;
+            }       
+
+            .cours:hover {
+                cursor: pointer;
+            }
+
+            // AFFICHAGE DU CONTENU DES COURS SÉLÉCTTIONNÉS OU NON
+            .cours-ferme .texte-cours {
+                display: none;
+            }
+
+            .cours-selection .texte-cours {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                background-color: #001c2d;
+                border-radius: 8px;
+                top: 10%;
+                left: 0;
+                width: 110%;
+                transform: translateX(-10%);
+                height: auto;
+                padding: 10%;
+            }
+
+            // Bouton pour fermer le contenu du cours
+            .bouton-x::before { 
+                content: 'X';
+                font-weight: bold;
+                position: relative;
+                top: 5%;
+                left: 47%;
+            }
+
+            .texte-cours, .cours h3{
+                text-align: center;
+            }
         }
     }
 }
 
-// COURS
-.cours {
-    width: 75%;
-    margin: 1em;
-    padding: 1em;
-    background-color: $bleu__moyen;
-    border-radius: 8px;
-}
 
 // ***************************** TABLETTE *********************************** //
 @media screen and (min-width: 554px) {
-    // BOUTONS SESSION
-    .session-buttons {
-       width: 52%;
-    }
+    .sessions-boutons-container > div {
+        // BOUTONS SESSION
+        .session-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
-    button.session-button {
-        font-size: 8vw;
-    }
+            button.session-button {
+                font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
+            }
+        }
 
-    // COURS
-    .cours {
-        width: 35%;
-        margin: 1em;
-        padding: 1em;
-        background-color: $bleu__moyen;
-        border-radius: 8px;
+        // SESSIONS
+        .sessions-container {
+            .session {
+                .cours {
+                    width: 35%;
+                    margin: 1em;
+                    padding: 1em;
+                    background-color: $bleu__moyen;
+                    border-radius: 8px;
+                }
+
+                // AFFICHAGE DU CONTENU DES COURS
+                .cours-selection .texte-cours {
+                    top: 5px;
+                    left: 0;
+                    width: 60%;
+                    transform: translateX(26%);
+                    padding: 3%;
+                }
+            }
+        }
     }
 }
 
 
 // ****************************** BUREAU ************************************ //
 @media screen and (min-width: 992px) {
-    // BOUTONS SESSION
-    .session-buttons {
-        margin-bottom: 2%;
-        width: 30%;
-    }
+    .sessions-boutons-container > div {
+        // BOUTONS SESSION
+        .session-buttons {
+            button.session-button {
+                font-size: 30px;
+            }
+        }
 
-    button.session-button {
-        margin: -1.6em;
-        font-size: 4vw;
-    }
-
-    .sessions-container .session {
-        width: 40%;
+        // SESSIONS
+        .sessions-container {
+            .session {
+                .cours {
+                    width: 40%;
+                }
+            }
+        }
     }
 }
