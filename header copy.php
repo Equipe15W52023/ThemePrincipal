@@ -43,26 +43,20 @@
    <div id="mySidenav" class="sidenav">
   <a id="closeBtn" href="#" class="close">×</a>
   <ul>
+    <li><a href="#">image tim</a></li>
+    <li><a href="#">Nos services</a></li>
+    <li><a href="#">Témoignages</a></li>
+    <li><a href="#">switch prog/creatif</a></li>
   </ul>
 </div>
 
-<div class="container nav-container">
-  <input class="checkbox" type="checkbox" name="burger_menu" id="burger" />
-      <div class="hamburger-lines">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
-      </div>  
-   
-    <div class="menu-items">
-        <?php
-     
-      get_template_part("templates-parts/aside");
-     
-      ?>
-     
-    </div>
-  </div>
+<a href="#" id="openBtn">
+  <span class="burger-icon">
+    <span>hey</span>
+    <span>hi</span>
+    <span>hello</span>
+  </span>
+</a>
        <section class="menu_recherche">
 
            <div class="logomenu">
@@ -105,5 +99,4 @@
 
 </section>
 
-<script src="header.js"></script>
 </header>
