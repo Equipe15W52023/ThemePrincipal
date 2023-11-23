@@ -32,12 +32,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "composant/aside_cours";
 @import "composant/burger";
 
-@import "composant/accueil";
+@import "composant/accueil";//à supprimer
 @import "composant/environnement";
 
 @import "composant/grille_cours";
 @import "composant/future";
 
-@import "composant/carrousel_test";
+@import "composant/carrousel";
 /*------------------------------------------layout */
 @import "layout/aside-contenu";
