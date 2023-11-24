@@ -668,30 +668,25 @@ div.sections-future div.section-future .img-future figcaption {
 .carrousel {
   width: 100%;
   height: 40vh;
+  padding: 5vh 0;
 }
 .carrousel .projet_article {
-  display: flex;
-  flex-direction: column;
-  background-color: red;
   font-family: "Montserrat", sans-serif;
   color: #E8E8E8;
-  margin-top: 15px;
   width: 100%;
   height: 40vh;
+  position: relative;
+  overflow: hidden;
 }
 .carrousel .projet_article .projet_info {
   z-index: 1;
-  position: relative;
-  background-color: rgba(2, 18, 45, 0.425);
+  position: absolute;
+  background-color: rgba(2, 18, 45, 0.64);
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
-  top: 100px;
-  margin: 0;
-  padding: 0;
-  height: 25vh;
+  bottom: 0;
+  height: 20vh;
 }
 .carrousel .projet_article .projet_info h2 {
   background-color: #F06543;
@@ -709,21 +704,36 @@ div.sections-future div.section-future .img-future figcaption {
 }
 .carrousel .projet_article .projet_info .carrousel_bouton {
   text-align: center;
+  /* button {
+
+      //background-image: url(../../medias/fleche.svg);
+  }*/
 }
-.carrousel .projet_article .projet_info .carrousel_bouton button {
+.carrousel .projet_article .projet_info .carrousel_bouton #bouton_gauche {
+  width: 100px;
+  /* spécifiez la largeur du bouton */
+  height: 40px;
+  background-size: cover;
+  /* ajuste la taille de l'image pour couvrir le bouton */
+  background-repeat: no-repeat;
+  /* supprimez la bordure du bouton */
+  color: transparent;
+  /* assurez-vous que le texte est transparent, car l'image servira de fond */
+  text-align: center;
+  /* centrez le texte à l'intérieur du bouton si nécessaire */
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+  border: none;
+  background-image: url("../../medias/masque-future.png");
+}
+.carrousel .projet_article .projet_info .carrousel_bouton #bouton_droit {
+  background-color: none;
   cursor: pointer;
   margin: 5px;
 }
 .carrousel .projet_article .projet_image {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-content: flex-end;
   z-index: 0;
-  position: absolute;
-  width: 100%;
-  height: 40vh;
-  bottom: 180px;
 }
 .carrousel .projet_article .projet_image img {
   width: 100%;
@@ -738,7 +748,6 @@ div.sections-future div.section-future .img-future figcaption {
   .carrousel .projet_article {
     display: flex;
     flex-direction: row;
-    background-color: blue;
     margin-top: 15px;
     width: 100%;
     height: 50vh;
@@ -767,14 +776,6 @@ div.sections-future div.section-future .img-future figcaption {
     cursor: pointer;
     margin: 5px;
   }
-  .carrousel .projet_article .projet_image {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-content: flex-end;
-    height: 50vh;
-    bottom: 120px;
-  }
   .carrousel .projet_article .projet_image img {
     height: 50vh;
   }
@@ -784,19 +785,17 @@ div.sections-future div.section-future .img-future figcaption {
     height: 80vh;
   }
   .carrousel .projet_article {
-    background-color: rgb(17, 255, 0);
     height: 80vh;
   }
   .carrousel .projet_article .projet_info {
     height: 80vh;
-    top: 0;
   }
   .carrousel .projet_article .projet_info h2 {
     width: 20vw;
     font-size: 24px;
   }
   .carrousel .projet_article .projet_info div {
-    padding: 5px;
+    padding: 5px 20px;
     font-size: 18px;
   }
   .carrousel .projet_article .projet_info .carrousel_bouton {
@@ -805,10 +804,6 @@ div.sections-future div.section-future .img-future figcaption {
   .carrousel .projet_article .projet_info .carrousel_bouton button {
     cursor: pointer;
     margin: 5px;
-  }
-  .carrousel .projet_article .projet_image {
-    height: 80vh;
-    bottom: -82px;
   }
   .carrousel .projet_article .projet_image img {
     height: 80vh;
