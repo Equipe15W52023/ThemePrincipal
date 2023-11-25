@@ -492,9 +492,10 @@ html {
 
 .titre-article {
   position: relative;
-  font-size: 35px;
+  font-size: 30px;
   color: #9ACBDA;
-  margin: 0 20%;
+  text-transform: uppercase;
+  margin: 1em 20%;
 }
 
 .titre-article::before {
@@ -502,15 +503,34 @@ html {
   position: absolute;
   background-color: #F06543;
   border-radius: 8px;
-  height: 6px;
-  width: 22%;
+  height: 3px;
+  width: 50%;
   bottom: 0;
+  left: 0;
+}
+
+.titre-article::after {
+  content: "";
+  position: absolute;
+  background-color: #F06543;
+  border-radius: 8px;
+  height: 3px;
+  width: 30%;
+  bottom: -0.3em;
   left: 0;
 }
 
 @media screen and (min-width: 554px) {
   .titre-article {
     font-size: 45px;
+  }
+  .titre-article::before {
+    height: 5px;
+    bottom: -0.2em;
+  }
+  .titre-article::after {
+    height: 5px;
+    bottom: -0.5em;
   }
 }
 @media screen and (min-width: 992px) {
@@ -731,6 +751,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 0 0.2em;
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
@@ -834,12 +855,16 @@ h3 {
 }
 
 @media screen and (min-width: 554px) {
+  .sessions-boutons-container > div {
+    width: 60%;
+  }
   .sessions-boutons-container > div .session-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
   .sessions-boutons-container > div .session-buttons button.session-button {
     font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
+    padding: 0 0.4em;
   }
   .sessions-boutons-container > div .sessions-container .session .cours {
     width: 35%;
@@ -960,7 +985,7 @@ div.sections-futur .bouton-plus {
 @media screen and (min-width: 554px) {
   div.sections-futur {
     flex-direction: row;
-    margin: 3em 5%;
+    margin: 1em 5%;
   }
   div.sections-futur div.section-futur {
     justify-content: center;

@@ -33,7 +33,7 @@ $custom_query = new WP_Query($args);
 if ($custom_query->have_posts()) :
     while ($custom_query->have_posts()) :
         $custom_query->the_post();
-        the_title();
+        ?> <h1 class="titre-article"> <?php the_title(); ?> </h1> <?php
         the_content();
         // Contenu de l'article
         // Vous pouvez personnaliser la mise en page ici
