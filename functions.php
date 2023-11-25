@@ -9,4 +9,7 @@ wp_enqueue_style(   'style-principale',  // identificateur du link css
 ); 
 }
 add_action( 'wp_enqueue_scripts', 'ajouter_styles' );
+
+//rajouter un miniature
+add_theme_support( 'post-thumbnails' );
 ?>

@@ -81,7 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -443,11 +444,13 @@ ul {
 
 #cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(3) {
   transition-delay: 1.5s;
+
 }
 
 #cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(4) {
   transition-delay: 2s;
 }
+
 
 #cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(5) {
   transition-delay: 2.5s;
@@ -567,7 +570,6 @@ html {
 .bloc_footer .footer_adresse {
   background-color: #F06543;
   width: 60%;
-  -webkit-border-radius: 40px;
   border-radius: 50px;
   margin: 5px 0px 5px 10px;
   display: flex;
@@ -701,6 +703,7 @@ h3 {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+
 }
 .environnement_div .titre_environnement {
   display: flex;
@@ -729,132 +732,130 @@ h3 {
 }
 
 .sessions-boutons-container > div {
+
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
-  width: 70%;
-}
-.sessions-boutons-container > div .session-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0;
-  margin-top: 5%;
-  align-self: stretch;
+  padding: 0;
 }
-.sessions-boutons-container > div .session-buttons button.session-button {
+.environnement_div .titre_environnement h2 {
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement iframe {
+  width: 90vw;
+  height: 50vh;
+}
+
+.session-buttons {
+  width: 63%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 3%;
+  margin-top: 5%;
+}
+
+button.session-button {
   position: relative;
   color: #E8E8E8;
   border: none;
+  margin: -2em;
   border-radius: 8px 8px 0 0;
+
   font-size: clamp(1.125rem, 0.5202rem + 3.871vw, 1.875rem);
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 0 0.2em;
+
 }
-.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
+
+button.session-button:nth-of-type(1) {
   z-index: 7;
-  background-color: #1e6b99;
+  background-color: #9ACBDA;
 }
-.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(2) {
+
+button.session-button:nth-of-type(2) {
   z-index: 6;
   background-color: #0a5785;
 }
-.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(3) {
+
+button.session-button:nth-of-type(3) {
   z-index: 5;
   background-color: #07486f;
 }
-.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(4) {
+
+button.session-button:nth-of-type(4) {
   z-index: 4;
   background-color: #00395b;
 }
-.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(5) {
+
+button.session-button:nth-of-type(5) {
   z-index: 3;
   background-color: #042a41;
 }
-.sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(6) {
+
+button.session-button:nth-of-type(6) {
   z-index: 2;
   background-color: #001c2d;
 }
-.sessions-boutons-container > div .session-buttons button.session-button.selection {
+
+button.session-button .selection {
   background-color: #9ACBDA;
-  color: #0E3D6D;
   z-index: 10;
 }
-.sessions-boutons-container > div .session-buttons .bouton-ferme {
-  display: none;
-}
-.sessions-boutons-container > div .session-buttons .bouton-ouvert {
-  display: block;
-  padding-right: 5%;
-}
-.sessions-boutons-container > div .session-buttons button.session-button:hover {
+
+button.session-button:hover {
   background-color: #F06543;
 }
-.sessions-boutons-container > div .sessions-container {
-  position: relative;
+
+.sessions-container {
   display: flex;
   justify-content: center;
   margin-bottom: 5em;
-  width: 100%;
 }
-.sessions-boutons-container > div .sessions-container .session {
+.sessions-container .session {
   background-color: #9ACBDA;
   color: #E8E8E8;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   padding: 1em;
   border-radius: 0 0 8px 8px;
 }
-.sessions-boutons-container > div .sessions-container .session h2 {
+.sessions-container .session h2 {
   align-self: center;
   width: 100%;
   text-align: center;
   margin: 0;
   color: #0E3D6D;
 }
-.sessions-boutons-container > div .sessions-container .session .cours {
+
+.cours {
   width: 75%;
   margin: 1em;
   padding: 1em;
   background-color: #1B72A6;
   border-radius: 8px;
 }
-.sessions-boutons-container > div .sessions-container .session .cours:hover {
-  cursor: pointer;
-}
-.sessions-boutons-container > div .sessions-container .session .cours-ferme .texte-cours {
-  display: none;
-}
-.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  background-color: #001c2d;
-  border-radius: 8px;
-  top: 10%;
-  left: 0;
-  width: 110%;
-  transform: translateX(-10%);
-  height: auto;
-  padding: 10%;
-}
-.sessions-boutons-container > div .sessions-container .session .bouton-x::before {
-  content: "X";
-  font-weight: bold;
-  position: relative;
-  top: 5%;
-  left: 47%;
-}
-.sessions-boutons-container > div .sessions-container .session .texte-cours, .sessions-boutons-container > div .sessions-container .session .cours h3 {
-  text-align: center;
-}
 
 @media screen and (min-width: 554px) {
+
   .sessions-boutons-container > div {
     width: 60%;
   }
@@ -865,52 +866,54 @@ h3 {
   .sessions-boutons-container > div .session-buttons button.session-button {
     font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
     padding: 0 0.4em;
+
+  .session-buttons {
+    width: 52%;
   }
-  .sessions-boutons-container > div .sessions-container .session .cours {
+  button.session-button {
+    font-size: 8vw;
+
+  }
+  .cours {
     width: 35%;
     margin: 1em;
     padding: 1em;
     background-color: #1B72A6;
     border-radius: 8px;
   }
-  .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
-    top: 5px;
-    left: 0;
-    width: 60%;
-    transform: translateX(26%);
-    padding: 3%;
-  }
 }
 @media screen and (min-width: 992px) {
-  .sessions-boutons-container > div .session-buttons button.session-button {
-    font-size: 30px;
+  .session-buttons {
+    margin-bottom: 2%;
+    width: 30%;
   }
-  .sessions-boutons-container > div .sessions-container .session .cours {
+  button.session-button {
+    margin: -1.6em;
+    font-size: 4vw;
+  }
+  .sessions-container .session {
     width: 40%;
   }
 }
-div.sections-futur {
+div.sections-future {
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
-  position: relative;
-  justify-content: space-around;
-  margin-bottom: 5em;
 }
-div.sections-futur .section-futur {
+div.sections-future div.section-future {
   display: flex;
   position: relative;
-  margin-bottom: 5em;
 }
-div.sections-futur .section-futur .img-futur {
+div.sections-future div.section-future .img-future {
   position: relative;
   justify-content: center;
-  margin: 1em;
+}
+div.sections-future div.section-future .img-future img {
   width: 250px;
 }
-div.sections-futur .section-futur h2 {
+div.sections-future div.section-future .img-future figcaption {
   position: absolute;
   text-align: center;
   color: black;
@@ -920,84 +923,35 @@ div.sections-futur .section-futur h2 {
   left: 10%;
   right: auto;
   font-size: clamp(1.125rem, 0.875rem + 1.3333vw, 1.375rem);
-  z-index: 1;
 }
-div.sections-futur .section-futur p.desc-futur {
+div.sections-future div.section-future p.texte-future {
   position: absolute;
   text-align: center;
   color: black;
-  width: 80%;
-  top: 40%;
+  width: 50%;
+  top: 35%;
   bottom: auto;
-  left: 10%;
+  left: 26%;
   right: auto;
   font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
-  z-index: 1;
-}
-div.sections-futur .section-futur:hover {
-  cursor: pointer;
-}
-div.sections-futur .section-ferme .texte-futur {
-  display: none;
-}
-div.sections-futur .texte-futur-selection .texte-futur {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  background-color: #001c2d;
-  color: #E8E8E8;
-  border-radius: 8px;
-  top: 50%;
-  left: 0;
-  width: 80%;
-  transform: translateY(-50%);
-  height: auto;
-  padding: 10%;
-  text-align: center;
-  z-index: 2;
-}
-div.sections-futur .texte-futur-selection .texte-futur h2 {
-  color: #E8E8E8;
-  top: 3%;
-}
-div.sections-futur .texte-futur-selection .texte-futur p {
-  font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
-}
-div.sections-futur .bouton-x-futur::before {
-  content: "X";
-  font-weight: bold;
-  position: relative;
-  top: 5%;
-  left: 47%;
-  z-index: 3;
-}
-div.sections-futur .bouton-plus {
-  position: absolute;
-  z-index: 0;
-  padding: 1.5em;
-  top: 85%;
-  right: 5%;
-  border-radius: 20px;
-  width: 30%;
-  height: auto;
 }
 
 @media screen and (min-width: 554px) {
-  div.sections-futur {
+  div.sections-future {
     flex-direction: row;
     margin: 1em 5%;
   }
-  div.sections-futur div.section-futur {
+  div.sections-future div.section-future {
     justify-content: center;
   }
-  div.sections-futur div.section-futur .img-futur {
+  div.sections-future div.section-future .img-future img {
     width: 20em;
   }
-  div.sections-futur div.section-futur h2 {
+  div.sections-future div.section-future .img-future figcaption {
     top: 30%;
     font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
   }
-  div.sections-futur div.section-futur p.desc-futur {
+  div.sections-future div.section-future p.texte-future {
     width: 40%;
     top: 40%;
     left: 30%;
@@ -1006,38 +960,38 @@ div.sections-futur .bouton-plus {
   }
 }
 @media screen and (min-width: 782px) {
-  div.sections-futur div.section-futur h2 {
+  div.sections-future div.section-future .img-future figcaption {
     position: absolute;
-    top: 30%;
+    top: 22%;
     bottom: auto;
     right: auto;
     font-size: 18px;
   }
-  div.sections-futur div.section-futur p.desc-futur {
-    width: 50%;
-    top: 40%;
-    left: 25%;
+  div.sections-future div.section-future p.texte-future {
+    width: 80%;
+    top: 30%;
+    left: 12%;
     font-size: clamp(1.125rem, 0.8333rem + 0.6667vw, 1.25rem);
   }
 }
 @media screen and (min-width: 992px) {
-  div.sections-futur {
+  div.sections-future {
     flex-direction: row;
     margin: 3em 17%;
   }
-  div.sections-futur div.section-futur .img-futur {
+  div.sections-future div.section-future .img-future img {
     width: 20em;
   }
-  div.sections-futur div.section-futur h2 {
+  div.sections-future div.section-future .img-future figcaption {
     text-align: center;
     top: 28%;
     font-size: clamp(1.125rem, 0.5rem + 1vw, 1.25rem);
   }
-  div.sections-futur div.section-futur p.desc-futur {
-    width: 45%;
-    top: 35%;
-    left: 27%;
+  div.sections-future div.section-future p.texte-future {
+    width: 75%;
+    top: 32%;
+    left: 13%;
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
-/*------------------------------------------layout */
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
