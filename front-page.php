@@ -21,9 +21,7 @@ $args = array(
  
 $custom_query = new WP_Query($args);
 ?>
-<!-- Bouton pour basculer entre les catégories -->
- 
-<button id="toggle-category-button">Basculer les catégories</button>
+
 
  
 <!-- les sections/articles de la page -->
@@ -34,7 +32,9 @@ $custom_query = new WP_Query($args);
 if ($custom_query->have_posts()) :
     while ($custom_query->have_posts()) :
         $custom_query->the_post();
-        the_title();
+       ?><h1> <?php  the_title(); ?> </h1><?php
+       
+       
         the_content();
         // Contenu de l'article
         // Vous pouvez personnaliser la mise en page ici
@@ -76,3 +76,5 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleCategoryButton.addEventListener('click', toggleCategory);
 });
 </script>
+
+<script src="header.js"></script>
