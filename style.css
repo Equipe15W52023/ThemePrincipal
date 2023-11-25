@@ -392,7 +392,7 @@ html {
 
 /* --------------------------------------------- composant */
 .bloc_footer {
-  background-color: #0E3D6D;
+  background-color: #1F1F1F;
   color: #E8E8E8;
   position: static;
   left: 0;
@@ -405,64 +405,86 @@ html {
   justify-content: space-between;
   font-family: "montserrat", sans-serif;
   font-size: 0.7em;
-  z-index: 100;
-}
-@media screen and (min-width: 768px) {
-  .bloc_footer {
-    height: 11%;
-    font-size: 0.8em;
-  }
-}
-@media screen and (min-width: 996px) {
-  .bloc_footer {
-    height: 15%;
-    font-size: 1em;
-  }
 }
 .bloc_footer .footer_adresse {
-  background-color: #F06543;
   width: 60%;
-  -webkit-border-radius: 40px;
-  border-radius: 50px;
-  margin: 5px 0px 5px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
 }
-.bloc_footer .footer_adresse a {
-  text-decoration: none;
-  color: #E8E8E8;
+.bloc_footer .footer_adresse ul {
+  margin: 3px;
+}
+.bloc_footer .footer_adresse ul li {
+  color: #F06543;
+}
+.bloc_footer .footer_adresse ul li a {
+  color: #9ACBDA;
   margin: 3px 0;
+  text-decoration: none;
+  font-weight: bold;
 }
-.bloc_footer .footer_adresse a:hover {
-  color: #1B72A6;
+.bloc_footer .footer_adresse ul li a:hover {
+  color: #F06543;
 }
 .bloc_footer .footer_logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F06543;
   width: 35%;
 }
 .bloc_footer .footer_logo a {
-  text-decoration: none;
-  margin: 5px;
+  margin: 0 1vh;
 }
 .bloc_footer .footer_logo a svg {
-  height: 2em;
+  color: #F06543;
+  height: 2.5em;
 }
+
 @media screen and (min-width: 768px) {
-  .bloc_footer .footer_logo a svg {
-    height: 2.5em;
+  .bloc_footer {
+    height: 11%;
+    font-size: 0.8em;
   }
-}
-@media screen and (min-width: 996px) {
+  .bloc_footer .footer_adresse {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .bloc_footer .footer_adresse li {
+    padding: 2px;
+  }
+  .bloc_footer .footer_logo a {
+    margin: 0 2vh;
+  }
   .bloc_footer .footer_logo a svg {
     height: 3em;
   }
 }
-
+@media screen and (min-width: 996px) {
+  .bloc_footer {
+    height: 15%;
+    font-size: 1.2em;
+  }
+  .bloc_footer .footer_adresse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+  .bloc_footer .footer_adresse {
+    flex-direction: row;
+  }
+  .bloc_footer .footer_adresse li {
+    padding: 5px;
+  }
+  .bloc_footer .footer_logo a {
+    margin: 0 5vh;
+  }
+  .bloc_footer .footer_logo a svg {
+    height: 3.5em;
+  }
+}
 .butt_burgP {
   display: flex;
   align-items: flex-start;
