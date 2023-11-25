@@ -25,6 +25,10 @@ $custom_query = new WP_Query($args);
  
 <button id="toggle-category-button">Basculer les catégories</button>
 
+ 
+<!-- les sections/articles de la page -->
+
+
 <?php  
 // Boucle pour afficher les articles
 if ($custom_query->have_posts()) :

@@ -1,6 +1,5 @@
 .bloc_footer {
     background-color: $fond__prog;
-    color: #E8E8E8;
     position: static;
     left: 0;
     bottom: 0;
@@ -14,25 +13,26 @@
     font-size: 0.7em;
 
     .footer_adresse {
-        //background-color: $bleu__pale;
         width: 60%;
-        //-webkit-border-radius: 40px;
-        // border-radius: 50px;
-        //margin: 5px 0px 5px 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        display: block;
+        margin: 5px;
 
-        ul {
-            margin: 3px;
+        .adresse_gauche,
+        .adresse_droit {
+            margin: 5px;
+            display: block;
 
-            li {
+            .adresse1,
+            .adresse2,
+            .adresse3,
+            .adresse4 {
                 color: $orange__creation ;
-                //list-style: none;
+                list-style: none;
+                margin: 5px 0;
 
                 a {
                     color: $bleu__pale;
-                    margin: 3px 0;
+                    margin: 5px 0;
                     text-decoration: none;
                     font-weight: bold;
                 }
@@ -59,6 +59,11 @@
                 height: 2.5em;
             }
 
+            svg:hover {
+                transition: height 1s;
+                height: 3em;
+            }
+
         }
 
     }
@@ -73,7 +78,10 @@
             flex-direction: row;
             justify-content: flex-start;
 
-            li {
+            .adresse1,
+            .adresse2,
+            .adresse3,
+            .adresse4 {
                 padding: 2px;
             }
         }
@@ -84,6 +92,10 @@
 
                 svg {
                     height: 3em;
+                }
+
+                svg:hover {
+                    height: 4em;
                 }
             }
         }
@@ -107,7 +119,10 @@
         .footer_adresse {
             flex-direction: row;
 
-            li {
+            .adresse1,
+            .adresse2,
+            .adresse3,
+            .adresse4 {
                 padding: 5px;
             }
         }
@@ -118,6 +133,10 @@
 
                 svg {
                     height: 3.5em;
+                }
+
+                svg:hover {
+                    height: 4.5em;
                 }
             }
         }

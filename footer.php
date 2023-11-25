@@ -2,18 +2,18 @@
     <!-- Pied de page, informations de copyright, etc. -->
         <section class="footer_adresse">
             <ul class="adresse_gauche">
-                <li>
+                <li class="adresse1">
                     <a href="https://www.cmaisonneuve.qc.ca/programme/integration-multimedia/">Plus d'information sur la technique</a>
                 </li>
-                <li>
+                <li class="adresse2">
                     <a href="https://www.cmaisonneuve.qc.ca/">Site du Collège de Maisonneuve</a>
                 </li>
             </ul>
             <ul class="adresse_droit">
-                <li>
+                <li class="adresse1">
                     <a href="https://maps.app.goo.gl/s1dwHsxxAWNb18XT6">3800, rue Sherbrooke Est<br>Montréal (Québec) H1X 2A2</a>
                 </li>
-                <li>
+                <li class="adresse4">
                     <a href="">514 254-7131</a>
                 </li>
             </ul>
