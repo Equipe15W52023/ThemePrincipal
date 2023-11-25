@@ -699,6 +699,8 @@ div.sections-future div.section-future .img-future figcaption {
   height: 40vh;
   position: relative;
   overflow: hidden;
+  border-top: 8px solid #1B72A6;
+  border-bottom: 8px solid #1B72A6;
 }
 .carrousel .projet_article .projet_info {
   z-index: 1;
@@ -710,8 +712,13 @@ div.sections-future div.section-future .img-future figcaption {
   bottom: 0;
   height: 20vh;
 }
-.carrousel .projet_article .projet_info h2 {
-  background-color: #F06543;
+.carrousel .projet_article .projet_info .projet_titre_desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carrousel .projet_article .projet_info .projet_titre_desc h2 {
+  color: #F06543;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -719,40 +726,37 @@ div.sections-future div.section-future .img-future figcaption {
   font-size: 18px;
   border-radius: 50px;
 }
-.carrousel .projet_article .projet_info div {
+.carrousel .projet_article .projet_info .projet_titre_desc div {
   margin: 0;
   padding: 5px;
   font-size: 10px;
 }
 .carrousel .projet_article .projet_info .carrousel_bouton {
   text-align: center;
-  /* button {
-
-      //background-image: url(../../medias/fleche.svg);
-  }*/
+}
+.carrousel .projet_article .projet_info .carrousel_bouton #bouton_gauche,
+.carrousel .projet_article .projet_info .carrousel_bouton #bouton_droit {
+  background-color: transparent;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  border-top: solid 4px #1B72A6;
+  border-right: solid 4px #1B72A6;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 5%;
+  transform: rotate(225deg);
+  margin: 1em;
+}
+.carrousel .projet_article .projet_info .carrousel_bouton #bouton_gauche:hover,
+.carrousel .projet_article .projet_info .carrousel_bouton #bouton_droit:hover {
+  border-color: #F06543;
 }
 .carrousel .projet_article .projet_info .carrousel_bouton #bouton_gauche {
-  width: 100px;
-  /* spécifiez la largeur du bouton */
-  height: 40px;
-  background-size: cover;
-  /* ajuste la taille de l'image pour couvrir le bouton */
-  background-repeat: no-repeat;
-  /* supprimez la bordure du bouton */
-  color: transparent;
-  /* assurez-vous que le texte est transparent, car l'image servira de fond */
-  text-align: center;
-  /* centrez le texte à l'intérieur du bouton si nécessaire */
-  font-size: 16px;
-  cursor: pointer;
-  margin: 5px;
-  border: none;
-  background-image: url("../../medias/masque-future.png");
+  transform: rotate(225deg);
 }
 .carrousel .projet_article .projet_info .carrousel_bouton #bouton_droit {
-  background-color: none;
-  cursor: pointer;
-  margin: 5px;
+  transform: rotate(45deg);
 }
 .carrousel .projet_article .projet_image {
   z-index: 0;
@@ -775,28 +779,34 @@ div.sections-future div.section-future .img-future figcaption {
     height: 50vh;
   }
   .carrousel .projet_article .projet_info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: column-reverse;
     width: 30vw;
     height: 50vh;
     top: 0;
+    right: 0;
   }
-  .carrousel .projet_article .projet_info h2 {
+  .carrousel .projet_article .projet_info .projet_titre_desc {
+    margin-top: 2vh;
+    padding: 2vh;
+    height: 50vh;
+    top: 0;
+  }
+  .carrousel .projet_article .projet_info .projet_titre_desc h2 {
     width: 20vw;
     font-size: 18px;
   }
-  .carrousel .projet_article .projet_info div {
+  .carrousel .projet_article .projet_info .projet_titre_desc div {
     padding: 5px;
     font-size: 12px;
   }
-  .carrousel .projet_article .projet_info .carrousel_bouton {
-    text-align: center;
-  }
-  .carrousel .projet_article .projet_info .carrousel_bouton button {
-    cursor: pointer;
-    margin: 5px;
+  .carrousel .projet_article .projet_info .carrousel_bouton #bouton_gauche,
+  .carrousel .projet_article .projet_info .carrousel_bouton #bouton_droit {
+    width: 1.5em;
+    height: 1.5em;
+    border-top: solid 5px #1B72A6;
+    border-right: solid 5px #1B72A6;
+    border-radius: 10%;
+    margin: 1.5em;
   }
   .carrousel .projet_article .projet_image img {
     height: 50vh;
@@ -812,20 +822,25 @@ div.sections-future div.section-future .img-future figcaption {
   .carrousel .projet_article .projet_info {
     height: 80vh;
   }
-  .carrousel .projet_article .projet_info h2 {
+  .carrousel .projet_article .projet_info .projet_titre_desc {
+    height: 80vh;
+  }
+  .carrousel .projet_article .projet_info .projet_titre_desc h2 {
     width: 20vw;
     font-size: 24px;
   }
-  .carrousel .projet_article .projet_info div {
+  .carrousel .projet_article .projet_info .projet_titre_desc div {
     padding: 5px 20px;
     font-size: 18px;
   }
-  .carrousel .projet_article .projet_info .carrousel_bouton {
-    text-align: center;
-  }
-  .carrousel .projet_article .projet_info .carrousel_bouton button {
-    cursor: pointer;
-    margin: 5px;
+  .carrousel .projet_article .projet_info .carrousel_bouton #bouton_gauche,
+  .carrousel .projet_article .projet_info .carrousel_bouton #bouton_droit {
+    width: 2.5em;
+    height: 2.5em;
+    border-top: solid 8px #1B72A6;
+    border-right: solid 8px #1B72A6;
+    border-radius: 10%;
+    margin: 2.5em;
   }
   .carrousel .projet_article .projet_image img {
     height: 80vh;
