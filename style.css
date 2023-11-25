@@ -444,11 +444,13 @@ ul {
 
 #cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(3) {
   transition-delay: 1.5s;
+
 }
 
 #cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(4) {
   transition-delay: 2s;
 }
+
 
 #cc-pour-bouton-burger:checked ~ .barre-menu > .menu a:nth-child(5) {
   transition-delay: 2.5s;
@@ -491,6 +493,54 @@ html {
   background-color: rgb(14, 61, 109);
 }
 
+.titre-article {
+  position: relative;
+  font-size: 30px;
+  color: #9ACBDA;
+  text-transform: uppercase;
+  margin: 1em 20%;
+}
+
+.titre-article::before {
+  content: "";
+  position: absolute;
+  background-color: #F06543;
+  border-radius: 8px;
+  height: 3px;
+  width: 50%;
+  bottom: 0;
+  left: 0;
+}
+
+.titre-article::after {
+  content: "";
+  position: absolute;
+  background-color: #F06543;
+  border-radius: 8px;
+  height: 3px;
+  width: 30%;
+  bottom: -0.3em;
+  left: 0;
+}
+
+@media screen and (min-width: 554px) {
+  .titre-article {
+    font-size: 45px;
+  }
+  .titre-article::before {
+    height: 5px;
+    bottom: -0.2em;
+  }
+  .titre-article::after {
+    height: 5px;
+    bottom: -0.5em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .titre-article {
+    font-size: 65px;
+  }
+}
 /* --------------------------------------------- composant */
 .bloc_footer {
   background-color: #0E3D6D;
@@ -653,8 +703,36 @@ h3 {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+
 }
 .environnement_div .titre_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .titre_environnement h2 {
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.environnement_div .vv_environnement iframe {
+  width: 90vw;
+  height: 50vh;
+}
+
+.sessions-boutons-container > div {
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -696,7 +774,13 @@ button.session-button {
   border: none;
   margin: -2em;
   border-radius: 8px 8px 0 0;
-  font-size: clamp(1.5rem, 1rem + 2.6667vw, 2rem);
+
+  font-size: clamp(1.125rem, 0.5202rem + 3.871vw, 1.875rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 0.2em;
+
 }
 
 button.session-button:nth-of-type(1) {
@@ -771,11 +855,24 @@ button.session-button:hover {
 }
 
 @media screen and (min-width: 554px) {
+
+  .sessions-boutons-container > div {
+    width: 60%;
+  }
+  .sessions-boutons-container > div .session-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .sessions-boutons-container > div .session-buttons button.session-button {
+    font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
+    padding: 0 0.4em;
+
   .session-buttons {
     width: 52%;
   }
   button.session-button {
     font-size: 8vw;
+
   }
   .cours {
     width: 35%;
@@ -842,7 +939,7 @@ div.sections-future div.section-future p.texte-future {
 @media screen and (min-width: 554px) {
   div.sections-future {
     flex-direction: row;
-    margin: 3em 5%;
+    margin: 1em 5%;
   }
   div.sections-future div.section-future {
     justify-content: center;
