@@ -24,7 +24,7 @@
 
  
 
-<body class="site <?= (is_front_page()?'no-aside':'') ?> ">
+<body <?php body_class(); ?> class="site <?= (is_front_page()?'no-aside':'') ?> ">
    <header class="site__entete">
        <section class="menu_recherche">
            <div class="logomenu">
