@@ -20,18 +20,16 @@
             flex-direction: column;
             align-items: center;
             bottom: 0;
-            height: 20vh;
 
             .projet_titre_desc {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                //background-color: aqua;
-
 
                 //titre
                 h2 {
-                    //background-color: $orange__creation;
+                    display: flex;
+                    justify-content: center;
                     color: $orange__creation;
                     margin: 0;
                     padding: 0;
@@ -42,7 +40,10 @@
                 }
 
                 //description
-                div {
+                p {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
                     margin: 0;
                     padding: 5px;
                     font-size: 10px;
