@@ -22,49 +22,45 @@
 
 </head>
 
- 
-
-<body <?php body_class(); ?> class="site <?= (is_front_page()?'no-aside':'') ?> ">
+<body <?php body_class(); ?> class="site ">
    <header class="site__entete">
-       <section class="menu_recherche">
-           <div class="logomenu">
-               <?php the_custom_logo(); ?>
-            </div>
-        <!-- <input type="checkbox" id="chkMenu"> -->
-        
-        <div class="site__entete_suite">
+   <div class="site__entete_suite">
             <?php wp_nav_menu(array(
                 "menu" => "entete",
                 "container" => "nav"
                 )) ?>
+    <nav class="navbar">
+      <div class="navbar-container container">
+          <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+          <?php
+      
+      get_template_part("templates-parts/aside");
+      
+      ?>
+          </ul>
+          <div class="logomenu">
+               <?php the_custom_logo(); ?>
+            </div>
+      </div>
+  </nav>
+    
+        
 <!-- Bouton pour basculer entre les catégories -->
  
 <button id="toggle-category-button">Basculer les catégories</button>
          
               
-    </div>
+    
     
 </section>
-<div class="navbar">
-  <div class="container nav-container">
-  <input class="checkbox" type="checkbox" name="burger_menu" id="burger" />
-      <div class="hamburger-lines">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
-      </div>  
-    
-    <div class="menu-items">
-        <?php
-      
-      get_template_part("templates-parts/aside");
-      
-      ?>
-      
-    </div>
-  </div>
-</div>
-</nav>
+
+
 
 
 
