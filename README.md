@@ -23,11 +23,7 @@
     - pour créer une ancre HTML
 
 #### Éléments à évaluer
-- Intégration de l'interactivité client et des effets d'animation (1 point) 
-- Implémentation/vérification de la mise en page adaptative (1 point) 
-- Codification CSS/Sass (1 point) 
-- Codification interactivité/animations (1 point) 
-- Codification HTML/PHP/React (1 point)
+Les éléments à évaluer qui sont à prioriser pour notre site internet sont la codification CSS/Sass et HTML/PHP.
 
 #### Liens vers le prototype
 - https://eclipse.projetweb.lucaruggeri.ca/wp/
