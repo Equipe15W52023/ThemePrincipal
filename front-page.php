@@ -1,7 +1,7 @@
 <?php
 // Template pour la page d'accueil personnalisée
 get_header();
- 
+
 // Vérifiez si la catégorie actuelle est définie dans le stockage local
 if (isset($_COOKIE['currentCategory'])) {
     $currentCategory = $_COOKIE['currentCategory'];
@@ -22,6 +22,8 @@ $args = array(
 $custom_query = new WP_Query($args);
 ?>
 
+<body  <?php body_class(); ?>>
+    
 
  
 <!-- les sections/articles de la page -->
@@ -44,6 +46,9 @@ if ($custom_query->have_posts()) :
 else :
     echo 'Aucun article trouvé dans cette catégorie.';
 endif;
+?>
+</body>
+<?php  
  
 get_footer();
 ?>
