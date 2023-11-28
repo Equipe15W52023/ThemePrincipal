@@ -16,29 +16,25 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 /* --------------------------------------------- base */
-@import "base/link";
+
 @import "base/heading";
 // @import "base/espacement";
 // @import "base/list";
 @import "base/body";
-@import "base/markdown";
+
 
 /* --------------------------------------------- composant */
-@import "composant/bloc_flex";
 @import "composant/pied_page";
-@import "composant/site_entete";
-@import "composant/form";
-@import "composant/search";
-@import "composant/aside_cours";
+// @import "composant/site_entete";
 @import "composant/burger";
 @import "composant/professeurs";
 
-@import "composant/accueil";
+
+
 @import "composant/environnement";
+@import "composant/carrousel";
 
 @import "composant/grille_cours";
-@import "composant/future";
-
+@import "composant/futur";
 
 /*------------------------------------------layout */
-@import "layout/aside-contenu";

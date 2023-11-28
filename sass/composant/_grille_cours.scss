@@ -20,11 +20,14 @@
             color: $couleur__textePale;
             border: none;
             border-radius: 8px 8px 0 0;
-            font-size: clamp(0.5rem, 0.0625rem + 2.3333vw, 0.9375rem);
+            font-size: clamp(1.125rem, 0.5202rem + 3.871vw, 1.875rem);            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 0 0.2em;
         }
 
         // Couleurs des boutons sessions
-        button.session-button:nth-of-type(1) { z-index: 7; background-color: $bleu__pale; }
+        button.session-button:nth-of-type(1) { z-index: 7; background-color: #1e6b99; }
         button.session-button:nth-of-type(2) { z-index: 6; background-color: #0a5785; }
         button.session-button:nth-of-type(3) { z-index: 5; background-color: #07486f; }
         button.session-button:nth-of-type(4) { z-index: 4; background-color: #00395b; }
@@ -32,9 +35,19 @@
         button.session-button:nth-of-type(6) { z-index: 2; background-color: #001c2d; }
 
         // bouton (session) sélectionné
-        button.session-button .selection {
+        button.session-button.selection {
             background-color: $bleu__pale;
+            color: $fond__creation;
             z-index: 10;
+        }
+
+        .bouton-ferme {
+            display: none;
+        }
+
+        .bouton-ouvert {
+            display: block;
+            padding-right: 5%;
         }
 
         // hover des boutons (session)
@@ -45,6 +58,7 @@
 
     // SESSIONS
     .sessions-container {
+        position: relative;
         display: flex;
         justify-content: center;
         margin-bottom: 5em;
@@ -77,6 +91,42 @@
                 background-color: $bleu__moyen;
                 border-radius: 8px;
             }       
+
+            .cours:hover {
+                cursor: pointer;
+            }
+
+            // AFFICHAGE DU CONTENU DES COURS SÉLÉCTTIONNÉS OU NON
+            .cours-ferme .texte-cours {
+                display: none;
+            }
+
+            .cours-selection .texte-cours {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                background-color: #001c2d;
+                border-radius: 8px;
+                top: 10%;
+                left: 0;
+                width: 110%;
+                transform: translateX(-10%);
+                height: auto;
+                padding: 10%;
+            }
+
+            // Bouton pour fermer le contenu du cours
+            .bouton-x::before { 
+                content: 'X';
+                font-weight: bold;
+                position: relative;
+                top: 5%;
+                left: 47%;
+            }
+
+            .texte-cours, .cours h3{
+                text-align: center;
+            }
         }
     }
 }
@@ -85,6 +135,8 @@
 // ***************************** TABLETTE *********************************** //
 @media screen and (min-width: 554px) {
     .sessions-boutons-container > div {
+        width: 60%;
+
         // BOUTONS SESSION
         .session-buttons {
             display: grid;
@@ -92,6 +144,7 @@
 
             button.session-button {
                 font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
+                padding: 0 0.4em;
             }
         }
 
@@ -105,9 +158,17 @@
                     background-color: $bleu__moyen;
                     border-radius: 8px;
                 }
+
+                // AFFICHAGE DU CONTENU DES COURS
+                .cours-selection .texte-cours {
+                    top: 5px;
+                    left: 0;
+                    width: 60%;
+                    transform: translateX(26%);
+                    padding: 3%;
+                }
             }
         }
-        
     }
 }
 

@@ -1,65 +1,117 @@
-////////////////////////version creative/////////////////////////////
 
-.site__entete{
-    display: flex;
-    color: #9ACBDA;
-    background-color: #0E3D6D;
-    flex-direction: row;
-    flex-wrap: nowrap;
+html {
+  scroll-behavior: smooth;
 }
+header{
 
-/* Sidenav menu */
-.sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: -250px;
-    background-color: #e8e8e8;
-    padding-top: 60px;
-    transition: left 0.5s ease;
+
+
+  ul{
+      display: flex;
+
   }
-  
-  /* Sidenav menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
+  .barre-menu,
+  .menu{
+
+      color: #ddd;
+  }
+
+
+  /* Styles de base
+  =============================================== */
+  main.contenu {
+  min-height: 100%;
+  background-color: #eee;
+
+
+  /*Conteneur flex en colonne*/
+  display: flex;
+  flex-direction: row;
+
+  /*IMPORTANT - Empêcher que le contenu attrape les clics de souris...*/
+  pointer-events: none;
+
+  }
+
+    
+
+
+
+  nav{
+
+
+    a {
+    
+
+     text-decoration: none;
+      color: white;
+    
+    }
+
+
+    li {
+      min-height: 100%;
+      display: flex;
+
+      flex-direction: row;
+      color: rgb(243, 247, 247); 
+      border-radius: 25px;
+      padding: 20px;
+      width: 200px;
+      height: 10%;
+
+    }
+    ul{
+      margin-top: 0;
+
+    }
+
+  }
+  .navbar {
+    width: 100%;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    @media screen and (min-width: 768px) {
+    display: none;
+    }
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+           
+  .navbar .menu-items {
+    display: flex;
+    .site__aside{
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+
+  .navbar .nav-container li {
+    list-style: none;
+  }
+
+  .navbar .nav-container a {
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    color: #0e2431;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .navbar .nav-container a:hover{
+    font-weight: bolder;
+  }
+
+  .nav-container {
     display: block;
-    transition: 0.3s;
+    position: relative;
+    height: 60px;
+    @media screen and (min-width: 992px){
+    display: none;
+    }
   }
-  
-  .sidenav a:hover {
-    color: #111;
-  }
-  
-  .sidenav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Active class */
-  .sidenav.active {
-    left: 0;
-  }
-  
-  /* Close btn */
-  .sidenav .close {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  
-  /* Icône burger */
-  .burger-icon span {
-    display: block;
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
-    border-radius: 50px;
-  }
+    
+ 
+}
