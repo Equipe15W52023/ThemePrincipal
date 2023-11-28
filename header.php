@@ -22,88 +22,47 @@
 
 </head>
 
- 
-
-<?php
-
-// $nouvelle_classe = "";
-
-// if (is_front_page()){
-
-//     $nouvelle_classe = "no-aside";
-
-// }
-
-?>
- 
-
-<body class="site">
-
-  <header class="site__entete">
-   <div id="mySidenav" class="sidenav">
-  <a id="closeBtn" href="#" class="close">×</a>
-  <ul>
-  </ul>
-</div>
-
-<div class="container nav-container">
-  <input class="checkbox" type="checkbox" name="burger_menu" id="burger" />
-      <div class="hamburger-lines">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
-      </div>  
-   
-    <div class="menu-items">
-        <?php
-     
-      get_template_part("templates-parts/aside");
-     
-      ?>
-     
-    </div>
-  </div>
-       <section class="menu_recherche">
-
-           <div class="logomenu">
-
-               <?php the_custom_logo(); ?>
-
-            </div>
-
-        <!-- <input type="checkbox" id="chkMenu"> -->
-
-        <div class="site__entete_suite">
-
+<body <?php body_class(); ?> class="site ">
+   <header class="site__entete">
+   <div class="site__entete_suite">
             <?php wp_nav_menu(array(
-
                 "menu" => "entete",
-
                 "container" => "nav"
-
                 )) ?>
-
-        <?php  get_search_form() ?>
-
-        <!-- <label class="burger" for="chkMenu">
-
-            <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" width="50" height="50"></label> -->
-
-            <nav>
-
-            <section id="site__header__titre">
-
+    <nav class="navbar">
+      <div class="navbar-container container">
+          <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+          <?php
+      
+      get_template_part("templates-parts/aside");
+      
+      ?>
+          </ul>
+          <div class="logomenu">
+               <?php the_custom_logo(); ?>
+            </div>
+      </div>
+  </nav>
+    
+        
+<!-- Bouton pour basculer entre les catégories -->
  
-
-<h1><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
-
-<h2><?= bloginfo('description') ?></h2>
-
+<button id="toggle-category-button">Basculer les catégories</button>
+         
+              
+    
+    
 </section>
 
-    </div>
 
-</section>
 
-<script src="header.js"></script>
-</header>
+
+
+
+    

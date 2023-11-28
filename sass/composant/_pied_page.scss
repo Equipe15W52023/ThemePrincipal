@@ -1,7 +1,8 @@
 .bloc_footer {
-    background-color: $fond__creation;
-    color: #E8E8E8;
-   
+    background-color: $fond__prog;
+    position: static;
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: 9%;
     display: flex;
@@ -10,39 +11,37 @@
     justify-content: space-between;
     font-family: 'montserrat', sans-serif;
     font-size: 0.7em;
-    z-index: 100;
-
-    @media screen and (min-width: $largeur__tablette) {
-        height: 11%;
-        font-size: 0.8em;
-    }
-
-    @media screen and (min-width: $largeur__bureau) {
-        height: 15%;
-        font-size: 1em;
-    }
 
     .footer_adresse {
-        background-color: $orange__creation;
         width: 60%;
+        display: block;
+        margin: 5px;
 
-        -webkit-border-radius: 40px;
-        border-radius: 50px;
-        margin: 5px 0px 5px 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        .adresse_gauche,
+        .adresse_droit {
+            margin: 5px;
+            display: block;
 
+            .adresse1,
+            .adresse2,
+            .adresse3,
+            .adresse4 {
+                color: $orange__creation ;
+                list-style: none;
+                margin: 5px 0;
 
-        a {
-            text-decoration: none;
-            color: #E8E8E8;
-            margin: 3px 0;
-        }
+                a {
+                    color: $bleu__pale;
+                    margin: 5px 0;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
 
-        a:hover {
-            color: $bleu__moyen;
+                a:hover {
+                    color: $orange__creation;
+                }
+
+            }
         }
     }
 
@@ -50,25 +49,96 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $orange__creation;
         width: 35%;
 
         a {
-            text-decoration: none;
-            margin: 5px;
+            margin: 0 1vh;
 
             svg {
-                height: 2em;
+                color: $orange__creation;
+                height: 2.5em;
+            }
 
-                @media screen and (min-width: $largeur__tablette) {
-                    height: 2.5em;
-                }
+            svg:hover {
+                transition: height 1s;
+                height: 3em;
+            }
 
-                @media screen and (min-width: $largeur__bureau) {
-                    height: 3em;
-                }
+        }
+
+    }
+}
+
+@media screen and (min-width: $largeur__tablette) {
+    .bloc_footer {
+        height: 11%;
+        font-size: 0.8em;
+
+        .footer_adresse {
+            flex-direction: row;
+            justify-content: flex-start;
+
+            .adresse1,
+            .adresse2,
+            .adresse3,
+            .adresse4 {
+                padding: 2px;
             }
         }
 
+        .footer_logo {
+            a {
+                margin: 0 2vh;
+
+                svg {
+                    height: 3em;
+                }
+
+                svg:hover {
+                    height: 4em;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: $largeur__bureau) {
+    .bloc_footer {
+        height: 15%;
+        font-size: 1.2em;
+
+        .footer_adresse {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+
+        .footer_adresse {
+            flex-direction: row;
+
+            .adresse1,
+            .adresse2,
+            .adresse3,
+            .adresse4 {
+                padding: 5px;
+            }
+        }
+
+        .footer_logo {
+            a {
+                margin: 0 5vh;
+
+                svg {
+                    height: 3.5em;
+                }
+
+                svg:hover {
+                    height: 4.5em;
+                }
+            }
+        }
     }
 }

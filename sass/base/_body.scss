@@ -5,5 +5,62 @@ html {
 }
 
 .site{
-	background-color:rgb(14, 61, 109);
+	background-color:#0e3d6d;
+}
+
+//                          TITRE DES SECTIONS
+// ****************************** MOBILE ************************************ //
+.titre-article {
+	position: relative;
+    font-size: 30px;
+    color: #9ACBDA;
+    text-transform: uppercase;
+    margin: 1em 20%;
+}
+
+// Ligne décoratrice
+.titre-article::before {
+	content: "";
+	position: absolute;
+	background-color: $orange__creation;
+	border-radius: 8px;
+	height: 3px;
+	width: 50%;
+	bottom: 0;
+	left: 0;
+}
+.titre-article::after {
+	content: "";
+    position: absolute;
+    background-color: $orange__creation;
+    border-radius: 8px;
+    height: 3px;
+    width: 30%;
+    bottom: -0.3em;
+    left: 0;
+}
+
+
+// ***************************** TABLETTE *********************************** //
+@media screen and (min-width: 554px) {
+	.titre-article {
+		font-size: 45px;
+	}
+
+	.titre-article::before {
+		height: 5px;
+		bottom: -0.2em;
+	}
+
+	.titre-article::after {
+		height: 5px;
+		bottom: -0.5em;
+	}
+}
+
+// ****************************** BUREAU ************************************ //
+@media screen and (min-width: 992px) {
+	.titre-article {
+		font-size: 65px;
+	}
 }
