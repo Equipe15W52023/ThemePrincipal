@@ -202,7 +202,7 @@ input[type="checkbox"]:checked body{
       .navbar-container {
         display: block;
         position: relative;
-        height: 64px;
+        height: 80px;
       }
     
       .navbar-container input[type="checkbox"] {
@@ -218,10 +218,10 @@ input[type="checkbox"]:checked body{
     
       .navbar-container .hamburger-lines {
         display: block;
-        height: 23px;
-        width: 35px;
+        height: 30px;
+        width: 42px;
         position: absolute;
-        top: 17px;
+        top: 12px;
         left: 20px;
         z-index: 2;
         display: flex;
@@ -231,10 +231,13 @@ input[type="checkbox"]:checked body{
     
       .navbar-container .hamburger-lines .line {
         display: block;
-        height: 4px;
+        height: 8px;
         width: 100%;
         border-radius: 10px;
         background: orangered;
+      }
+      .navbar-container .hamburger-lines .line :hover{
+        background: red;
       }
     
       .navbar-container .hamburger-lines .line1 {
@@ -254,7 +257,7 @@ input[type="checkbox"]:checked body{
     
       .navbar .menu-items {
         padding-top: 100px;
-        background: #0e3d6dc6;
+        background: #0e3d6df2;
         height: 100vh;
         max-width: 300px;
         transform: translate(-150%);

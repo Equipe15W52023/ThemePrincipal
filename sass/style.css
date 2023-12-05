@@ -354,12 +354,11 @@ h3 {
 
 li {
   min-height: 100%;
-  background-color: lightblue;
+  background-color: #1B72A6;
   display: flex;
   flex-direction: row;
   color: azure;
   border-radius: 25px;
-  border: 2px solid orangered;
   padding: 20px;
   width: 200px;
   height: 10%;
@@ -901,7 +900,7 @@ input[type=checkbox]:checked body {
   .navbar-container {
     display: block;
     position: relative;
-    height: 64px;
+    height: 80px;
   }
   .navbar-container input[type=checkbox] {
     position: absolute;
@@ -915,10 +914,10 @@ input[type=checkbox]:checked body {
   }
   .navbar-container .hamburger-lines {
     display: block;
-    height: 23px;
-    width: 35px;
+    height: 30px;
+    width: 42px;
     position: absolute;
-    top: 17px;
+    top: 12px;
     left: 20px;
     z-index: 2;
     display: flex;
@@ -927,10 +926,13 @@ input[type=checkbox]:checked body {
   }
   .navbar-container .hamburger-lines .line {
     display: block;
-    height: 4px;
+    height: 8px;
     width: 100%;
     border-radius: 10px;
     background: orangered;
+  }
+  .navbar-container .hamburger-lines .line :hover {
+    background: red;
   }
   .navbar-container .hamburger-lines .line1 {
     transform-origin: 0% 0%;
@@ -945,7 +947,7 @@ input[type=checkbox]:checked body {
   }
   .navbar .menu-items {
     padding-top: 100px;
-    background: rgba(14, 61, 109, 0.7764705882);
+    background: rgba(14, 61, 109, 0.9490196078);
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
