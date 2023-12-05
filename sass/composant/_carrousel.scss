@@ -42,56 +42,60 @@
                 }
             }
 
-            //boutons
-            .carrousel_bouton {
+            .bouton_image {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                height: 25vh;
-                position: absolute;
+                flex-wrap: wrap;
 
-                #bouton_gauche,
-                #bouton_droit {
-                    background-color: transparent;
-                    cursor: pointer;
-                    width: 3em;
-                    height: 3em;
-                    border-top: solid 6px $bleu__moyen;
-                    border-right: solid 6px $bleu__moyen;
-                    border-left: none;
-                    border-bottom: none;
-                    border-radius: 10%;
-                    margin: 2em;
-                }
-
-                #bouton_gauche:hover,
-                #bouton_droit:hover {
-                    border-color: $orange__creation;
-                }
-
-                #bouton_gauche:active,
-                #bouton_droit:active {
-                    border-color: $orange__creation;
-                    background-color: $fond__creation;
-                }
-
-                #bouton_gauche {
-                    transform: rotate(225deg);
-                }
-
-                #bouton_droit {
-                    transform: rotate(45deg);
-                }
-            }
-
-            //images
-            .projet_image {
-
-                img {
+                //boutons
+                .carrousel_bouton {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-content: center;
                     width: 100%;
-                    object-fit: cover;
-                    height: 25vh;
+                    height: 35vh;
+                    position: absolute;
+                    z-index: 2;
+
+                    #bouton_gauche,
+                    #bouton_droit {
+                        background-color: transparent;
+                        cursor: pointer;
+                        width: 3em;
+                        height: 3em;
+                        border-top: solid 6px $bleu__moyen;
+                        border-right: solid 6px $bleu__moyen;
+                        border-left: none;
+                        border-bottom: none;
+                        border-radius: 10%;
+                        margin: 2em;
+                    }
+
+                    #bouton_gauche:hover,
+                    #bouton_droit:hover {
+                        border-color: $orange__creation;
+                    }
+
+                    #bouton_gauche:active,
+                    #bouton_droit:active {
+                        border-color: red;
+                    }
+
+                    #bouton_gauche {
+                        transform: rotate(225deg);
+                    }
+
+                    #bouton_droit {
+                        transform: rotate(45deg);
+                    }
+                }
+
+                //images
+                .projet_image {
+                    height: 35vh;
+
+                    img {}
                 }
             }
         }
@@ -101,64 +105,63 @@
 ///////////////////////////////////////////
 @media screen and (min-width: $largeur__tablette) {
     .carrousel {
-        height: 50vh;
+        height: 60vh;
         width: 100%;
 
         .projet_article {
             width: 100%;
-            height: 50vh;
+            height: 60vh;
 
             .bloc_projet {
                 display: flex;
                 flex-direction: row;
+                justify-content: flex-end;
                 width: 100%;
-                height: 50vh;
+                height: 60vh;
 
-                .projet_info {
-                    flex-direction: column-reverse;
+                .projet_titre_desc {
                     width: 40vw;
-                    height: 50vh;
-                    top: 0;
-                    right: 0;
 
-                    .projet_titre_desc {
-                        margin-top: 2vh;
-                        padding: 2vh;
-                        height: 50vh;
-
-                        //titre
-                        h2 {
-                            width: 20vw;
-                            font-size: 18px;
-                        }
-
-                        //description
-                        div {
-                            padding: 5px;
-                            font-size: 12px;
-                        }
+                    //titre
+                    h2 {
+                        width: 20vw;
+                        font-size: 18px;
                     }
+
+                    //description
+                    div {
+                        padding: 5px;
+                        font-size: 12px;
+                    }
+                }
+
+                .bouton_image {
+                    justify-content: center;
+                    height: 60vh;
 
                     //boutons
                     .carrousel_bouton {
+                        height: 60vh;
+                        justify-content: space-around;
+
 
                         #bouton_gauche,
                         #bouton_droit {
-                            width: 1.5em;
-                            height: 1.5em;
-                            border-top: solid 5px $bleu__moyen;
-                            border-right: solid 5px $bleu__moyen;
+                            width: 2em;
+                            height: 2em;
+                            border-top: solid 7px $bleu__moyen;
+                            border-right: solid 7px $bleu__moyen;
                             border-radius: 10%;
-                            margin: 2em;
                         }
                     }
                 }
 
                 //images
                 .projet_image {
-                    img {
-                        height: 50vh;
-                    }
+                    height: 60vh;
+                    width: 60vw;
+
+                    img {}
                 }
             }
         }
@@ -168,36 +171,35 @@
 //////////////////////////////////////
 @media screen and (min-width: $largeur__bureau) {
     .carrousel {
-        height: 80vh;
+        height: 90vh;
         width: 100%;
 
         .projet_article {
-            height: 80vh;
+            height: 90vh;
             width: 100%;
 
             .bloc_projet {
-                height: 80vh;
+                height: 90vh;
                 width: 100%;
 
-                .projet_info {
-                    height: 80vh;
+                .projet_titre_desc {
                     width: 30vw;
 
-                    .projet_titre_desc {
-                        height: 80vh;
-
-                        //titre
-                        h2 {
-                            width: 20vw;
-                            font-size: 24px;
-                        }
-
-                        //description
-                        div {
-                            padding: 5px 20px;
-                            font-size: 18px;
-                        }
+                    //titre
+                    h2 {
+                        width: 25vw;
+                        font-size: 24px;
                     }
+
+                    //description
+                    div {
+                        padding: 5px 20px;
+                        font-size: 18px;
+                    }
+                }
+
+                .bouton_image {
+                    height: 90vh;
 
                     //boutons
                     .carrousel_bouton {
@@ -216,9 +218,11 @@
 
                 //images
                 .projet_image {
+                    width: 100%;
+                    height: 90vh;
 
                     img {
-                        height: 80vh;
+                        //object-fit: contain;
                     }
                 }
             }

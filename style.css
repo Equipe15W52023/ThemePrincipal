@@ -1089,16 +1089,23 @@ ul#menu-menu-1 {
   padding: 5px;
   font-size: 10px;
 }
-.carrousel .projet_article .bloc_projet .carrousel_bouton {
+.carrousel .projet_article .bloc_projet .bouton_image {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 25vh;
-  position: absolute;
+  flex-wrap: wrap;
 }
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche,
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit {
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  height: 35vh;
+  position: absolute;
+  z-index: 2;
+}
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche,
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
   background-color: transparent;
   cursor: pointer;
   width: 3em;
@@ -1110,105 +1117,100 @@ ul#menu-menu-1 {
   border-radius: 10%;
   margin: 2em;
 }
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche:hover,
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit:hover {
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche:hover,
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit:hover {
   border-color: #F06543;
 }
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche:active,
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit:active {
-  border-color: #F06543;
-  background-color: #0E3D6D;
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche:active,
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit:active {
+  border-color: red;
 }
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche {
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche {
   transform: rotate(225deg);
 }
-.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit {
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
   transform: rotate(45deg);
 }
-.carrousel .projet_article .bloc_projet .projet_image img {
-  width: 100%;
-  object-fit: cover;
-  height: 25vh;
+.carrousel .projet_article .bloc_projet .bouton_image .projet_image {
+  height: 35vh;
 }
-
 @media screen and (min-width: 768px) {
   .carrousel {
-    height: 50vh;
+    height: 60vh;
     width: 100%;
   }
   .carrousel .projet_article {
     width: 100%;
-    height: 50vh;
+    height: 60vh;
   }
   .carrousel .projet_article .bloc_projet {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
   }
-  .carrousel .projet_article .bloc_projet .projet_info {
-    flex-direction: column-reverse;
+  .carrousel .projet_article .bloc_projet .projet_titre_desc {
     width: 40vw;
-    height: 50vh;
-    top: 0;
-    right: 0;
   }
-  .carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc {
-    margin-top: 2vh;
-    padding: 2vh;
-    height: 50vh;
-  }
-  .carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc h2 {
+  .carrousel .projet_article .bloc_projet .projet_titre_desc h2 {
     width: 20vw;
     font-size: 18px;
   }
-  .carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc div {
+  .carrousel .projet_article .bloc_projet .projet_titre_desc div {
     padding: 5px;
     font-size: 12px;
   }
-  .carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_gauche,
-  .carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_droit {
-    width: 1.5em;
-    height: 1.5em;
-    border-top: solid 5px #1B72A6;
-    border-right: solid 5px #1B72A6;
-    border-radius: 10%;
-    margin: 2em;
+  .carrousel .projet_article .bloc_projet .bouton_image {
+    justify-content: center;
+    height: 60vh;
   }
-  .carrousel .projet_article .bloc_projet .projet_image img {
-    height: 50vh;
+  .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton {
+    height: 60vh;
+    justify-content: space-around;
+  }
+  .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche,
+  .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
+    width: 2em;
+    height: 2em;
+    border-top: solid 7px #1B72A6;
+    border-right: solid 7px #1B72A6;
+    border-radius: 10%;
+  }
+  .carrousel .projet_article .bloc_projet .projet_image {
+    height: 60vh;
+    width: 60vw;
   }
 }
 @media screen and (min-width: 996px) {
   .carrousel {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
   }
   .carrousel .projet_article {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
   }
   .carrousel .projet_article .bloc_projet {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
   }
-  .carrousel .projet_article .bloc_projet .projet_info {
-    height: 80vh;
+  .carrousel .projet_article .bloc_projet .projet_titre_desc {
     width: 30vw;
   }
-  .carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc {
-    height: 80vh;
-  }
-  .carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc h2 {
-    width: 20vw;
+  .carrousel .projet_article .bloc_projet .projet_titre_desc h2 {
+    width: 25vw;
     font-size: 24px;
   }
-  .carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc div {
+  .carrousel .projet_article .bloc_projet .projet_titre_desc div {
     padding: 5px 20px;
     font-size: 18px;
   }
-  .carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_gauche,
-  .carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_droit {
+  .carrousel .projet_article .bloc_projet .bouton_image {
+    height: 90vh;
+  }
+  .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche,
+  .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
     width: 2.5em;
     height: 2.5em;
     border-top: solid 8px #1B72A6;
@@ -1216,8 +1218,9 @@ ul#menu-menu-1 {
     border-radius: 10%;
     margin: 2.5em;
   }
-  .carrousel .projet_article .bloc_projet .projet_image img {
-    height: 80vh;
+  .carrousel .projet_article .bloc_projet .projet_image {
+    width: 100%;
+    height: 90vh;
   }
 }
 .sessions-boutons-container > div {
