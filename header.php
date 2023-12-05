@@ -22,81 +22,47 @@
 
 </head>
 
- 
-
-<?php
-
-// $nouvelle_classe = "";
-
-// if (is_front_page()){
-
-//     $nouvelle_classe = "no-aside";
-
-// }
-
-?>
- 
-
-<body class="site">
-
+<header class="site ">
    <header class="site__entete">
-   <div id="mySidenav" class="sidenav">
-  <a id="closeBtn" href="#" class="close">×</a>
-  <ul>
-    <li><a href="#">A propos</a></li>
-    <li><a href="#">Nos services</a></li>
-    <li><a href="#">Témoignages</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</div>
-
-<a href="#" id="openBtn">
-  <span class="burger-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-</a>
-       <section class="menu_recherche">
-
-           <div class="logomenu">
-
-               <?php the_custom_logo(); ?>
-
-            </div>
-
-        <!-- <input type="checkbox" id="chkMenu"> -->
-
-        <div class="site__entete_suite">
-
+   <div class="site__entete_suite">
             <?php wp_nav_menu(array(
-
                 "menu" => "entete",
-
                 "container" => "nav"
-
                 )) ?>
-
-        <?php  get_search_form() ?>
-
-        <!-- <label class="burger" for="chkMenu">
-
-            <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" width="50" height="50"></label> -->
-
-            <nav>
-
-            <section id="site__header__titre">
-
+    <nav class="navbar">
+      <div class="navbar-container container">
+          <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+          <?php
+      
+      get_template_part("templates-parts/aside");
+      
+      ?>
+          </ul>
+          <div class="logomenu">
+               <?php the_custom_logo(); ?>
+            </div>
+      </div>
+  </nav>
+    
+        
+<!-- Bouton pour basculer entre les catégories -->
  
-
-<h1><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
-
-<h2><?= bloginfo('description') ?></h2>
-
+<button id="toggle-category-button">Basculer les catégories</button>
+         
+              
+    
+    
 </section>
 
-    </div>
+            </header>
 
-</section>
 
-</header>
+
+
+    
