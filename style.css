@@ -317,8 +317,6 @@ template {
 }
 
 /* --------------------------------------------- base */
-
-=======
 html {
   scroll-behavior: smooth;
 }
@@ -335,13 +333,11 @@ header .menu {
   color: #ddd;
 }
 header main.contenu {
-
   min-height: 100%;
   background-color: #eee;
   /*Conteneur flex en colonne*/
   display: flex;
   flex-direction: row;
-
   /*IMPORTANT - Empêcher que le contenu attrape les clics de souris...*/
   pointer-events: none;
 }
@@ -361,7 +357,6 @@ header nav li {
 }
 header nav ul {
   margin-top: 0;
-
 }
 header .navbar {
   width: 100%;
@@ -376,7 +371,6 @@ header .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 62px;
 }
 header .navbar .menu-items {
   display: flex;
@@ -463,7 +457,6 @@ html {
   .titre-article {
     font-size: 65px;
   }
-
 }
 /* --------------------------------------------- composant */
 .bloc_footer {
@@ -619,55 +612,6 @@ html {
   z-index: 150;
 }
 
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 62px;
-}
-
-.navbar .menu-items {
-  display: flex;
-}
-.navbar .menu-items .site__aside {
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.navbar .nav-container li {
-  list-style: none;
-}
-
-.navbar .nav-container a {
-  text-decoration: none;
-  color: #0e2431;
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-
-.navbar .nav-container a:hover {
-  font-weight: bolder;
-}
-
-.nav-container {
-  display: block;
-  position: relative;
-  height: 60px;
-}
-
-.nav-container .checkbox {
-  position: absolute;
-  display: block;
-  height: 32px;
-  width: 32px;
-  top: 20px;
-  left: 20px;
-  z-index: 5;
-  opacity: 0;
-  cursor: pointer;
-}
-
-
 .nav-container .hamburger-lines {
   display: block;
   height: 26px;
@@ -675,34 +619,28 @@ html {
   position: absolute;
   top: 17px;
   left: 20px;
-
   z-index: 120;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 @media screen and (min-width: 992px) {
   .nav-container .hamburger-lines {
     display: none;
   }
 }
 
-
 .nav-container .hamburger-lines .line {
   display: block;
   height: 4px;
   width: 100%;
   border-radius: 10px;
-
   background: orangered;
 }
 @media screen and (min-width: 992px) {
   .nav-container .hamburger-lines .line {
     display: none;
   }
-
 }
 
 .nav-container .hamburger-lines .line1 {
@@ -720,12 +658,11 @@ html {
 }
 
 .navbar .menu-items {
-
-  background-color: rgb(75, 75, 75);
+  background-color: #0E3D6D;
   padding-top: 120px;
-  height: 100vh;
+  height: 600vh;
   width: 100%;
-
+  top: 0;
   transform: translateX(-150%);
   display: flex;
   flex-direction: column;
@@ -742,7 +679,7 @@ html {
   color: azure;
   border-radius: 25px;
   padding: 20px;
-  width: 200px;
+  width: 50%;
   height: 10%;
   justify-content: center;
   z-index: 150;
@@ -754,7 +691,6 @@ html {
 
 input[type=checkbox]:checked body {
   overflow: hidden;
-
 }
 
 .nav-container input[type=checkbox]:checked ~ .menu-items {
@@ -830,13 +766,18 @@ input[type=checkbox]:checked body {
 .menu-items a:hover {
   color: #117964;
   transition: color 0.3s ease-in-out;
-
 }
 
 .logo {
   order: 1;
   font-size: 2.3rem;
   margin-bottom: 0.5rem;
+}
+
+ul#menu-menu-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* ......../ media query /.......... */
@@ -961,14 +902,10 @@ input[type=checkbox]:checked body {
   justify-content: center;
   color: #E8E8E8;
   position: relative;
-  left: 10%;
-  flex-wrap: wrap;
-  width: 80%;
   padding: 1em;
   border-radius: 0 0 8px 8px;
 }
 .Section-prof .professeur {
-  background-color: red;
   width: 75%;
   margin: 1em;
   padding: 1em;
@@ -984,7 +921,7 @@ input[type=checkbox]:checked body {
 .environnement_div .vv_environnement iframe {
   width: 80vw;
   height: 50vh;
-  margin: 2%;4
+  margin: 2%;
   border-radius: 30px;
   border: 5px solid #1B72A6;
 }
@@ -1028,10 +965,8 @@ input[type=checkbox]:checked body {
   align-items: center;
 }
 .carrousel .projet_article .projet_info .projet_titre_desc h2 {
-
   display: flex;
   justify-content: center;
-
   color: #F06543;
   margin: 0;
   padding: 0;
@@ -1040,7 +975,6 @@ input[type=checkbox]:checked body {
   font-size: 18px;
   border-radius: 50px;
 }
-
 .carrousel .projet_article .projet_info .projet_titre_desc p {
   display: flex;
   flex-wrap: wrap;
@@ -1188,7 +1122,6 @@ input[type=checkbox]:checked body {
   flex-direction: row;
   justify-content: center;
   padding: 0 0.2em;
-
 }
 .sessions-boutons-container > div .session-buttons button.session-button:nth-of-type(1) {
   z-index: 7;
@@ -1292,7 +1225,6 @@ input[type=checkbox]:checked body {
 }
 
 @media screen and (min-width: 554px) {
-
   .sessions-boutons-container > div {
     width: 60%;
   }
@@ -1304,7 +1236,6 @@ input[type=checkbox]:checked body {
     font-size: clamp(0.9375rem, -0.2083rem + 3.3333vw, 1.875rem);
     padding: 0 0.4em;
   }
-
   .sessions-boutons-container > div .sessions-container .session .cours {
     width: 35%;
     margin: 1em;
