@@ -318,24 +318,17 @@ template {
 }
 
 /* --------------------------------------------- base */
-
-html {
-  scroll-behavior: smooth;
+/* Normalisation supplémentaire
+       =============================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  /* Styles de base
-  =============================================== */
-}
-header ul {
-  display: flex;
-}
-header .barre-menu,
-header .menu {
-  color: #ddd;
-}
-header main.contenu {
-
+/* Styles de base
+=============================================== */
+main.contenu {
   min-height: 100%;
   background-color: #eee;
   /*Conteneur flex en colonne*/
@@ -350,8 +343,13 @@ nav a {
   padding: 0.5rem 1rem;
   margin-bottom: 0.2rem;
   text-decoration: none;
-  color: navy;
+  color: whitesmoke;
   text-align: center;
+}
+
+nav a:hover {
+  color: orangered;
+  transition: color 0.3s ease-in-out;
 }
 
 h1,
@@ -361,21 +359,21 @@ h3 {
 
 li {
   min-height: 100%;
-  background-color: lightblue;
+  background-color: #1B72A6;
   display: flex;
   flex-direction: row;
-  color: azure;
-  border-radius: 25px;
-  border: 2px solid orangered;
-  padding: 20px;
+  color: whitesmoke;
+  padding: 1%;
   width: 200px;
   height: 10%;
   justify-content: center;
 }
 
-header nav ul {
-  margin-top: 0;
-
+ul {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
 
 .navbar {
@@ -392,6 +390,7 @@ header nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 62px;
 }
 
 .navbar .menu-items {
@@ -789,7 +788,7 @@ html {
 
 .navbar .menu-items li {
   min-height: 100%;
-  background-color: lightblue;
+  background-color: #1B72A6;
   display: flex;
   flex-direction: row;
   color: azure;
@@ -874,13 +873,13 @@ input[type=checkbox]:checked body {
 
 .menu-items a {
   text-decoration: none;
-  color: #444;
+  color: whitesmoke;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
 .menu-items a:hover {
-  color: #117964;
+  color: orangered;
   transition: color 0.3s ease-in-out;
 }
 
