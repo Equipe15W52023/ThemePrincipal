@@ -318,17 +318,24 @@ template {
 }
 
 /* --------------------------------------------- base */
-/* Normalisation supplémentaire
-       =============================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* Styles de base
-=============================================== */
-main.contenu {
+header {
+  /* Styles de base
+  =============================================== */
+}
+header ul {
+  display: flex;
+}
+header .barre-menu,
+header .menu {
+  color: #ddd;
+}
+header main.contenu {
+
   min-height: 100%;
   background-color: #eee;
   /*Conteneur flex en colonne*/
@@ -366,11 +373,9 @@ li {
   justify-content: center;
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
+header nav ul {
+  margin-top: 0;
+
 }
 
 .navbar {
@@ -387,7 +392,6 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 62px;
 }
 
 .navbar .menu-items {
@@ -791,7 +795,7 @@ html {
   color: azure;
   border-radius: 25px;
   padding: 20px;
-  width: 200px;
+  width: 50%;
   height: 10%;
   justify-content: center;
   z-index: 150;
@@ -884,6 +888,12 @@ input[type=checkbox]:checked body {
   order: 1;
   font-size: 2.3rem;
   margin-bottom: 0.5rem;
+}
+
+ul#menu-menu-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* ......../ media query /.......... */
@@ -1015,7 +1025,6 @@ input[type=checkbox]:checked body {
   border-radius: 0 0 8px 8px;
 }
 .Section-prof .professeur {
-  background-color: red;
   width: 75%;
   margin: 1em;
   padding: 1em;
