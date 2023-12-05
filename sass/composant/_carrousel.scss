@@ -11,72 +11,77 @@
             display: flex;
             flex-direction: column;
 
-            .projet_info {
-                background-color: rgb(2, 18, 45);
+            .projet_titre_desc {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                background-color: rgb(2, 18, 45);
+                padding: 3%;
 
-                .projet_titre_desc {
+                //titre
+                h2 {
                     display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    //titre
-                    h2 {
-                        display: flex;
-                        justify-content: center;
-                        color: $bleu__pale;
-                        margin: 0;
-                        padding: 0;
-                        text-align: center;
-                        width: 60vw;
-                        font-size: 18px;
-                        border-radius: 50px;
-                    }
-
-                    //description
-                    p {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        margin: 0;
-                        padding: 5px;
-                        font-size: 10px;
-                    }
+                    justify-content: center;
+                    color: $bleu__pale;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                    width: 60vw;
+                    font-size: 18px;
+                    border-radius: 50px;
                 }
 
-                //boutons
-                .carrousel_bouton {
-                    text-align: center;
+                //description
+                p {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin: 0;
+                    padding: 5px;
+                    font-size: 10px;
+                }
+            }
 
-                    #bouton_gauche,
-                    #bouton_droit {
-                        background-color: transparent;
-                        cursor: pointer;
-                        width: 1.5em;
-                        height: 1.5em;
-                        border-top: solid 4px $bleu__moyen;
-                        border-right: solid 4px $bleu__moyen;
-                        border-left: none;
-                        border-bottom: none;
-                        border-radius: 5%;
-                        transform: rotate(225deg);
-                        margin: 1.3em 2em;
-                    }
+            //boutons
+            .carrousel_bouton {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 25vh;
+                position: absolute;
 
-                    #bouton_gauche:hover,
-                    #bouton_droit:hover {
-                        border-color: $orange__creation;
-                    }
+                #bouton_gauche,
+                #bouton_droit {
+                    background-color: transparent;
+                    cursor: pointer;
+                    width: 3em;
+                    height: 3em;
+                    border-top: solid 6px $bleu__moyen;
+                    border-right: solid 6px $bleu__moyen;
+                    border-left: none;
+                    border-bottom: none;
+                    border-radius: 10%;
+                    margin: 2em;
+                }
 
-                    #bouton_gauche {
-                        transform: rotate(225deg);
-                    }
+                #bouton_gauche:hover,
+                #bouton_droit:hover {
+                    border-color: $orange__creation;
+                }
 
-                    #bouton_droit {
-                        transform: rotate(45deg);
-                    }
+                #bouton_gauche:active,
+                #bouton_droit:active {
+                    border-color: $orange__creation;
+                    background-color: $fond__creation;
+                }
+
+                #bouton_gauche {
+                    transform: rotate(225deg);
+                }
+
+                #bouton_droit {
+                    transform: rotate(45deg);
                 }
             }
 

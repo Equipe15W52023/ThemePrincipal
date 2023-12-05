@@ -317,22 +317,17 @@ template {
 }
 
 /* --------------------------------------------- base */
-html {
-  scroll-behavior: smooth;
+/* Normalisation supplémentaire
+       =============================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  /* Styles de base
-  =============================================== */
-}
-header ul {
-  display: flex;
-}
-header .barre-menu,
-header .menu {
-  color: #ddd;
-}
-header main.contenu {
+/* Styles de base
+=============================================== */
+main.contenu {
   min-height: 100%;
   background-color: #eee;
   /*Conteneur flex en colonne*/
@@ -341,66 +336,182 @@ header main.contenu {
   /*IMPORTANT - Empêcher que le contenu attrape les clics de souris...*/
   pointer-events: none;
 }
-header nav a {
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.2rem;
   text-decoration: none;
-  color: white;
+  color: navy;
+  text-align: center;
 }
-header nav li {
+
+h1,
+h3 {
+  padding: 0 0.5rem;
+}
+
+li {
   min-height: 100%;
+  background-color: lightblue;
   display: flex;
   flex-direction: row;
-  color: rgb(243, 247, 247);
+  color: azure;
   border-radius: 25px;
+  border: 2px solid orangered;
   padding: 20px;
   width: 200px;
   height: 10%;
+  justify-content: center;
 }
-header nav ul {
-  margin-top: 0;
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
-header .navbar {
+
+.navbar {
   width: 100%;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 @media screen and (min-width: 768px) {
-  header .navbar {
+  .navbar {
     display: none;
   }
 }
-header .nav-container {
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 62px;
 }
-header .navbar .menu-items {
+
+.navbar .menu-items {
   display: flex;
 }
-header .navbar .menu-items .site__aside {
+.navbar .menu-items .site__aside {
   background-color: rgba(255, 255, 255, 0);
 }
-header .navbar .nav-container li {
+
+.navbar .nav-container li {
   list-style: none;
 }
-header .navbar .nav-container a {
+
+.navbar .nav-container a {
   text-decoration: none;
   color: #0e2431;
   font-weight: 500;
   font-size: 1.2rem;
 }
-header .navbar .nav-container a:hover {
+
+.navbar .nav-container a:hover {
   font-weight: bolder;
 }
-header .nav-container {
+
+.nav-container {
   display: block;
   position: relative;
   height: 60px;
 }
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: orangered;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  background-color: rgb(75, 75, 75);
+  padding-top: 120px;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(-150%);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.nav-container input[type=checkbox]:checked ~ .menu-items {
+  transform: translateX(0);
+  position: fixed;
+}
+
+.nav-container input[type=checkbox]:checked header {
+  position: fixed;
+}
+
+.nav-container input[type=checkbox]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type=checkbox]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type=checkbox]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image {
+  position: initial;
+}
+
 @media screen and (min-width: 992px) {
-  header .nav-container {
+  .container nav-container {
     display: none;
   }
 }
-
 html {
   background-color: rgb(255, 255, 255);
   font-family: "Red Hat Display", sans-serif;
@@ -679,7 +790,7 @@ html {
   color: azure;
   border-radius: 25px;
   padding: 20px;
-  width: 200px;
+  width: 50%;
   height: 10%;
   justify-content: center;
   z-index: 150;
@@ -774,6 +885,12 @@ input[type=checkbox]:checked body {
   margin-bottom: 0.5rem;
 }
 
+ul#menu-menu-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* ......../ media query /.......... */
 @media (max-width: 768px) {
   #menu-menu {
@@ -818,7 +935,7 @@ input[type=checkbox]:checked body {
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #333;
+    background: orangered;
   }
   .navbar-container .hamburger-lines .line1 {
     transform-origin: 0% 0%;
@@ -833,7 +950,7 @@ input[type=checkbox]:checked body {
   }
   .navbar .menu-items {
     padding-top: 100px;
-    background: #fff;
+    background: rgba(14, 61, 109, 0.7764705882);
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
@@ -842,7 +959,7 @@ input[type=checkbox]:checked body {
     margin-left: -40px;
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
-    box-shadow: 5px 0px 10px 0px #aaa;
+    box-shadow: 5px 0px 10px 0px #071f37;
   }
   .navbar .menu-items li {
     margin-bottom: 1.5rem;
@@ -900,7 +1017,6 @@ input[type=checkbox]:checked body {
   border-radius: 0 0 8px 8px;
 }
 .Section-prof .professeur {
-  background-color: red;
   width: 75%;
   margin: 1em;
   padding: 1em;
@@ -947,18 +1063,14 @@ input[type=checkbox]:checked body {
   display: flex;
   flex-direction: column;
 }
-.carrousel .projet_article .bloc_projet .projet_info {
+.carrousel .projet_article .bloc_projet .projet_titre_desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(2, 18, 45);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 3%;
 }
-.carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc h2 {
+.carrousel .projet_article .bloc_projet .projet_titre_desc h2 {
   display: flex;
   justify-content: center;
   color: #9ACBDA;
@@ -969,7 +1081,7 @@ input[type=checkbox]:checked body {
   font-size: 18px;
   border-radius: 50px;
 }
-.carrousel .projet_article .bloc_projet .projet_info .projet_titre_desc p {
+.carrousel .projet_article .bloc_projet .projet_titre_desc p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -977,31 +1089,40 @@ input[type=checkbox]:checked body {
   padding: 5px;
   font-size: 10px;
 }
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton {
-  text-align: center;
+.carrousel .projet_article .bloc_projet .carrousel_bouton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+  position: absolute;
 }
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_gauche,
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_droit {
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche,
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit {
   background-color: transparent;
   cursor: pointer;
-  width: 1.5em;
-  height: 1.5em;
-  border-top: solid 4px #1B72A6;
-  border-right: solid 4px #1B72A6;
+  width: 3em;
+  height: 3em;
+  border-top: solid 6px #1B72A6;
+  border-right: solid 6px #1B72A6;
   border-left: none;
   border-bottom: none;
-  border-radius: 5%;
-  transform: rotate(225deg);
-  margin: 1.3em 2em;
+  border-radius: 10%;
+  margin: 2em;
 }
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_gauche:hover,
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_droit:hover {
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche:hover,
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit:hover {
   border-color: #F06543;
 }
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_gauche {
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche:active,
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit:active {
+  border-color: #F06543;
+  background-color: #0E3D6D;
+}
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_gauche {
   transform: rotate(225deg);
 }
-.carrousel .projet_article .bloc_projet .projet_info .carrousel_bouton #bouton_droit {
+.carrousel .projet_article .bloc_projet .carrousel_bouton #bouton_droit {
   transform: rotate(45deg);
 }
 .carrousel .projet_article .bloc_projet .projet_image img {
