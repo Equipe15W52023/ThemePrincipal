@@ -22,7 +22,7 @@
 
 </head>
 
-<header class="site ">
+
    <header class="site__entete">
    <div class="site__entete_suite">
             <?php wp_nav_menu(array(
@@ -60,7 +60,7 @@
     
 </section>
 
-            </header>
+</header>
 
 
 
