@@ -1307,16 +1307,14 @@ div.sections-futur .section-futur p.desc-futur {
 div.sections-futur .section-futur:hover {
   cursor: pointer;
 }
-div.sections-futur .section-ferme .texte-futur {
+div.sections-futur .section-ferme .texte-futur, div.sections-futur .texte-futur-selection .intro-ferme {
   display: none;
 }
 div.sections-futur .texte-futur-selection .texte-futur {
   position: absolute;
   display: flex;
   flex-direction: column;
-  background-color: #001c2d;
-  color: #E8E8E8;
-  border-radius: 8px;
+  color: #001c2d;
   top: 50%;
   left: 0;
   width: 80%;
@@ -1327,7 +1325,7 @@ div.sections-futur .texte-futur-selection .texte-futur {
   z-index: 2;
 }
 div.sections-futur .texte-futur-selection .texte-futur h2 {
-  color: #E8E8E8;
+  color: #001c2d;
   top: 3%;
 }
 div.sections-futur .texte-futur-selection .texte-futur p {
@@ -1410,4 +1408,4 @@ div.sections-futur .bouton-plus {
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
 }
-/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
+/*------------------------------------------layout */
