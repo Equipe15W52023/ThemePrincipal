@@ -5,6 +5,7 @@
         flex-wrap: wrap;
         justify-content: center;
         mask-clip: content-box;
+        z-index: 5;
 
         iframe {
             width: 100%;
