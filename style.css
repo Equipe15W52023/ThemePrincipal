@@ -647,6 +647,42 @@ html {
   height: 3em;
 }
 
+.vague_footer {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background: #1F1F1F;
+  transform: scale(1, 1);
+  z-index: 0;
+}
+
+.vague_footer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #0E3D6D;
+  right: -25%;
+  top: -280px;
+}
+
+.vague_footer:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #1F1F1F;
+  left: -25%;
+  top: -20px;
+  rotate: 180deg;
+  clip-path: ellipse(100% 15% at -15% 100%);
+}
+
 @media screen and (min-width: 768px) {
   .bloc_footer {
     height: 11%;
@@ -1135,7 +1171,7 @@ ul#menu-menu-1 {
 .carrousel .projet_article .bloc_projet .bouton_image .projet_image {
   height: 35vh;
 }
-.vague {
+.vague_carrousel {
   display: block;
   position: relative;
   height: 40px;
@@ -1145,7 +1181,7 @@ ul#menu-menu-1 {
   z-index: 0;
 }
 
-.vague:before {
+.vague_carrousel:before {
   content: "";
   display: block;
   position: absolute;
@@ -1157,7 +1193,7 @@ ul#menu-menu-1 {
   top: 20px;
 }
 
-.vague:after {
+.vague_carrousel:after {
   content: "";
   display: block;
   position: absolute;
