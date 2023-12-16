@@ -895,14 +895,14 @@ ul#menu-menu-1 {
 }
 .Section-prof {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(8, 1fr);
   justify-items: center;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   color: #E8E8E8;
   position: relative;
-  padding: 1em;
+  padding: 0;
   border-radius: 0 0 8px 8px;
 }
 .Section-prof .professeur {
@@ -913,6 +913,24 @@ ul#menu-menu-1 {
   border-radius: 8px;
 }
 
+@media screen and (min-width: 554px) {
+  .Section-prof {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1em;
+    width: 90%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .Section-prof {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1em;
+    width: 65%;
+    margin: auto;
+  }
+}
 .environnement_div .vv_environnement {
   display: flex;
   flex-wrap: wrap;
