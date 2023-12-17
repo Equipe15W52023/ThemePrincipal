@@ -19,6 +19,19 @@
     }
 }
 
+.masque_vague {
+    //si le temps
+    // background-color: rgb(255, 0, 64);
+    //border-top: 10px solid red;
+    //border-radius: 75%;
+    //position: relative;
+    // width: 212px;
+    // height: 100px;
+    //box-sizing: content-box;
+    //clip-path: polygon(29% 38%, 68% 16%, 100% 30%, 100% 70%, 70% 61%, 28% 81%, 0 64%, 0 20%);
+    //clip-path: ellipse(50% 26% at 50% 50%);
+}
+
 @media screen and (min-width: $largeur__tablette) {
     .environnement_div {
 
@@ -27,8 +40,10 @@
 
             iframe {
                 width: 70%;
-                height: 65vh;
-                border-radius: 30px;
+                height: 65vw;
+                border-radius: 15%;
+                border-bottom: none;
+                border-top: none;
                 border: 15px solid $bleu__moyen;
             }
         }
@@ -41,7 +56,7 @@
         .vv_environnement {
 
             iframe {
-                height: 80vh;
+                height: 50vw;
             }
         }
     }

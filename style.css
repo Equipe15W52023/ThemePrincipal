@@ -604,7 +604,7 @@ html {
 .bloc_footer .footer_adresse .adresse_droit .adresse4 {
   color: #F06543;
   list-style: none;
-  margin: 5px 0;
+  margin: 15px 0;
 }
 .bloc_footer .footer_adresse .adresse_gauche .adresse1 a,
 .bloc_footer .footer_adresse .adresse_gauche .adresse2 a,
@@ -1077,14 +1077,16 @@ ul#menu-menu-1 {
 @media screen and (min-width: 768px) {
   .environnement_div .vv_environnement iframe {
     width: 70%;
-    height: 65vh;
-    border-radius: 30px;
+    height: 65vw;
+    border-radius: 15%;
+    border-bottom: none;
+    border-top: none;
     border: 15px solid #1B72A6;
   }
 }
 @media screen and (min-width: 996px) {
   .environnement_div .vv_environnement iframe {
-    height: 80vh;
+    height: 50vw;
   }
 }
 .carrousel {
@@ -1149,16 +1151,24 @@ ul#menu-menu-1 {
   cursor: pointer;
   width: 3em;
   height: 3em;
-  border-top: solid 7px #E8E8E8;
-  border-right: solid 7px #E8E8E8;
+  border-top: solid 7px #9ACBDA;
+  border-right: solid 7px #9ACBDA;
   border-left: none;
   border-bottom: none;
   border-radius: 10%;
   margin: 2em;
+  transition: border-color 0.5s ease, rotate 0.5s ease;
 }
 .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche:hover,
 .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit:hover {
   border-color: #F06543;
+  rotate: 5deg;
+}
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche:hover {
+  rotate: 5deg;
+}
+.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit:hover {
+  rotate: -5deg;
 }
 .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche {
   transform: rotate(225deg);
@@ -1196,7 +1206,7 @@ ul#menu-menu-1 {
   position: relative;
   height: 40px;
   width: 100%;
-  background: rgb(2, 18, 45);
+  background: #02122d;
   transform: scale(1, 1);
   z-index: 0;
 }
@@ -1244,6 +1254,7 @@ ul#menu-menu-1 {
   }
   .carrousel .projet_article .bloc_projet .projet_titre_desc {
     width: 40vw;
+    background-color: rgba(2, 18, 45, 0);
   }
   .carrousel .projet_article .bloc_projet .projet_titre_desc h2 {
     width: 20vw;
@@ -1265,8 +1276,8 @@ ul#menu-menu-1 {
   .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
     width: 2em;
     height: 2em;
-    border-top: solid 7px #E8E8E8;
-    border-right: solid 7px #E8E8E8;
+    border-top: solid 7px #9ACBDA;
+    border-right: solid 7px #9ACBDA;
     border-radius: 10%;
   }
   .carrousel .projet_article .bloc_projet .projet_image {
@@ -1276,6 +1287,7 @@ ul#menu-menu-1 {
   .carrousel .projet_article .bloc_projet .projet_image img {
     height: 60vh;
     width: 60vw;
+    border-radius: 0 0 25% 0;
   }
 }
 @media screen and (min-width: 996px) {
@@ -1314,8 +1326,8 @@ ul#menu-menu-1 {
   .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
     width: 3em;
     height: 3em;
-    border-top: solid 8px #E8E8E8;
-    border-right: solid 8px #E8E8E8;
+    border-top: solid 8px #9ACBDA;
+    border-right: solid 8px #9ACBDA;
     border-radius: 10%;
   }
   .carrousel .projet_article .bloc_projet .projet_image {
@@ -1325,6 +1337,7 @@ ul#menu-menu-1 {
   .carrousel .projet_article .bloc_projet .projet_image img {
     width: 100%;
     height: 90vh;
+    border-radius: 0 0 50% 0;
   }
 }
 .sessions-boutons-container > div {
