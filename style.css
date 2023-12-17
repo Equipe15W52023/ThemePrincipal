@@ -1233,6 +1233,7 @@ ul#menu-menu-1 {
   width: 80%;
   height: auto;
   padding: 10%;
+  z-index: 5;
 }
 .sessions-boutons-container > div .sessions-container .session .bouton-x::before {
   content: "X";
@@ -1354,14 +1355,6 @@ div.sections-futur .texte-futur-selection .texte-futur h2 {
 div.sections-futur .texte-futur-selection .texte-futur p {
   font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
 }
-div.sections-futur .bouton-x-futur::before {
-  content: "X";
-  font-weight: bold;
-  position: relative;
-  top: 5%;
-  left: 47%;
-  z-index: 3;
-}
 div.sections-futur .bouton-plus {
   position: absolute;
   z-index: 0;
@@ -1406,10 +1399,13 @@ div.sections-futur .bouton-plus {
     width: 30%;
     height: auto;
   }
+  div.sections-futur .texte-futur-selection .texte-futur h2 {
+    top: 10%;
+  }
   div.sections-futur .texte-futur-selection .texte-futur {
-    left: 10px;
-    border-radius: 118px;
-    padding: 4em 1.5em 4em 1.5em;
+    left: 15px;
+    border-radius: 85px;
+    padding: 6.5em 0.7em 6.5em 0.7em;
     background-color: white;
   }
 }

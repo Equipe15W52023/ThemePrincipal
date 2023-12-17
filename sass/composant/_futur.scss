@@ -88,14 +88,14 @@ div.sections-futur {
     }
 
     // Bouton pour fermer le contenu du cours
-    .bouton-x-futur::before { 
-        content: 'X';
-        font-weight: bold;
-        position: relative;
-        top: 5%;
-        left: 47%;
-        z-index: 3;
-    }
+    // .bouton-x-futur::before { 
+    //     content: 'X';
+    //     font-weight: bold;
+    //     position: relative;
+    //     top: 5%;
+    //     left: 47%;
+    //     z-index: 3;
+    // }
 
     // BOUTON PLUS EN BAS DES SECTION
     .bouton-plus {
@@ -152,10 +152,14 @@ div.sections-futur {
             }
         }
 
+        .texte-futur-selection .texte-futur h2 {
+            top: 10%;
+        }
+
         .texte-futur-selection .texte-futur {
-            left: 10px;
-            border-radius: 118px;
-            padding: 4em 1.5em 4em 1.5em;
+            left: 15px;
+            border-radius: 85px;
+            padding: 6.5em 0.7em 6.5em 0.7em;
             background-color: white;
         }
     }
