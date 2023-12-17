@@ -3,6 +3,7 @@
     font-family: 'Montserrat', sans-serif;
     color: $couleur__textePale;
     overflow: hidden;
+    background-color: rgb(2, 18, 45);
 
     .projet_article {
         width: 100%;
@@ -17,6 +18,7 @@
                 align-items: center;
                 background-color: rgb(2, 18, 45);
                 padding: 3%;
+                z-index: 2;
 
                 //titre
                 h2 {
@@ -64,22 +66,21 @@
                         cursor: pointer;
                         width: 3em;
                         height: 3em;
-                        border-top: solid 6px $bleu__moyen;
-                        border-right: solid 6px $bleu__moyen;
+                        border-top: solid 7px $couleur__textePale;
+                        border-right: solid 7px $couleur__textePale;
                         border-left: none;
                         border-bottom: none;
                         border-radius: 10%;
                         margin: 2em;
+                        //opacity: 1;
+                        //transition: opacity 1s ease-in-out;
                     }
 
                     #bouton_gauche:hover,
                     #bouton_droit:hover {
                         border-color: $orange__creation;
-                    }
+                        //opacity: 0;
 
-                    #bouton_gauche:active,
-                    #bouton_droit:active {
-                        border-color: red;
                     }
 
                     #bouton_gauche {
@@ -94,12 +95,44 @@
                 //images
                 .projet_image {
                     height: 35vh;
+                    animation: 2s ease-in-out animImg,
+                        2s ease-in-out 4.5s animImg2;
+                    z-index: 0;
 
-                    img {}
+                    img {
+                        object-fit: cover;
+                    }
                 }
             }
         }
+
     }
+
+    @keyframes animImg {
+        from {
+            opacity: 0;
+            //transform: translateX(110vh);
+
+        }
+
+        to {
+            opacity: 1;
+            //transform: translateX(0);
+        }
+    }
+
+    @keyframes animImg2 {
+        from {
+            opacity: 1;
+            //transform: translateX(0);
+        }
+
+        to {
+            opacity: 0;
+            //transform: translateX(-110vh);
+        }
+    }
+
 }
 
 //vague
@@ -180,13 +213,12 @@
                         height: 60vh;
                         justify-content: space-around;
 
-
                         #bouton_gauche,
                         #bouton_droit {
                             width: 2em;
                             height: 2em;
-                            border-top: solid 7px $bleu__moyen;
-                            border-right: solid 7px $bleu__moyen;
+                            border-top: solid 7px $couleur__textePale;
+                            border-right: solid 7px $couleur__textePale;
                             border-radius: 10%;
                         }
                     }
@@ -197,13 +229,15 @@
                     height: 60vh;
                     width: 60vw;
 
-                    img {}
+                    img {
+                        height: 60vh;
+                        width: 60vw;
+                    }
                 }
             }
         }
     }
 }
-
 
 //////////////////////////////////////
 @media screen and (min-width: $largeur__bureau) {
@@ -241,15 +275,17 @@
                     //boutons
                     .carrousel_bouton {
                         height: 90vh;
+                        justify-content: center;
+                        align-content: flex-end;
 
                         #bouton_gauche,
                         #bouton_droit {
-                            width: 2.5em;
-                            height: 2.5em;
-                            border-top: solid 8px $bleu__moyen;
-                            border-right: solid 8px $bleu__moyen;
+                            width: 3em;
+                            height: 3em;
+                            border-top: solid 8px $couleur__textePale;
+                            border-right: solid 8px $couleur__textePale;
                             border-radius: 10%;
-                            margin: 2.5em;
+
                         }
                     }
                 }
@@ -260,7 +296,6 @@
                     height: 90vh;
 
                     img {
-                        object-fit: cover;
                         width: 100%;
                         height: 90vh;
                     }

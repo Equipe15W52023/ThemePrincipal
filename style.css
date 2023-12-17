@@ -1092,6 +1092,7 @@ ul#menu-menu-1 {
   font-family: "Montserrat", sans-serif;
   color: #E8E8E8;
   overflow: hidden;
+  background-color: rgb(2, 18, 45);
 }
 .carrousel .projet_article {
   width: 100%;
@@ -1106,6 +1107,7 @@ ul#menu-menu-1 {
   align-items: center;
   background-color: rgb(2, 18, 45);
   padding: 3%;
+  z-index: 2;
 }
 .carrousel .projet_article .bloc_projet .projet_titre_desc h2 {
   display: flex;
@@ -1147,8 +1149,8 @@ ul#menu-menu-1 {
   cursor: pointer;
   width: 3em;
   height: 3em;
-  border-top: solid 6px #1B72A6;
-  border-right: solid 6px #1B72A6;
+  border-top: solid 7px #E8E8E8;
+  border-right: solid 7px #E8E8E8;
   border-left: none;
   border-bottom: none;
   border-radius: 10%;
@@ -1158,10 +1160,6 @@ ul#menu-menu-1 {
 .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit:hover {
   border-color: #F06543;
 }
-.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche:active,
-.carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit:active {
-  border-color: red;
-}
 .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche {
   transform: rotate(225deg);
 }
@@ -1170,7 +1168,29 @@ ul#menu-menu-1 {
 }
 .carrousel .projet_article .bloc_projet .bouton_image .projet_image {
   height: 35vh;
+  animation: 2s ease-in-out animImg, 2s ease-in-out 4.5s animImg2;
+  z-index: 0;
 }
+.carrousel .projet_article .bloc_projet .bouton_image .projet_image img {
+  object-fit: cover;
+}
+@keyframes animImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animImg2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .vague_carrousel {
   display: block;
   position: relative;
@@ -1245,11 +1265,15 @@ ul#menu-menu-1 {
   .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
     width: 2em;
     height: 2em;
-    border-top: solid 7px #1B72A6;
-    border-right: solid 7px #1B72A6;
+    border-top: solid 7px #E8E8E8;
+    border-right: solid 7px #E8E8E8;
     border-radius: 10%;
   }
   .carrousel .projet_article .bloc_projet .projet_image {
+    height: 60vh;
+    width: 60vw;
+  }
+  .carrousel .projet_article .bloc_projet .projet_image img {
     height: 60vh;
     width: 60vw;
   }
@@ -1283,22 +1307,22 @@ ul#menu-menu-1 {
   }
   .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton {
     height: 90vh;
+    justify-content: center;
+    align-content: flex-end;
   }
   .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_gauche,
   .carrousel .projet_article .bloc_projet .bouton_image .carrousel_bouton #bouton_droit {
-    width: 2.5em;
-    height: 2.5em;
-    border-top: solid 8px #1B72A6;
-    border-right: solid 8px #1B72A6;
+    width: 3em;
+    height: 3em;
+    border-top: solid 8px #E8E8E8;
+    border-right: solid 8px #E8E8E8;
     border-radius: 10%;
-    margin: 2.5em;
   }
   .carrousel .projet_article .bloc_projet .projet_image {
     width: 100%;
     height: 90vh;
   }
   .carrousel .projet_article .bloc_projet .projet_image img {
-    object-fit: cover;
     width: 100%;
     height: 90vh;
   }
