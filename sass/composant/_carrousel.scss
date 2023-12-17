@@ -1,6 +1,5 @@
 .carrousel {
     width: 100%;
-    font-family: 'Montserrat', sans-serif;
     color: $couleur__textePale;
     overflow: hidden;
     background-color: rgb(2, 18, 45);
@@ -29,7 +28,7 @@
                     padding: 0;
                     text-align: center;
                     width: 60vw;
-                    font-size: 18px;
+                    //font-size: 18px;
                     border-radius: 50px;
                 }
 
@@ -40,7 +39,7 @@
                     justify-content: center;
                     margin: 0;
                     padding: 5px;
-                    font-size: 10px;
+                    //font-size: 10px;
                 }
             }
 
@@ -207,13 +206,13 @@
                     //titre
                     h2 {
                         width: 20vw;
-                        font-size: 18px;
+                        //font-size: 18px;
                     }
 
                     //description
                     div {
                         padding: 5px;
-                        font-size: 12px;
+                        //font-size: 12px;
                     }
                 }
 
@@ -273,13 +272,13 @@
                     //titre
                     h2 {
                         width: 25vw;
-                        font-size: 24px;
+                        //font-size: 24px;
                     }
 
                     //description
                     div {
                         padding: 5px 20px;
-                        font-size: 18px;
+                        //font-size: 18px;
                     }
                 }
 

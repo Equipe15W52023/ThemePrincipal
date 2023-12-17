@@ -9,8 +9,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-family: 'montserrat', sans-serif;
-    font-size: 0.7em;
+    //font-family: 'montserrat', sans-serif;
+    //font-size: 0.7em;
 
     .footer_adresse {
         width: 60%;
@@ -110,7 +110,7 @@
 @media screen and (min-width: $largeur__tablette) {
     .bloc_footer {
         height: 11%;
-        font-size: 0.8em;
+        //font-size: 0.8em;
 
         .footer_adresse {
             flex-direction: row;
@@ -145,7 +145,7 @@
 @media screen and (min-width: $largeur__bureau) {
     .bloc_footer {
         height: 15%;
-        font-size: 1.2em;
+        //font-size: 1.2em;
 
         .footer_adresse {
             display: flex;
