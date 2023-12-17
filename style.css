@@ -896,7 +896,7 @@ ul#menu-menu-1 {
 .Section-prof {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   justify-items: center;
   align-items: stretch;
   justify-content: stretch;
@@ -911,6 +911,7 @@ ul#menu-menu-1 {
   padding: 1em;
   background-color: #1B72A6;
   border-radius: 8px;
+  font-size: 15px;
 }
 
 @media screen and (min-width: 554px) {
@@ -920,6 +921,9 @@ ul#menu-menu-1 {
     padding: 1em;
     width: 90%;
     margin: auto;
+  }
+  .Section-prof .professeur {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1285,6 +1289,7 @@ div.sections-futur {
   position: relative;
   justify-content: space-around;
   margin-bottom: 5em;
+  font-size: 15px;
 }
 div.sections-futur .section-futur {
   display: flex;
@@ -1303,7 +1308,7 @@ div.sections-futur .section-futur h2 {
   text-align: center;
   color: black;
   width: 80%;
-  top: 25%;
+  top: 30%;
   bottom: auto;
   left: 10%;
   right: auto;
@@ -1319,7 +1324,6 @@ div.sections-futur .section-futur p.desc-futur {
   bottom: auto;
   left: 10%;
   right: auto;
-  font-size: clamp(0.9375rem, 0.75rem + 1vw, 1.125rem);
   z-index: 1;
 }
 div.sections-futur .section-futur:hover {
@@ -1341,6 +1345,7 @@ div.sections-futur .texte-futur-selection .texte-futur {
   padding: 10%;
   text-align: center;
   z-index: 2;
+  background-color: white;
 }
 div.sections-futur .texte-futur-selection .texte-futur h2 {
   color: #001c2d;
@@ -1363,7 +1368,7 @@ div.sections-futur .bouton-plus {
   top: 60%;
   right: 5%;
   border-radius: 20px;
-  width: 30%;
+  width: 25%;
   height: auto;
 }
 
@@ -1377,7 +1382,7 @@ div.sections-futur .bouton-plus {
     margin-bottom: 5em;
   }
   div.sections-futur div.section-futur .img-futur {
-    width: 20em;
+    width: 15em;
     transform: rotateZ(0deg) translateY(0);
   }
   div.sections-futur div.section-futur h2 {
@@ -1393,13 +1398,19 @@ div.sections-futur .bouton-plus {
   }
   div.sections-futur div.section-futur .bouton-plus {
     position: absolute;
-    z-index: 0;
+    z-index: 3;
     padding: 1.5em;
     top: 85%;
     right: 5%;
     border-radius: 20px;
     width: 30%;
     height: auto;
+  }
+  div.sections-futur .texte-futur-selection .texte-futur {
+    left: 10px;
+    border-radius: 118px;
+    padding: 4em 1.5em 4em 1.5em;
+    background-color: white;
   }
 }
 @media screen and (min-width: 782px) {
@@ -1421,9 +1432,6 @@ div.sections-futur .bouton-plus {
   div.sections-futur {
     flex-direction: row;
     margin: 3em 17%;
-  }
-  div.sections-futur div.section-futur .img-futur {
-    width: 20em;
   }
   div.sections-futur div.section-futur h2 {
     text-align: center;

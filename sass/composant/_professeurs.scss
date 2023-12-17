@@ -1,7 +1,7 @@
 .Section-prof {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     justify-items: center;
     align-items: stretch;
     justify-content: stretch;
@@ -13,12 +13,12 @@
     border-radius: 0 0 8px 8px;
 
     .professeur {
-
         width: 75%;
         margin: 1em;
         padding: 1em;
         background-color: $bleu__moyen;
         border-radius: 8px;
+        font-size: 15px;
     }
 }
 
@@ -30,6 +30,10 @@
         padding: 1em;
         width: 90%;
         margin: auto;
+
+        .professeur {
+            font-size: 18px;
+        }
     }
 }
 
