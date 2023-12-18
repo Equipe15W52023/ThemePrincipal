@@ -342,8 +342,13 @@ nav a {
   padding: 0.5rem 1rem;
   margin-bottom: 0.2rem;
   text-decoration: none;
-  color: navy;
+  color: whitesmoke;
   text-align: center;
+}
+
+nav a:hover {
+  color: orangered;
+  transition: color 0.3s ease-in-out;
 }
 
 h1,
@@ -353,15 +358,11 @@ h3 {
 
 li {
   min-height: 100%;
-  background-color: lightblue;
   display: flex;
   flex-direction: row;
-  color: azure;
-  border-radius: 25px;
-  border: 2px solid orangered;
-  padding: 20px;
-  width: 200px;
-  height: 10%;
+  color: whitesmoke;
+  padding: 1%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -370,6 +371,32 @@ ul {
   flex-direction: row;
   align-content: center;
   justify-content: center;
+}
+
+
+.site__entete_suite {
+  min-height: 100%;
+  background-color: #1B72A6;
+  display: flex;
+  flex-direction: row;
+  color: whitesmoke;
+  padding: 1%;
+  width: 100%;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .site__entete_suite {
+    display: none;
+  }
+}
+
+.imglogo {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 150px;
+  height: 100px;
+
 }
 
 .navbar {
@@ -658,6 +685,7 @@ a {
 .bloc_footer .footer_adresse .adresse_droit .adresse3 a:hover,
 .bloc_footer .footer_adresse .adresse_droit .adresse4 a:hover {
   color: #F06543;
+  transition: color 0.3s ease-in-out;
 }
 .bloc_footer .footer_logo {
   display: flex;
@@ -848,7 +876,7 @@ a {
 
 .navbar .menu-items li {
   min-height: 100%;
-  background-color: lightblue;
+  background-color: #1B72A6;
   display: flex;
   flex-direction: row;
   color: azure;
@@ -933,13 +961,13 @@ input[type=checkbox]:checked body {
 
 .menu-items a {
   text-decoration: none;
-  color: #444;
+  color: whitesmoke;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
 .menu-items a:hover {
-  color: #117964;
+  color: orangered;
   transition: color 0.3s ease-in-out;
 }
 
@@ -970,7 +998,7 @@ ul#menu-menu-1 {
   .navbar-container {
     display: block;
     position: relative;
-    height: 64px;
+    height: 80px;
   }
   .navbar-container input[type=checkbox] {
     position: absolute;
@@ -984,10 +1012,10 @@ ul#menu-menu-1 {
   }
   .navbar-container .hamburger-lines {
     display: block;
-    height: 23px;
-    width: 35px;
+    height: 30px;
+    width: 42px;
     position: absolute;
-    top: 17px;
+    top: 12px;
     left: 20px;
     z-index: 2;
     display: flex;
@@ -996,10 +1024,13 @@ ul#menu-menu-1 {
   }
   .navbar-container .hamburger-lines .line {
     display: block;
-    height: 4px;
+    height: 8px;
     width: 100%;
     border-radius: 10px;
     background: orangered;
+  }
+  .navbar-container .hamburger-lines .line :hover {
+    background: red;
   }
   .navbar-container .hamburger-lines .line1 {
     transform-origin: 0% 0%;
@@ -1014,7 +1045,9 @@ ul#menu-menu-1 {
   }
   .navbar .menu-items {
     padding-top: 100px;
-    background: rgba(14, 61, 109, 0.7764705882);
+
+    background: rgba(14, 61, 109, 0.9490196078);
+
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);

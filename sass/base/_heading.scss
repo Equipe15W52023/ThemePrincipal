@@ -30,8 +30,12 @@
             padding: 0.5rem 1rem;
             margin-bottom: 0.2rem;
             text-decoration: none;
-            color: navy;
+            color: whitesmoke;
             text-align: center;
+        }
+        nav a:hover{
+          color: orangered;
+          transition: color 0.3s ease-in-out;
         }
 
         h1,
@@ -41,15 +45,13 @@
 
         li {
           min-height: 100%;
-        background-color: lightblue;
+        
         display: flex;
         flex-direction: row;
-        color: azure; 
-        border-radius: 25px;
-        border: 2px solid orangered;
-        padding: 20px;
-        width: 200px;
-        height: 10%;
+        color: whitesmoke; 
+        padding: 1%;
+        width: 100%;
+       // height: 10%;
         justify-content: center;
         }
 
@@ -58,6 +60,30 @@
             flex-direction: row;
             align-content: center;
             justify-content: center;
+        }
+
+        .site__entete_suite{
+          min-height: 100%;
+          background-color: #1B72A6;
+          display: flex;
+          flex-direction: row;
+          color: whitesmoke; 
+          padding: 1%;
+          width: 100%;
+         // height: 10%;
+          justify-content: space-between;
+          
+          @media screen and (max-width: 768px) {
+            display: none;
+        }
+        }
+
+        .imglogo{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+          width: 150px;
+          height: 100px;
         }
 
         .navbar {

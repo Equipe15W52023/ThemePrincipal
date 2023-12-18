@@ -25,10 +25,13 @@
 
    <header class="site__entete">
    <div class="site__entete_suite">
+   
+   <img class="imglogo" src="<?php echo get_template_directory_uri()?>/medias/logotim.png" alt="medias/logotim.png" />
             <?php wp_nav_menu(array(
                 "menu" => "entete",
                 "container" => "nav"
                 )) ?>
+   </div>
     <nav class="navbar">
       <div class="navbar-container container">
           <input type="checkbox" name="" id="">
@@ -51,9 +54,9 @@
   </nav>
     
         
-<!-- Bouton pour basculer entre les catégories -->
+<!-- Bouton pour basculer entre les catégories <button id="toggle-category-button">Basculer les catégories</button>-->
  
-<button id="toggle-category-button">Basculer les catégories</button>
+
          
               
     
