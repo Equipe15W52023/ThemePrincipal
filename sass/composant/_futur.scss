@@ -7,7 +7,7 @@ div.sections-futur {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 5em;
     font-size: 15px;
 
@@ -113,7 +113,8 @@ div.sections-futur {
 @media screen and (min-width: 554px) {
     div.sections-futur {
         flex-direction: row;
-        margin: 1em 5%;
+        margin: auto;
+        width: 80%;
     
         div.section-futur {
             justify-content: center;
@@ -168,6 +169,7 @@ div.sections-futur {
 // ****************************** LAPTOP ************************************ //
 @media screen and (min-width: 782px) {
     div.sections-futur {
+        width: 65%;
 
         div.section-futur {
 
@@ -196,7 +198,6 @@ div.sections-futur {
 @media screen and (min-width: 992px) {
     div.sections-futur {
         flex-direction: row;
-        margin: 3em 17%;
 
         div.section-futur {
 

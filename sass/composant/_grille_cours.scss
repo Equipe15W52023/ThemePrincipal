@@ -135,7 +135,7 @@
 // ***************************** TABLETTE *********************************** //
 @media screen and (min-width: 554px) {
     .sessions-boutons-container > div {
-        width: 60%;
+        width: 80%;
 
         // BOUTONS SESSION
         .session-buttons {
@@ -176,6 +176,8 @@
 // ****************************** BUREAU ************************************ //
 @media screen and (min-width: 992px) {
     .sessions-boutons-container > div {
+        width: 65%;
+
         // BOUTONS SESSION
         .session-buttons {
             button.session-button {

@@ -415,7 +415,8 @@ html {
   font-size: 30px;
   color: #9ACBDA;
   text-transform: uppercase;
-  margin: 1em 20%;
+  margin: 1em auto;
+  width: 90%;
 }
 
 .titre-article::before {
@@ -443,6 +444,7 @@ html {
 @media screen and (min-width: 554px) {
   .titre-article {
     font-size: 45px;
+    width: 80%;
   }
   .titre-article::before {
     height: 5px;
@@ -456,6 +458,7 @@ html {
 @media screen and (min-width: 992px) {
   .titre-article {
     font-size: 65px;
+    width: 65%;
   }
 }
 /* --------------------------------------------- composant */
@@ -919,7 +922,7 @@ ul#menu-menu-1 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
     padding: 1em;
-    width: 90%;
+    width: 80%;
     margin: auto;
   }
   .Section-prof .professeur {
@@ -931,7 +934,7 @@ ul#menu-menu-1 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
     padding: 1em;
-    width: 65%;
+    width: 70%;
     margin: auto;
   }
 }
@@ -1248,7 +1251,7 @@ ul#menu-menu-1 {
 
 @media screen and (min-width: 554px) {
   .sessions-boutons-container > div {
-    width: 60%;
+    width: 80%;
   }
   .sessions-boutons-container > div .session-buttons {
     display: grid;
@@ -1274,6 +1277,9 @@ ul#menu-menu-1 {
   }
 }
 @media screen and (min-width: 992px) {
+  .sessions-boutons-container > div {
+    width: 65%;
+  }
   .sessions-boutons-container > div .session-buttons button.session-button {
     font-size: 30px;
   }
@@ -1288,7 +1294,7 @@ div.sections-futur {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 5em;
   font-size: 15px;
 }
@@ -1368,7 +1374,8 @@ div.sections-futur .bouton-plus {
 @media screen and (min-width: 554px) {
   div.sections-futur {
     flex-direction: row;
-    margin: 1em 5%;
+    margin: auto;
+    width: 80%;
   }
   div.sections-futur div.section-futur {
     justify-content: center;
@@ -1410,6 +1417,9 @@ div.sections-futur .bouton-plus {
   }
 }
 @media screen and (min-width: 782px) {
+  div.sections-futur {
+    width: 65%;
+  }
   div.sections-futur div.section-futur h2 {
     position: absolute;
     top: 30%;
@@ -1427,7 +1437,6 @@ div.sections-futur .bouton-plus {
 @media screen and (min-width: 992px) {
   div.sections-futur {
     flex-direction: row;
-    margin: 3em 17%;
   }
   div.sections-futur div.section-futur h2 {
     text-align: center;
