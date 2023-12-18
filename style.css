@@ -1073,13 +1073,10 @@ ul#menu-menu-1 {
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
   justify-items: center;
-
   align-items: stretch;
   justify-content: stretch;
   width: 95%;
   margin: auto;
-  color: #E8E8E8;
-
   position: relative;
   padding: 0;
   border-radius: 0 0 8px 8px;
@@ -1091,7 +1088,6 @@ ul#menu-menu-1 {
   border-radius: 8px;
   font-size: 15px;
 }
-
 
 @media screen and (min-width: 554px) {
   .Section-prof {
@@ -1112,7 +1108,13 @@ ul#menu-menu-1 {
     width: 70%;
     margin: auto;
   }
-
+}
+.environnement_div .texte_environnement {
+  color: #E8E8E8;
+  width: 100%;
+  text-align: center;
+  background-color: #1B72A6;
+  padding-top: 1.5%;
 }
 .environnement_div .vv_environnement {
   display: flex;
@@ -1743,11 +1745,10 @@ div.sections-futur .agrandissement {
   div.sections-futur div.section-futur .bouton-plus {
     position: absolute;
     z-index: 3;
-    padding: 1.5em;
     top: 85%;
     right: 5%;
-    border-radius: 20px;
-    width: 30%;
+    border-radius: 0;
+    width: 40%;
     height: auto;
   }
   div.sections-futur .texte-futur-selection .texte-futur h2 {
