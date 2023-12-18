@@ -58,24 +58,29 @@ div.sections-futur {
         cursor: pointer;
     }
 
+    .section-futur:hover .bouton-plus {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+
     // AFFICHAGE DU CONTENU SÉLÉCTTIONNÉ OU NON
     .section-ferme .texte-futur, .texte-futur-selection .intro-ferme {
         display: none;
     }
 
     .texte-futur-selection .texte-futur {
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         color: #001c2d;
-        top: 50%;
-        left: 0;
-        width: 80%;
-        transform: translateY(-50%);
-        height: auto;
+        top: 30%;
+        left: 22%;
+        width: 30vw;
+        height: 35vh;
         padding: 10%;
         text-align: center;
-        z-index: 2;
+        z-index: 15;
+        border-radius: 55px;
         background-color: white;
     }
 
@@ -89,19 +94,19 @@ div.sections-futur {
     }
 
     // Bouton pour fermer le contenu du cours
-    // .bouton-x-futur::before { 
-    //     content: 'X';
-    //     font-weight: bold;
-    //     position: relative;
-    //     top: 5%;
-    //     left: 47%;
-    //     z-index: 3;
-    // }
+    .bouton-x-futur::before { 
+        content: 'X';
+        font-weight: bold;
+        position: relative;
+        top: 5%;
+        left: 47%;
+        z-index: 3;
+    }
 
     // BOUTON PLUS EN BAS DES SECTION
     .bouton-plus {
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         top: 65%;
         right: -15%;
         width: 30%;
@@ -110,7 +115,7 @@ div.sections-futur {
 
     // ANIMATION DE LA SECTION
     .agrandissement {
-        animation: agrandir 0.2s both;
+        animation: agrandir 0.3s both;
     }
 }
 
@@ -165,11 +170,12 @@ div.sections-futur {
         }
 
         .texte-futur-selection .texte-futur {
+            position: absolute;
             left: 5px;
             top: 0;
             border-radius: 85px;
             padding: 5em 1em 5em 1em;
-            background-color: white;
+            
         }
     }
 }
@@ -213,7 +219,6 @@ div.sections-futur {
     div.sections-futur {
 
         div.section-futur {
-
             .img-futur {
                 width: 19vw;
                 margin: 0.3em;
@@ -234,6 +239,12 @@ div.sections-futur {
                 font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
             }
         }
+
+        .texte-futur-selection .texte-futur {
+            width: 15vw;
+            height: 30vh;
+            z-index: 2;
+        }
     }
 }
 
@@ -242,10 +253,13 @@ div.sections-futur {
     div.sections-futur {
 
         div.section-futur {
-
             .img-futur {
                 width: 10em;
             }
+        }
+
+        .texte-futur-selection .texte-futur {
+            width: 12vw;
         }
     }
 }
