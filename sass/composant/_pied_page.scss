@@ -9,8 +9,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-family: 'montserrat', sans-serif;
-    font-size: 0.7em;
 
     .footer_adresse {
         width: 60%;
@@ -28,7 +26,7 @@
             .adresse4 {
                 color: $orange__creation ;
                 list-style: none;
-                margin: 5px 0;
+                margin: 15px 0;
 
                 a {
                     color: $bleu__pale;
@@ -70,10 +68,48 @@
     }
 }
 
+//vague
+.vague_footer {
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background: $fond__prog;
+    transform: scale(1, 1);
+    z-index: 0;
+}
+
+.vague_footer:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 100%;
+    height: 300px;
+    background-color: $fond__creation;
+    right: -25%;
+    top: -280px;
+}
+
+.vague_footer:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 100%;
+    height: 300px;
+    background-color: $fond__prog;
+    left: -25%;
+    top: -20px;
+    rotate: 180deg;
+    clip-path: ellipse(100% 15% at -15% 100%);
+}
+
+////////////////////////////////////////////////////////////////
 @media screen and (min-width: $largeur__tablette) {
     .bloc_footer {
         height: 11%;
-        font-size: 0.8em;
+        //font-size: 0.8em;
 
         .footer_adresse {
             flex-direction: row;
@@ -104,10 +140,10 @@
 
 }
 
+/////////////////////////////////////////////////////////
 @media screen and (min-width: $largeur__bureau) {
     .bloc_footer {
         height: 15%;
-        font-size: 1.2em;
 
         .footer_adresse {
             display: flex;
