@@ -900,7 +900,6 @@ ul#menu-menu-1 {
   justify-items: center;
   align-items: center;
   justify-content: center;
-  color: #E8E8E8;
   position: relative;
   padding: 1em;
   border-radius: 0 0 8px 8px;
@@ -909,7 +908,6 @@ ul#menu-menu-1 {
   width: 75%;
   margin: 1em;
   padding: 1em;
-  background-color: #1B72A6;
   border-radius: 8px;
 }
 
