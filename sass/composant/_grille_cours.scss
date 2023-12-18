@@ -1,4 +1,17 @@
 // ****************************** Mobile ************************************ //
+// FOND POUR CLIQUE HORS SECTION
+.background-click {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.index-plus {
+    z-index: 1;
+}
+
 // SECTION COMPLÈTE
 .sessions-boutons-container > div {
     display: flex;
