@@ -1,3 +1,4 @@
+<div class="vague_footer"></div>
 <footer class="bloc_footer">
     <!-- Pied de page, informations de copyright, etc. -->
         <section class="footer_adresse">
