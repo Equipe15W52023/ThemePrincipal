@@ -25,7 +25,8 @@
 
    <header class="site__entete">
    <div class="site__entete_suite">
-   <img src="myPic.jpg" alt="myPic" />
+   
+   <img class="imglogo" src="<?php echo get_template_directory_uri()?>/medias/logotim.png" alt="medias/logotim.png" />
             <?php wp_nav_menu(array(
                 "menu" => "entete",
                 "container" => "nav"

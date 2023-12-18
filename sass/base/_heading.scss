@@ -45,7 +45,7 @@
 
         li {
           min-height: 100%;
-        background-color: #1B72A6;
+        
         display: flex;
         flex-direction: row;
         color: whitesmoke; 
@@ -71,7 +71,19 @@
           padding: 1%;
           width: 100%;
          // height: 10%;
-          justify-content: center;
+          justify-content: space-between;
+          
+          @media screen and (max-width: 768px) {
+            display: none;
+        }
+        }
+
+        .imglogo{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+          width: 150px;
+          height: 100px;
         }
 
         .navbar {
