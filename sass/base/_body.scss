@@ -41,10 +41,13 @@ a {
 // ****************************** MOBILE ************************************ //
 .titre-article {
 	position: relative;
-	font-size: 30px;
-	color: #9ACBDA;
-	text-transform: uppercase;
-	margin: 1em 20%;
+
+    font-size: 30px;
+    color: #9ACBDA;
+    text-transform: uppercase;
+    margin: 1em auto;
+	width: 90%;
+
 }
 
 // Ligne décoratrice
@@ -75,6 +78,7 @@ a {
 @media screen and (min-width: 554px) {
 	.titre-article {
 		font-size: 45px;
+		width: 80%;
 	}
 
 	.titre-article::before {
@@ -92,5 +96,6 @@ a {
 @media screen and (min-width: 992px) {
 	.titre-article {
 		font-size: 65px;
+		width: 65%;
 	}
 }
