@@ -50,8 +50,8 @@
         flex-direction: row;
         color: whitesmoke; 
         padding: 1%;
-        width: 200px;
-        height: 10%;
+        width: 100%;
+       // height: 10%;
         justify-content: center;
         }
 
@@ -60,6 +60,18 @@
             flex-direction: row;
             align-content: center;
             justify-content: center;
+        }
+
+        .site__entete_suite{
+          min-height: 100%;
+          background-color: #1B72A6;
+          display: flex;
+          flex-direction: row;
+          color: whitesmoke; 
+          padding: 1%;
+          width: 100%;
+         // height: 10%;
+          justify-content: center;
         }
 
         .navbar {

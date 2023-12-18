@@ -364,8 +364,7 @@ li {
   flex-direction: row;
   color: whitesmoke;
   padding: 1%;
-  width: 200px;
-  height: 10%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -373,6 +372,17 @@ ul {
   display: flex;
   flex-direction: row;
   align-content: center;
+  justify-content: center;
+}
+
+.site__entete_suite {
+  min-height: 100%;
+  background-color: #1B72A6;
+  display: flex;
+  flex-direction: row;
+  color: whitesmoke;
+  padding: 1%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -632,6 +642,7 @@ html {
 .bloc_footer .footer_adresse .adresse_droit .adresse3 a:hover,
 .bloc_footer .footer_adresse .adresse_droit .adresse4 a:hover {
   color: #F06543;
+  transition: color 0.3s ease-in-out;
 }
 .bloc_footer .footer_logo {
   display: flex;
