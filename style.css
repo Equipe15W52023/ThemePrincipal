@@ -415,7 +415,8 @@ html {
   font-size: 30px;
   color: #9ACBDA;
   text-transform: uppercase;
-  margin: 1em 20%;
+  margin: 1em auto;
+  width: 90%;
 }
 
 .titre-article::before {
@@ -443,6 +444,7 @@ html {
 @media screen and (min-width: 554px) {
   .titre-article {
     font-size: 45px;
+    width: 80%;
   }
   .titre-article::before {
     height: 5px;
@@ -456,6 +458,7 @@ html {
 @media screen and (min-width: 992px) {
   .titre-article {
     font-size: 65px;
+    width: 65%;
   }
 }
 /* --------------------------------------------- composant */
@@ -895,14 +898,16 @@ ul#menu-menu-1 {
 }
 .Section-prof {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
   justify-items: center;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 95%;
+  margin: auto;
   color: #E8E8E8;
   position: relative;
-  padding: 1em;
+  padding: 0;
   border-radius: 0 0 8px 8px;
 }
 .Section-prof .professeur {
@@ -911,8 +916,29 @@ ul#menu-menu-1 {
   padding: 1em;
   background-color: #1B72A6;
   border-radius: 8px;
+  font-size: 15px;
 }
 
+@media screen and (min-width: 554px) {
+  .Section-prof {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 1em;
+    width: 80%;
+    margin: auto;
+  }
+  .Section-prof .professeur {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .Section-prof {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1em;
+    width: 70%;
+    margin: auto;
+  }
+}
 .environnement_div .vv_environnement {
   display: flex;
   flex-wrap: wrap;
@@ -1098,12 +1124,24 @@ ul#menu-menu-1 {
     height: 80vh;
   }
 }
+.background-click {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.index-plus {
+  z-index: 1;
+}
+
 .sessions-boutons-container > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
-  width: 70%;
+  width: 90%;
 }
 .sessions-boutons-container > div .session-buttons {
   display: grid;
@@ -1151,6 +1189,7 @@ ul#menu-menu-1 {
   background-color: #9ACBDA;
   color: #0E3D6D;
   z-index: 10;
+  padding: 0 0.5em;
 }
 .sessions-boutons-container > div .session-buttons .bouton-ferme {
   display: none;
@@ -1161,6 +1200,7 @@ ul#menu-menu-1 {
 }
 .sessions-boutons-container > div .session-buttons button.session-button:hover {
   background-color: #F06543;
+  transition: background-color 0.4s;
 }
 .sessions-boutons-container > div .sessions-container {
   position: relative;
@@ -1196,22 +1236,37 @@ ul#menu-menu-1 {
 }
 .sessions-boutons-container > div .sessions-container .session .cours:hover {
   cursor: pointer;
+  background-color: #001c2d;
+  transition: background-color 0.3s;
 }
 .sessions-boutons-container > div .sessions-container .session .cours-ferme .texte-cours {
   display: none;
 }
 .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   background-color: #001c2d;
   border-radius: 8px;
-  top: 10%;
-  left: 0;
-  width: 110%;
-  transform: translateX(-10%);
+  top: 25%;
+  left: 14%;
+  width: 50vw;
   height: auto;
   padding: 10%;
+  z-index: 15;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours p:nth-of-type(2) {
+  font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
+  overflow: overlay;
+  height: 30vh;
+  padding: 0 0.5em;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours p:nth-of-type(2)::-webkit-scrollbar {
+  width: 2px;
+}
+.sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours p:nth-of-type(2)::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
 }
 .sessions-boutons-container > div .sessions-container .session .bouton-x::before {
   content: "X";
@@ -1223,10 +1278,13 @@ ul#menu-menu-1 {
 .sessions-boutons-container > div .sessions-container .session .texte-cours, .sessions-boutons-container > div .sessions-container .session .cours h3 {
   text-align: center;
 }
+.sessions-boutons-container > div .agrandissement {
+  animation: agrandir 0.3s both;
+}
 
 @media screen and (min-width: 554px) {
   .sessions-boutons-container > div {
-    width: 60%;
+    width: 80%;
   }
   .sessions-boutons-container > div .session-buttons {
     display: grid;
@@ -1244,19 +1302,37 @@ ul#menu-menu-1 {
     border-radius: 8px;
   }
   .sessions-boutons-container > div .sessions-container .session .cours-selection .texte-cours {
-    top: 5px;
-    left: 0;
-    width: 60%;
-    transform: translateX(26%);
+    top: 25%;
+    left: 22%;
+    width: 50%;
     padding: 3%;
   }
 }
 @media screen and (min-width: 992px) {
+  .sessions-boutons-container > div {
+    width: 65%;
+  }
   .sessions-boutons-container > div .session-buttons button.session-button {
     font-size: 30px;
   }
   .sessions-boutons-container > div .sessions-container .session .cours {
     width: 40%;
+  }
+}
+@keyframes agrandir {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes reduire {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
   }
 }
 div.sections-futur {
@@ -1266,26 +1342,29 @@ div.sections-futur {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 5em;
+  font-size: clamp(1.125rem, 0.75rem + 2vw, 1.5rem);
+  width: 90%;
+  margin: -6em auto 7em auto;
 }
 div.sections-futur .section-futur {
   display: flex;
   position: relative;
-  margin-bottom: 5em;
+  margin-bottom: -10em;
 }
 div.sections-futur .section-futur .img-futur {
   position: relative;
-  justify-content: center;
-  margin: 1em;
-  width: 250px;
+  margin: 2em;
+  width: 40vw;
+  transform: rotateZ(90deg);
 }
 div.sections-futur .section-futur h2 {
   position: absolute;
   text-align: center;
   color: black;
   width: 80%;
-  top: 25%;
+  top: 30%;
   bottom: auto;
   left: 10%;
   right: auto;
@@ -1296,38 +1375,40 @@ div.sections-futur .section-futur p.desc-futur {
   position: absolute;
   text-align: center;
   color: black;
-  width: 80%;
-  top: 40%;
+  width: 100%;
+  top: 37%;
   bottom: auto;
-  left: 10%;
+  left: 0;
   right: auto;
-  font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
   z-index: 1;
 }
 div.sections-futur .section-futur:hover {
   cursor: pointer;
 }
-div.sections-futur .section-ferme .texte-futur {
+div.sections-futur .section-futur:hover .bouton-plus {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+div.sections-futur .section-ferme .texte-futur, div.sections-futur .texte-futur-selection .intro-ferme {
   display: none;
 }
 div.sections-futur .texte-futur-selection .texte-futur {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: #001c2d;
-  color: #E8E8E8;
-  border-radius: 8px;
-  top: 50%;
-  left: 0;
-  width: 80%;
-  transform: translateY(-50%);
-  height: auto;
+  color: #001c2d;
+  top: 30%;
+  left: 22%;
+  width: 30vw;
+  height: 35vh;
   padding: 10%;
   text-align: center;
-  z-index: 2;
+  z-index: 15;
+  border-radius: 55px;
+  background-color: white;
 }
 div.sections-futur .texte-futur-selection .texte-futur h2 {
-  color: #E8E8E8;
+  color: #001c2d;
   top: 3%;
 }
 div.sections-futur .texte-futur-selection .texte-futur p {
@@ -1343,60 +1424,91 @@ div.sections-futur .bouton-x-futur::before {
 }
 div.sections-futur .bouton-plus {
   position: absolute;
-  z-index: 0;
-  padding: 1.5em;
-  top: 85%;
-  right: 5%;
-  border-radius: 20px;
+  z-index: 3;
+  top: 65%;
+  right: -15%;
   width: 30%;
   height: auto;
+}
+div.sections-futur .agrandissement {
+  animation: agrandir 0.3s both;
 }
 
 @media screen and (min-width: 554px) {
   div.sections-futur {
     flex-direction: row;
-    margin: 1em 5%;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
   }
   div.sections-futur div.section-futur {
     justify-content: center;
+    margin-bottom: 5em;
   }
   div.sections-futur div.section-futur .img-futur {
-    width: 20em;
+    width: 24vw;
+    margin: 0.2em;
+    transform: rotateZ(0deg) translateY(0);
   }
   div.sections-futur div.section-futur h2 {
-    top: 30%;
-    font-size: clamp(1.25rem, 0.7rem + 1.6vw, 1.5rem);
+    top: 22%;
+    font-size: clamp(1.125rem, 0.5521rem + 1.6667vw, 1.375rem);
   }
   div.sections-futur div.section-futur p.desc-futur {
-    width: 40%;
-    top: 40%;
-    left: 30%;
+    width: 85%;
+    top: 35%;
+    left: 9%;
     right: auto;
     font-size: clamp(1.125rem, 0.575rem + 1.6vw, 1.375rem);
   }
+  div.sections-futur div.section-futur .bouton-plus {
+    position: absolute;
+    z-index: 3;
+    padding: 1.5em;
+    top: 85%;
+    right: 5%;
+    border-radius: 20px;
+    width: 30%;
+    height: auto;
+  }
+  div.sections-futur .texte-futur-selection .texte-futur h2 {
+    top: 10%;
+  }
+  div.sections-futur .texte-futur-selection .texte-futur {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    border-radius: 85px;
+    padding: 5em 1em 5em 1em;
+  }
 }
 @media screen and (min-width: 782px) {
+  div.sections-futur {
+    justify-content: space-between;
+    width: 65%;
+  }
+  div.sections-futur div.section-futur .img-futur {
+    width: 19vw;
+    margin: 0.3em;
+  }
   div.sections-futur div.section-futur h2 {
     position: absolute;
-    top: 30%;
+    top: 25%;
     bottom: auto;
     right: auto;
     font-size: 18px;
   }
   div.sections-futur div.section-futur p.desc-futur {
-    width: 50%;
-    top: 40%;
-    left: 25%;
-    font-size: clamp(1.125rem, 0.8333rem + 0.6667vw, 1.25rem);
+    width: 65%;
+    top: 31%;
+    left: 17%;
+    font-size: clamp(1.125rem, 0.6715rem + 0.9302vw, 1.25rem);
   }
 }
 @media screen and (min-width: 992px) {
-  div.sections-futur {
-    flex-direction: row;
-    margin: 3em 17%;
-  }
   div.sections-futur div.section-futur .img-futur {
-    width: 20em;
+    width: 19vw;
+    margin: 0.3em;
   }
   div.sections-futur div.section-futur h2 {
     text-align: center;
@@ -1409,5 +1521,34 @@ div.sections-futur .bouton-plus {
     left: 27%;
     font-size: clamp(1rem, -0.25rem + 2vw, 1.25rem);
   }
+  div.sections-futur .texte-futur-selection .texte-futur {
+    width: 15vw;
+    height: 30vh;
+    z-index: 2;
+  }
 }
-/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
+@media screen and (min-width: 1200px) {
+  div.sections-futur div.section-futur .img-futur {
+    width: 10em;
+  }
+  div.sections-futur .texte-futur-selection .texte-futur {
+    width: 12vw;
+  }
+}
+@keyframes agrandir {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes reduire {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+/*------------------------------------------layout */
