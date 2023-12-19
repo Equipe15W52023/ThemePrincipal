@@ -1,5 +1,5 @@
 .bloc_footer {
-    background-color: $fond__prog;
+    background-color: #02122D;
     position: static;
     left: 0;
     bottom: 0;
@@ -9,6 +9,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
 
     .footer_adresse {
         width: 60%;
@@ -70,39 +71,10 @@
 
 //vague
 .vague_footer {
-    display: block;
-    position: relative;
-    height: 40px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background: $fond__prog;
-    transform: scale(1, 1);
-    z-index: 0;
-}
-
-.vague_footer:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100%;
-    width: 100%;
-    height: 300px;
-    background-color: $fond__creation;
-    right: -25%;
-    top: -280px;
-}
-
-.vague_footer:after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100%;
-    width: 100%;
-    height: 300px;
-    background-color: $fond__prog;
-    left: -25%;
-    top: -20px;
-    rotate: 180deg;
-    clip-path: ellipse(100% 15% at -15% 100%);
+    padding: -5px;
 }
 
 ////////////////////////////////////////////////////////////////
