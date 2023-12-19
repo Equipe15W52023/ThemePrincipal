@@ -1,11 +1,24 @@
 // ****************************** Mobile ************************************ //
+// FOND POUR CLIQUE HORS SECTION
+.background-click {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.index-plus {
+    z-index: 1;
+}
+
 // SECTION COMPLÈTE
 .sessions-boutons-container > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    width: 70%;
+    width: 90%;
     
     // BOUTONS SESSION
     .session-buttons {
@@ -39,6 +52,8 @@
             background-color: $bleu__pale;
             color: $fond__creation;
             z-index: 10;
+            padding: 0 0.5em;
+            font-weight: 600;
         }
 
         .bouton-ferme {
@@ -53,6 +68,7 @@
         // hover des boutons (session)
         button.session-button:hover {
             background-color: $orange__creation;
+            transition: background-color 0.4s;
         }
     }
 
@@ -90,10 +106,17 @@
                 padding: 1em;
                 background-color: $bleu__moyen;
                 border-radius: 8px;
+                
+                p {
+                    font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
+                    text-align: center;
+                }
             }       
 
             .cours:hover {
                 cursor: pointer;
+                background-color: #001c2d;
+                transition: background-color 0.3s;
             }
 
             // AFFICHAGE DU CONTENU DES COURS SÉLÉCTTIONNÉS OU NON
@@ -102,18 +125,36 @@
             }
 
             .cours-selection .texte-cours {
-                position: absolute;
+                position: fixed;
                 display: flex;
                 flex-direction: column;
                 background-color: #001c2d;
                 border-radius: 8px;
-                top: 10%;
-                left: 0;
-                width: 110%;
-                transform: translateX(-10%);
+                top: 25%;
+                left: 14%;
+                width: 70vw;
                 height: auto;
                 padding: 10%;
+                z-index: 20;
+
+                p:nth-of-type(2) {
+                    font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
+                    overflow: overlay;
+                    height: 30vh;
+                    padding: 0 0.5em;
+                    margin: 1em 0;
+                }
+
+                p:nth-of-type(2)::-webkit-scrollbar {
+                    width: 2px;
+                }
+
+                p:nth-of-type(2)::-webkit-scrollbar-thumb {
+                    background-color: white;
+                    border-radius: 20px;
+                }
             }
+            
 
             // Bouton pour fermer le contenu du cours
             .bouton-x::before { 
@@ -129,13 +170,18 @@
             }
         }
     }
+
+    // ANIMATION DE LA SECTION
+    .agrandissement {
+        animation: agrandir 0.5s both;
+    }
 }
 
 
 // ***************************** TABLETTE *********************************** //
 @media screen and (min-width: 554px) {
     .sessions-boutons-container > div {
-        width: 60%;
+        width: 80%;
 
         // BOUTONS SESSION
         .session-buttons {
@@ -161,10 +207,9 @@
 
                 // AFFICHAGE DU CONTENU DES COURS
                 .cours-selection .texte-cours {
-                    top: 5px;
-                    left: 0;
-                    width: 60%;
-                    transform: translateX(26%);
+                    top: 25%;
+                    left: 19%;
+                    width: 60vw;
                     padding: 3%;
                 }
             }
@@ -176,6 +221,8 @@
 // ****************************** BUREAU ************************************ //
 @media screen and (min-width: 992px) {
     .sessions-boutons-container > div {
+        width: 65%;
+
         // BOUTONS SESSION
         .session-buttons {
             button.session-button {
@@ -189,7 +236,33 @@
                 .cours {
                     width: 40%;
                 }
+
+                // AFFICHAGE DU CONTENU DES COURS
+                .cours-selection .texte-cours {
+                    left: 20%;
+                }
             }
         }
+    }
+}
+
+// ************************* ANIMATION AJOUTÉ PAR JS ***************************
+@keyframes agrandir {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes reduire {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
     }
 }
