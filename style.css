@@ -1566,7 +1566,7 @@ ul#menu-menu-1 {
   text-align: center;
 }
 .sessions-boutons-container > div .agrandissement {
-  animation: agrandir 0.3s both;
+  animation: agrandir 0.5s both;
 }
 
 @media screen and (min-width: 554px) {
@@ -1714,7 +1714,7 @@ div.sections-futur .bouton-plus {
   height: auto;
 }
 div.sections-futur .agrandissement {
-  animation: agrandir 0.3s both;
+  animation: agrandir 0.5s both;
 }
 
 @media screen and (min-width: 554px) {
@@ -1773,7 +1773,7 @@ div.sections-futur .agrandissement {
     width: 1px;
   }
   div.sections-futur .texte-futur-selection .texte-futur p::-webkit-scrollbar-thumb {
-    background-color: whitesmoke;
+    background-color: #9ACBDA;
     border-radius: 20px;
   }
 }
