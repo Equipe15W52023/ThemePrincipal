@@ -1,7 +1,13 @@
 
 
 
-
+header.site__entete {
+  position: fixed;
+  z-index: 50;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
   
 .menu-menu-1 {
     display: flex;

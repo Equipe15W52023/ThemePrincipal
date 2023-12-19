@@ -17,6 +17,7 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Sections
@@ -373,7 +374,6 @@ ul {
   justify-content: center;
 }
 
-
 .site__entete_suite {
   min-height: 100%;
   background-color: #1B72A6;
@@ -396,7 +396,6 @@ ul {
   flex-direction: row;
   width: 150px;
   height: 100px;
-
 }
 
 .navbar {
@@ -795,6 +794,14 @@ a {
     height: 4.5em;
   }
 }
+header.site__entete {
+  position: fixed;
+  z-index: 50;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
 .menu-menu-1 {
   display: flex;
   flex-direction: column;
@@ -1045,9 +1052,7 @@ ul#menu-menu-1 {
   }
   .navbar .menu-items {
     padding-top: 100px;
-
     background: rgba(14, 61, 109, 0.9490196078);
-
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
@@ -1106,13 +1111,10 @@ ul#menu-menu-1 {
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
   justify-items: center;
-
   align-items: stretch;
   justify-content: stretch;
   width: 95%;
   margin: auto;
-  color: #E8E8E8;
-
   position: relative;
   padding: 0;
   border-radius: 0 0 8px 8px;
@@ -1124,7 +1126,6 @@ ul#menu-menu-1 {
   border-radius: 8px;
   font-size: 15px;
 }
-
 
 @media screen and (min-width: 554px) {
   .Section-prof {
@@ -1145,7 +1146,13 @@ ul#menu-menu-1 {
     width: 70%;
     margin: auto;
   }
-
+}
+.environnement_div .texte_environnement {
+  color: #E8E8E8;
+  width: 100%;
+  text-align: center;
+  background-color: #1B72A6;
+  padding-top: 1.5%;
 }
 .environnement_div .vv_environnement {
   display: flex;
@@ -1863,4 +1870,4 @@ div.sections-futur .agrandissement {
     transform: scale(0);
   }
 }
-/*------------------------------------------layout */
+/*------------------------------------------layout *//*# sourceMappingURL=style.css.map */
