@@ -1,343 +1,428 @@
-
-
-
 header.site__entete {
   position: fixed;
   z-index: 50;
   width: 100vw;
+  height: 14vh;
   top: 0;
   left: 0;
+  background-color: $fond__creation ;
+  @media screen and (max-width: 768px) {
+      height: 10vh;
+    }
 }
-  
+
+nav a {
+  text-decoration: none;
+  color: whitesmoke;
+  text-align: center;
+  width: 10vw;
+}
+
+nav a:hover {
+  color: orangered;
+  transition: color 0.3s ease-in-out;
+}
+
+h1,
+h3 {
+  padding: 0 0.5rem;
+}
+
+li {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  color: whitesmoke;
+  padding: 1%;
+  width: 100%;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+#menu-test {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 5%;
+}
+
+.site__entete_suite {
+  /* background-color: $fond__creation;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 1%;
+  width: 100%;*/
+}
+
+/*.site__entete_suite {
+  background-color: $fond__creation;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 1%;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}*/
+
+.imglogo {
+  margin: 1.5%;
+  width: 5%;
+  height: 5%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+////////////////////
 .menu-menu-1 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
 }
-  
-  .nav-container .checkbox {
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 150;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: orangered;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  background-color: $fond__creation;
+  padding-top: 120px;
+  height: 600vh;
+  width: 100%;
+  top: 0;
+  transform: translateX(-150%);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+  z-index: 100;
+}
+
+.navbar .menu-items li {
+  min-height: 100%;
+  background-color: #1B72A6;
+  display: flex;
+  flex-direction: row;
+  color: azure;
+  border-radius: 25px;
+  padding: 20px;
+  width: 50%;
+  height: 10%;
+  justify-content: center;
+  z-index: 150;
+}
+
+.nav-container input[type="checkbox"]:checked #home {
+  overflow: hidden;
+}
+
+input[type="checkbox"]:checked body {
+  overflow: hidden;
+}
+
+
+.nav-container input[type="checkbox"]:checked~.menu-items {
+  transform: translateX(0);
+  position: fixed;
+}
+
+.nav-container input[type="checkbox"]:checked header {
+  position: fixed;
+}
+
+.nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image {
+  position: initial;
+}
+
+
+
+/* ............/navbar/............ *
+    
+    /* desktop mode............/// */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  //background: $bleu__moyen;
+  color: #000;
+  height: 50px;
+  z-index: 12;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+
+.menu-items li {
+  list-style: none;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover {
+  color: orangered;
+  transition: color 0.3s ease-in-out;
+}
+
+.logo {
+  order: 1;
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+
+ul#menu-menu-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+/* ......../ media query /.......... */
+
+@media (max-width: 768px) {
+  #menu-menu {
+    display: none;
+  }
+
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 80px;
+  }
+
+  .navbar-container input[type="checkbox"] {
     position: absolute;
     display: block;
     height: 32px;
-    width: 32px;
+    width: 30px;
     top: 20px;
     left: 20px;
     z-index: 5;
     opacity: 0;
-    cursor: pointer;
-    z-index: 150;
   }
-  
-  .nav-container .hamburger-lines {
+
+  .navbar-container .hamburger-lines {
     display: block;
-    height: 26px;
-    width: 32px;
+    height: 30px;
+    width: 42px;
     position: absolute;
-    top: 17px;
+    top: 12px;
     left: 20px;
-    z-index: 120;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   @media screen and (min-width: 992px){
-        display: none;
   }
-  }
-  
-  .nav-container .hamburger-lines .line {
+
+  .navbar-container .hamburger-lines .line {
     display: block;
-    height: 4px;
+    height: 8px;
     width: 100%;
     border-radius: 10px;
     background: orangered;
+  }
 
-     @media screen and (min-width: 992px){
-        display: none;
+  .navbar-container .hamburger-lines .line :hover {
+    background: red;
   }
-  }
-  
-  .nav-container .hamburger-lines .line1 {
+
+  .navbar-container .hamburger-lines .line1 {
     transform-origin: 0% 0%;
     transition: transform 0.4s ease-in-out;
   }
-  
-  .nav-container .hamburger-lines .line2 {
+
+  .navbar-container .hamburger-lines .line2 {
     transition: transform 0.2s ease-in-out;
   }
-  
-  .nav-container .hamburger-lines .line3 {
+
+  .navbar-container .hamburger-lines .line3 {
     transform-origin: 0% 100%;
     transition: transform 0.4s ease-in-out;
   }
-  
+
+
   .navbar .menu-items {
-    background-color: $fond__creation;
-    padding-top: 120px;
-    height: 600vh;
-    width: 100%;
-    top: 0;
-    transform: translateX(-150%);
+    padding-top: 100px;
+    background: #0e3d6df2;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
     display: flex;
     flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
     transition: transform 0.5s ease-in-out;
-    text-align: center;
-    z-index: 100;
+    box-shadow: 5px 0px 10px 0px #071f37;
   }
-  
-  .navbar .menu-items li {
-    min-height: 100%;
-    background-color: #1B72A6;
-    display: flex;
-    flex-direction: row;
-    color: azure; 
-    border-radius: 25px;
-    padding: 20px;
-    width: 50%;
-    height: 10%;
-    justify-content: center;
-    z-index: 150;
-  }
-  
-  .nav-container input[type="checkbox"]:checked #home {
-    overflow: hidden;
-}
-input[type="checkbox"]:checked body{
-    overflow: hidden;
-}
 
-  
-  .nav-container input[type="checkbox"]:checked ~ .menu-items {
+  .navbar .menu-items li {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked~.menu-items {
     transform: translateX(0);
-    position: fixed;
   }
-  .nav-container input[type="checkbox"]:checked header{
-      position: fixed;
+
+  .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+    transform: rotate(35deg);
   }
-  
-  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-    transform: rotate(45deg);
-  }
-  
-  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+
+  .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
     transform: scaleY(0);
   }
-  
-  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-    transform: rotate(-45deg);
+
+  .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+    transform: rotate(-35deg);
   }
-  
-    .wp-block-gallery.has-nested-images figure.wp-block-image{
-      position: initial;
-    }
 
 
-    
-    /* ............/navbar/............ *
-    
-    /* desktop mode............/// */
-    
-    .navbar input[type="checkbox"],
-    .navbar .hamburger-lines {
-      display: none;
-    }
-    
-    .navbar {
-      box-shadow: 0px 5px 10px 0px #aaa;
-      position: fixed;
-      width: 100%;
-      background: $bleu__moyen;
-      color: #000;
-      opacity: 0.85;
-      height: 50px;
-      z-index: 12;
-    }
-    
-    .navbar-container {
-      display: flex;
-      justify-content: space-between;
-      height: 64px;
-      align-items: center;
-    }
-    
-    .menu-items {
-      order: 2;
-      display: flex;
-    }
-    
-    .menu-items li {
-      list-style: none;
-      margin-left: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-    
-    .menu-items a {
-      text-decoration: none;
-      color: whitesmoke;
-      font-weight: 500;
-      transition: color 0.3s ease-in-out;
-    }
-    
-    .menu-items a:hover {
-      color: orangered;
-      transition: color 0.3s ease-in-out;
-    }
-    
-    .logo {
-      order: 1;
-      font-size: 2.3rem;
-      margin-bottom: 0.5rem;
-    }
 
-    ul#menu-menu-1 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-       
-    }
-    /* ......../ media query /.......... */
-    
-    @media (max-width: 768px) {
-        #menu-menu{
-            display: none;
-        }
-      .navbar {
-        opacity: 0.95;
-      }
-    
-      .navbar-container input[type="checkbox"],
-      .navbar-container .hamburger-lines {
-        display: block;
-      }
-    
-      .navbar-container {
-        display: block;
-        position: relative;
-        height: 80px;
-      }
-    
-      .navbar-container input[type="checkbox"] {
-        position: absolute;
-        display: block;
-        height: 32px;
-        width: 30px;
-        top: 20px;
-        left: 20px;
-        z-index: 5;
-        opacity: 0;
-      }
-    
-      .navbar-container .hamburger-lines {
-        display: block;
-        height: 30px;
-        width: 42px;
-        position: absolute;
-        top: 12px;
-        left: 20px;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    
-      .navbar-container .hamburger-lines .line {
-        display: block;
-        height: 8px;
-        width: 100%;
-        border-radius: 10px;
-        background: orangered;
-      }
-      .navbar-container .hamburger-lines .line :hover{
-        background: red;
-      }
-    
-      .navbar-container .hamburger-lines .line1 {
-        transform-origin: 0% 0%;
-        transition: transform 0.4s ease-in-out;
-      }
-    
-      .navbar-container .hamburger-lines .line2 {
-        transition: transform 0.2s ease-in-out;
-      }
-    
-      .navbar-container .hamburger-lines .line3 {
-        transform-origin: 0% 100%;
-        transition: transform 0.4s ease-in-out;
-      }
- 
-    
-      .navbar .menu-items {
-        padding-top: 100px;
-        background: #0e3d6df2;
-        height: 100vh;
-        max-width: 300px;
-        transform: translate(-150%);
-        display: flex;
-        flex-direction: column;
-        margin-left: -40px;
-        padding-left: 50px;
-        transition: transform 0.5s ease-in-out;
-        box-shadow: 5px 0px 10px 0px #071f37;
-      }
-    
-      .navbar .menu-items li {
-        margin-bottom: 1.5rem;
-        font-size: 1.3rem;
-        font-weight: 500;
-      }
-    
-      .logo {
-        position: absolute;
-        top: 5px;
-        right: 15px;
-        font-size: 2rem;
-      }
-    
-      .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-        transform: translateX(0);
-      }
-    
-      .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-        transform: rotate(35deg);
-      }
-    
-      .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-        transform: scaleY(0);
-      }
-    
-      .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-        transform: rotate(-35deg);
-      }
-    
-     
-      
-    }
-    
-    @media (max-width: 500px) {
-      html {
-        font-size: 65%;
-      }
-    
-      .navbar .menu-items li{
-          font-size: 1.6rem;
-      }
-    
+}
 
-    
-      .logo {
-        position: absolute;
-        top: 06px;
-        right: 15px;
-        font-size: 3rem;
-      }
-    
-      .navbar .menu-items li {
-        margin-bottom: 2.5rem;
-        font-size: 1.8rem;
-        font-weight: 500;
-      }
-    }
- 
+@media (max-width: 500px) {
+  html {
+    font-size: 65%;
+  }
 
-    
+  .navbar .menu-items li {
+    font-size: 1.6rem;
+  }
+
+
+
+  .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
