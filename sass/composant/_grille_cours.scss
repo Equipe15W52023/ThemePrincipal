@@ -53,6 +53,7 @@
             color: $fond__creation;
             z-index: 10;
             padding: 0 0.5em;
+            font-weight: 600;
         }
 
         .bouton-ferme {
@@ -105,6 +106,11 @@
                 padding: 1em;
                 background-color: $bleu__moyen;
                 border-radius: 8px;
+                
+                p {
+                    font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
+                    text-align: center;
+                }
             }       
 
             .cours:hover {
@@ -126,16 +132,17 @@
                 border-radius: 8px;
                 top: 25%;
                 left: 14%;
-                width: 50vw;
+                width: 70vw;
                 height: auto;
                 padding: 10%;
-                z-index: 15;
+                z-index: 20;
 
                 p:nth-of-type(2) {
                     font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
                     overflow: overlay;
                     height: 30vh;
                     padding: 0 0.5em;
+                    margin: 1em 0;
                 }
 
                 p:nth-of-type(2)::-webkit-scrollbar {
@@ -166,7 +173,7 @@
 
     // ANIMATION DE LA SECTION
     .agrandissement {
-        animation: agrandir 0.3s both;
+        animation: agrandir 0.5s both;
     }
 }
 
@@ -201,8 +208,8 @@
                 // AFFICHAGE DU CONTENU DES COURS
                 .cours-selection .texte-cours {
                     top: 25%;
-                    left: 22%;
-                    width: 50%;
+                    left: 19%;
+                    width: 60vw;
                     padding: 3%;
                 }
             }
@@ -228,6 +235,11 @@
             .session {
                 .cours {
                     width: 40%;
+                }
+
+                // AFFICHAGE DU CONTENU DES COURS
+                .cours-selection .texte-cours {
+                    left: 20%;
                 }
             }
         }
