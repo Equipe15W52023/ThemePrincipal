@@ -92,6 +92,17 @@ div.sections-futur {
 
     .texte-futur-selection .texte-futur p {
         font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
+        overflow: overlay;
+    }
+
+    
+    .texte-futur-selection .texte-futur p::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    .texte-futur-selection .texte-futur p::-webkit-scrollbar-thumb {
+        background-color: $bleu__pale;
+        border-radius: 20px;
     }
 
     // BOUTON PLUS EN BAS DES SECTION
@@ -171,16 +182,6 @@ div.sections-futur {
 
         .texte-futur-selection .texte-futur p {
             font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
-            overflow: overlay;
-        }
-
-        .texte-futur-selection .texte-futur p::-webkit-scrollbar {
-            width: 1px;
-        }
-
-        .texte-futur-selection .texte-futur p::-webkit-scrollbar-thumb {
-            background-color: $bleu__pale;
-            border-radius: 20px;
         }
     }
 }

@@ -1744,6 +1744,14 @@ div.sections-futur .texte-futur-selection .texte-futur h2 {
 }
 div.sections-futur .texte-futur-selection .texte-futur p {
   font-size: clamp(1.375rem, 1.2308rem + 0.7692vw, 1.5rem);
+  overflow: overlay;
+}
+div.sections-futur .texte-futur-selection .texte-futur p::-webkit-scrollbar {
+  width: 1px;
+}
+div.sections-futur .texte-futur-selection .texte-futur p::-webkit-scrollbar-thumb {
+  background-color: #9ACBDA;
+  border-radius: 20px;
 }
 div.sections-futur .bouton-plus {
   position: absolute;
@@ -1807,14 +1815,6 @@ div.sections-futur .agrandissement {
   }
   div.sections-futur .texte-futur-selection .texte-futur p {
     font-size: clamp(0.875rem, 0.625rem + 1.3333vw, 1.125rem);
-    overflow: overlay;
-  }
-  div.sections-futur .texte-futur-selection .texte-futur p::-webkit-scrollbar {
-    width: 1px;
-  }
-  div.sections-futur .texte-futur-selection .texte-futur p::-webkit-scrollbar-thumb {
-    background-color: #9ACBDA;
-    border-radius: 20px;
   }
 }
 @media screen and (min-width: 782px) {
