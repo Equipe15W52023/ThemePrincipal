@@ -2,20 +2,21 @@ header.site__entete {
   position: fixed;
   z-index: 50;
   width: 100vw;
-  height: 14vh;
+  height: 12vh;
   top: 0;
   left: 0;
   background-color: $fond__creation ;
+
   @media screen and (max-width: 768px) {
-      height: 10vh;
-    }
+    height: 10vh;
+  }
 }
 
 nav a {
   text-decoration: none;
   color: whitesmoke;
   text-align: center;
-  width: 10vw;
+  //width: 10vw;
 }
 
 nav a:hover {
@@ -42,7 +43,7 @@ li {
   }
 }
 
-#menu-menu {
+ul#menu-menu {
   display: flex;
   flex-direction: row;
   width: 80%;
