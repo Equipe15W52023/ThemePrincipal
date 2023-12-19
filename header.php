@@ -31,7 +31,7 @@
                 "menu" => "entete",
                 "container" => "nav"
                 )) ?>
-   </div>
+                
     <nav class="navbar">
       <div class="navbar-container container">
           <input type="checkbox" name="" id="">
